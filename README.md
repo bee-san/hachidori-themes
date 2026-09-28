@@ -20,7 +20,7 @@ Theme modules are reviewed here and copied into a pinned Hachidori release.
 Hachidori does not download executable theme code at runtime. This repository's
 YAML describes sources; the extension reads its bundled JSON catalogue.
 
-The [version 2 view contract](https://github.com/bee-san/hachidori/blob/befcf61e5b36138cc8b1e30e3dc32b8ce0bf70ea/docs/themes/README.md)
+The [version 2 view contract](https://github.com/bee-san/hachidori/blob/e4af9457acde9fa625805ba0bfb01219dc4e5813/docs/themes/README.md)
 explains renderer ownership, core callbacks, text/rich content, CSS, switching and
 fallback. The MVP omits a remote installer and live catalogue refresh.
 
