@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Default vs direct Nazeka — MVP benchmark
 
-Measured on 2026-09-28 at Hachidori **7ef2a8d1f0303874958e86c71ab5d9b87eb8520e**.
+Measured on 2026-09-28 at Hachidori **befcf61e5b36138cc8b1e30e3dc32b8ce0bf70ea**.
 Both themes use exactly the same engine, input, options and extension revision.
 Subsequent changes add catalogue captions, screenshots and evidence, not a new
 popup rendering path.
@@ -15,22 +15,30 @@ flat, 40-level structured and 24-sense dictionary entries.
 
 | Measurement | Default median / p95 | Nazeka median / p95 |
 | --- | ---: | ---: |
-| Cold first correct frame (6 samples) | 34.85 / 41.00 ms | 30.35 / 34.10 ms |
-| Cold complete stable result | 53.85 / 63.60 ms | 49.85 / 50.10 ms |
-| Warm first correct frame | 16.90 / 17.50 ms | 17.00 / 17.20 ms |
-| Warm complete stable result | 33.30 / 33.40 ms | 33.30 / 33.40 ms |
-| Synchronous renderer, including core callbacks/layout it triggers | 2.45 / 4.80 ms | 0.90 / 1.70 ms |
-| Script duration during sample | 1.575 / 1.910 ms | 0.857 / 1.212 ms |
-| Style recalculation during sample | 0.839 / 1.635 ms | 0.306 / 0.404 ms |
-| Layout during sample | 0.864 / 2.157 ms | 0.530 / 0.978 ms |
+| Cold first correct frame (6 samples) | 92.70 / 96.50 ms | 68.10 / 70.50 ms |
+| Cold complete stable result | 102.20 / 146.40 ms | 70.30 / 72.90 ms |
+| Warm first correct frame | 19.15 / 27.00 ms | 17.70 / 19.20 ms |
+| Warm complete stable result | 49.80 / 60.30 ms | 33.40 / 50.10 ms |
+| Synchronous renderer, including core callbacks/layout it triggers | 5.75 / 11.90 ms | 2.25 / 4.30 ms |
+| Script duration during sample | 4.100 / 5.216 ms | 2.366 / 3.251 ms |
+| Style recalculation during sample | 1.980 / 4.192 ms | 0.716 / 0.982 ms |
+| Layout during sample | 2.095 / 5.486 ms | 1.265 / 2.639 ms |
 | Popup element count | 73 / 228 | 19 / 91 |
-| Page JS heap used | 3.25 / 3.66 MiB | 2.67 / 3.08 MiB |
+| Page JS heap used | 3.23 / 3.67 MiB | 2.73 / 3.12 MiB |
 
-Nazeka takes **63% less synchronous render time** and creates fewer nodes. All
-measured work categories decrease. The observed cold first-frame median improves
-by 13%, but six cold samples are a small set. Warm frame latency is essentially
-unchanged: this workload fits within a frame in both themes. These results do
-**not** establish that every lookup, dictionary search or complete popup is faster.
+Nazeka takes **61% less synchronous render time** and creates fewer nodes. All
+measured work categories decrease. Cold first-frame median improves by 27%,
+and warm complete-frame median by 33% in this run. Six cold samples are a small
+set. These results do **not** establish that every lookup or dictionary search
+is faster.
+
+The earlier pre-review comparison at `7ef2a8d` measured 2.45 vs 0.90 ms rendering
+(63% less), with warm completion at 33.3 ms for both themes. Absolute times vary
+with machine load and frame scheduling: the final run's starting load averages
+were 2.40–3.96. We report the final revision above rather than selecting the
+fastest run. Historical raw evidence is in `evidence/pre-review/`; its renderer
+timer was inside the host, while the final timer wraps the host in the existing
+benchmark-only probe. Production code now contains no timing counters.
 
 ### Proving that Nazeka becomes the popup
 
@@ -56,8 +64,6 @@ repeated results above include this fix. Text conversion and source highlighting
 remain in the measured path; work is not deferred outside the result barrier.
 
 ## Reproduce
-
-Run these commands from a Hachidori checkout.
 
 Environment: Intel Core Ultra 7 165U, 14 logical CPUs, Linux, Node v26.8.2,
 Chrome for Testing 152.0.7977.75, headless, production threaded OPFS engine.
