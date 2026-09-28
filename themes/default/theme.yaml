@@ -1,0 +1,8 @@
+schema: 2
+slug: default
+name: Default
+contentMode: rich
+renderer: builtin
+screenshot: screenshot.png
+source: https://github.com/bee-san/hachidori/tree/main/extension/render
+benchmark: ../../benchmark/README.md
