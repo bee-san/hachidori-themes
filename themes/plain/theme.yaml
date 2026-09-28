@@ -1,0 +1,8 @@
+schema: 2
+slug: plain
+name: Plain
+contentMode: text
+renderer: theme.js
+stylesheet: theme.css
+screenshot: screenshot.png
+benchmark: ../../benchmark/README.md
