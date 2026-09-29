@@ -11,6 +11,9 @@ They do not build Default and hide or rearrange it afterwards.
   audio or Anki controls, or icon/dictionary stylesheets.
 - **Nazeka** — a compact text renderer adapted from wareya/nazeka, with core
   pronunciation, Anki and navigation bindings. See its attribution and licence.
+- **JL** — a text renderer following rampaa/JL's popup, with JL's default
+  colours, pitch marker and dictionary tabs. Each dictionary gets its own block
+  with its own audio and Anki buttons. See its attribution and licence.
 
 The experimental Store in Hachidori shows screenshots, descriptions and benchmark
 results as carousel cards. **Use** selects the bundled renderer immediately.
@@ -41,4 +44,5 @@ limitations. Compare complete lookup frames as well as construction time; fewer
 DOM nodes do not guarantee a lower end-to-end latency.
 
 New integration code is GPL-3.0-or-later. Adapted Nazeka portions retain their
-Apache-2.0 attribution and licence in `themes/nazeka/`.
+Apache-2.0 attribution and licence in `themes/nazeka/`, and the adapted JL design
+keeps its Apache-2.0 attribution and licence in `themes/jl/`.
