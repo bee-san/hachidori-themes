@@ -1,0 +1,10 @@
+schema: 2
+slug: jl
+name: JL
+contentMode: text
+renderer: theme.js
+stylesheet: theme.css
+screenshot: screenshot.png
+upstream: https://github.com/rampaa/JL
+upstreamRevision: b490928aa3a23eb5d4fa9359961f5b686bc0eaae
+benchmark: ../../benchmark/README.md
