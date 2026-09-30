@@ -1,12 +1,13 @@
 /* Independent JL layout; Default reader.css is never loaded beneath it.
- * Colours, sizes and spacing follow JL's defaults in rampaa/JL (Apache-2.0,
+ * Sizes and spacing follow JL's defaults in rampaa/JL (Apache-2.0,
  * see ATTRIBUTION.md): ConfigManager.cs, PopupContentGenerator.cs, PopupWindow.
  * SPDX-License-Identifier: GPL-3.0-or-later */
-:host { color-scheme: dark; --hoshidicts-accent: #1e90ff; --hoshidicts-text: #fff; }
+:host { color-scheme: light; --hoshidicts-accent: #9a236c; --hoshidicts-text: #4a2442; }
 .gsm-hoshidicts-popup {
   position: fixed; z-index: 2147483647; pointer-events: auto;
   box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
-  color: #fff; background: color-mix(in srgb, #000 var(--gsm-hoshidicts-popup-opacity, 80%), transparent);
+  color: #4a2442; background: color-mix(in srgb, #fff7fc var(--gsm-hoshidicts-popup-opacity, 80%), transparent);
+  border: 1px solid #95618c; border-radius: 8px;
   /* Meiryo's Latin letters are Verdana's, so Verdana keeps JL's look without Meiryo. */
   font: 17px/1.5 Meiryo, Verdana, "Noto Sans CJK JP", "Noto Sans JP", sans-serif; text-align: left; white-space: normal;
   /* WPF keeps adjacent full-width punctuation full width; Chrome's default halves it. */
@@ -15,36 +16,39 @@
 }
 .gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
 .gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: default; }
-.gsm-hoshidicts-popup button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+.gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid #5f3ba4; outline-offset: 2px; }
 .jl-header { flex: none; }
 /* JL's 20 px title row holds the x; the tab row sits 2 px below it. */
 .jl-nav { display: flex; justify-content: flex-end; min-height: 20px; margin-right: 10px; }
 .jl-tabs { display: flex; flex-wrap: wrap; margin: 2px 2px 0; }
 .jl-nav:empty, .jl-tabs:empty { display: none; }
 .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
-  margin: 0 0 2px 2px; padding: 3px 8px; background: #2a2b2d;
-  border: 1px solid #37393b; border-radius: 3px; font-size: 12px; line-height: 20px;
+  margin: 0 0 2px 2px; padding: 3px 8px; background: #f2d6ec;
+  border: 1px solid #95618c; border-radius: 3px; font-size: 12px; line-height: 20px;
 }
 .gsm-hoshidicts-popup .jl-tab:first-child { margin-left: 0; }
-/* JL's selected tab is DodgerBlue to its edges, with no grey border. */
-.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] { border-color: #1e90ff; background: #1e90ff; }
+/* The underline makes the selected group identifiable without colour. */
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: #9a236c; background: #9a236c; color: #fff7fc;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px;
+}
 .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
   padding: 0; background: none; border: 0; font: 16px/20px "Meiryo UI", Meiryo, Verdana, sans-serif;
 }
 .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before { display: none; }
-.jl-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #555 transparent; }
+.jl-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #95618c transparent; }
 /* JL's list item padding and 2 px item margin put results about 13 px in. */
 .jl-entry { margin: 0 6px 0 13px; padding-top: 9px; }
 /* JL's separator between results, counting only the selected tab's. Its element
  * is 2 px tall, but the WPF Separator template draws a 1 px line. */
-.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid #fff; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid #95618c; }
 .jl-top { display: flex; flex-wrap: wrap; align-items: center; }
-.jl-spelling { margin-left: 2px; color: #d2691e; font-size: 21px; }
-.jl-reading { margin-left: 7px; color: #daa520; font-size: 19px; }
-.jl-deconj { margin-left: 7px; color: #b0c4de; }
-.jl-frequency { margin-left: 7px; color: #ff0; }
-.jl-dictionary { margin-left: 7px; color: #add8e6; font-size: 15px; }
-.jl-mora { border: 0 dotted #00bfff; }
+.jl-spelling { margin-left: 2px; color: #9a236c; font-size: 21px; }
+.jl-reading { margin-left: 7px; color: #6442aa; font-size: 19px; }
+.jl-deconj { margin-left: 7px; color: #665064; }
+.jl-frequency { margin-left: 7px; color: #754805; }
+.jl-dictionary { margin-left: 7px; color: #6442aa; font-size: 15px; }
+.jl-mora { border: 0 dotted #6442aa; }
 .jl-mora[data-pitch="high"] { border-top-width: 1.5px; }
 .jl-mora[data-pitch="low"] { border-bottom-width: 1.5px; }
 .jl-mora[data-transition] { margin-right: -1.5px; border-right-width: 1.5px; }
@@ -64,27 +68,28 @@
 .gsm-hoshidicts-popup .hd-icon[data-icon="add"] {
   --hd-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8 1h4v7h7v4h-7v7H8v-7H1V8h7z'/%3E%3C/svg%3E");
 }
-/* JL turns the mine button OrangeRed when the note already exists. */
+/* Keep duplicate actions legible against the translucent rose surface. */
 .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
-  [data-state="view-existing"], [data-state="overwrite"]) { color: #ff4500; }
+  [data-state="view-existing"], [data-state="overwrite"]) { color: #9f2850; }
 .gsm-hoshidicts-definitions, .jl-kanji-text { margin: 6px 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .jl-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
 .jl-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
 .gsm-hoshidicts-anki-feedback { margin: 0 2px; font-size: 12px; }
 .gsm-hoshidicts-lookup-notice, .gsm-hoshidicts-lookup-failure { margin: 4px; }
-.gsm-hoshidicts-lookup-failure button { margin-left: 6px; padding: 1px 6px; background: #2a2b2d; border: 1px solid #37393b; border-radius: 3px; }
+.gsm-hoshidicts-lookup-failure button { margin-left: 6px; padding: 1px 6px; background: #f2d6ec; border: 1px solid #95618c; border-radius: 3px; }
 .gsm-hoshidicts-audio-menu {
   position: absolute; right: 8px; top: 32px; z-index: 2; min-width: 180px; max-height: calc(100% - 48px);
-  overflow: auto; padding: 6px; background: #1b1b1b; border: 1px solid #fff; font-size: 12px;
+  overflow: auto; padding: 6px; background: #fbe9f5; border: 1px solid #95618c; font-size: 12px;
 }
-.gsm-hoshidicts-audio-menu button { display: block; width: 100%; padding: 2px 4px; text-align: left; background: #2a2b2d; border: 1px solid #37393b; }
+.gsm-hoshidicts-audio-menu button { display: block; width: 100%; padding: 2px 4px; text-align: left; background: #f2d6ec; border: 1px solid #95618c; }
 .gsm-hoshidicts-resize-handle { position: absolute; right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; }
 
+/* Girlypop's rose and lilac palette uses darker accents for text contrast. */
 /* Bee's additions keep JL's compact list and use Hachidori's shared controls. */
 :host {
-  --text-color: #fff; --text-color-light1: #add8e6; --text-color-light3: #b0c4de;
-  --accent-color: #1e90ff; --accent-color-dark: #00bfff; --link-color: #00bfff;
-  --font-size-no-units: 17; --line-height: 1.5; --gloss-image-background-color: #1b1b1b;
+  --text-color: #4a2442; --text-color-light1: #6442aa; --text-color-light3: #665064;
+  --accent-color: #9a236c; --accent-color-dark: #6442aa; --link-color: #6442aa;
+  --font-size-no-units: 17; --line-height: 1.5; --gloss-image-background-color: #fbe9f5;
 }
 :host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
 :host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
@@ -94,37 +99,44 @@
 }
 .gsm-hoshidicts-note-icon { width: 16px; height: 16px; }
 .gsm-hoshidicts-popup .gsm-hoshidicts-text-action-button {
-  padding: 1px 4px; background: #2a2b2d; border: 1px solid #37393b;
+  padding: 1px 4px; background: #f2d6ec; border: 1px solid #95618c;
   border-radius: 3px; font-size: 12px;
 }
 .bee-more-actions { position: relative; font-size: 15px; }
 .bee-more-actions > summary { cursor: pointer; list-style: none; padding: 0 4px; }
-.bee-more-actions > summary:focus-visible, .bee-rich-definition > summary:focus-visible {
-  outline: 2px solid #fff; outline-offset: 1px;
-}
-.bee-action-menu { padding: 4px; background: #1b1b1b; border: 1px solid #555; display: flex; flex-wrap: wrap; gap: 4px; }
-.gsm-hoshidicts-note-form { display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1px solid #555; background: #1b1b1b; }
-.gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; color: #add8e6; }
+.bee-action-menu { padding: 4px; background: #fbe9f5; border: 1px solid #95618c; display: flex; flex-wrap: wrap; gap: 4px; }
+.gsm-hoshidicts-note-form { display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1px solid #95618c; background: #fbe9f5; }
+.gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; color: #6442aa; }
 .gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
-  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid #555;
-  background: #111; color: #fff; font: inherit;
+  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid #95618c;
+  background: #fff7fc; color: #4a2442; font: inherit;
 }
 .gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
 .gsm-hoshidicts-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
-.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button { background: #2a2b2d; border: 1px solid #555; padding: 3px 8px; }
-.gsm-hoshidicts-note-error { color: #ffb4ab; font-size: 12px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button { background: #f2d6ec; border: 1px solid #95618c; padding: 3px 8px; }
+.gsm-hoshidicts-note-error { color: #9f2850; font-size: 12px; }
 .bee-rich-definition { margin-top: 4px; white-space: normal; }
-.bee-rich-definition > summary { color: #add8e6; font-size: 12px; cursor: pointer; }
+.bee-rich-definition > summary { color: #6442aa; font-size: 12px; cursor: pointer; }
 .gsm-hoshidicts-definitions:has(> .bee-rich-definition[open]) > .gsm-hoshidicts-glossary-content { display: none; }
 .bee-rich-content { margin-top: 6px; white-space: normal; }
-.bee-rich-tags { color: #b0c4de; font-size: 14px; }
+.bee-rich-tags { color: #665064; font-size: 14px; }
 .bee-rich-row + .bee-rich-row { margin-top: 4px; }
 .bee-rich-content .gloss-list { margin: 0; padding-left: 1.2em; }
 .bee-rich-content .gloss-list[data-count="1"] { padding-left: 0; list-style: none; }
 .bee-rich-content :is(ul, ol) { margin-block: 0; }
-.bee-rich-content a { color: #00bfff; cursor: pointer; }
+.bee-rich-content a { color: #6442aa; cursor: pointer; text-decoration: underline; }
 .bee-rich-content .gloss-sc-table-container { max-width: 100%; overflow-x: auto; }
 .bee-rich-content .gloss-link-external-icon { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: middle; }
+
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none;
+    background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}
 
 /* Shared glossary media styling from Hachidori. */
 .gloss-image-container {
@@ -306,4 +318,3 @@
 .gloss-image-link[data-image-load-state="load-error"] .gloss-image-container {
   display: none;
 }
-
