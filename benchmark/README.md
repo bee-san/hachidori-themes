@@ -1,6 +1,11 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 # Default, Nazeka, Plain and JL benchmark
 
+Bee's Theme adds group tabs, the personal dictionary editor, custom actions and
+lazy rich content to JL. Its separate measurements and reproduction commands
+are documented in [Hachidori's Bee's Theme report](https://github.com/bee-san/hachidori/blob/main/docs/themes/bee.md).
+The four-theme results below describe the original renderers.
+
 Measured on 2026-09-29 at Hachidori **fb999351c10d50be1124acd3165070c0ab0ebb8a**.
 All four themes use exactly the same engine, input, options and extension revision.
 Later commits don't touch renderer, engine or probe code, and manifests retain
