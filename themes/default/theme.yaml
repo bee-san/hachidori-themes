@@ -6,3 +6,4 @@ renderer: builtin
 screenshot: screenshot.png
 source: https://github.com/bee-san/hachidori/tree/main/extension/render
 benchmark: ../../benchmark/README.md
+designSettings: all

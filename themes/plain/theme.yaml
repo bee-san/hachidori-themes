@@ -6,3 +6,4 @@ renderer: theme.js
 stylesheet: theme.css
 screenshot: screenshot.png
 benchmark: ../../benchmark/README.md
+designSettings: []

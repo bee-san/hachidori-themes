@@ -8,3 +8,4 @@ screenshot: screenshot.png
 upstream: https://github.com/rampaa/JL
 upstreamRevision: b490928aa3a23eb5d4fa9359961f5b686bc0eaae
 benchmark: ../../benchmark/README.md
+designSettings: [popupOpacityPercent, kanjiClickDictionary, showPitchAccentFurigana, pitchAccentFuriganaDictionary]
