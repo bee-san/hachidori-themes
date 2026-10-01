@@ -19,10 +19,9 @@ The experimental Store in Hachidori shows screenshots, descriptions and benchmar
 results as carousel cards. **Use** selects the bundled renderer immediately.
 Enable it under Advanced → Experimental features, then open Design.
 
-- **Bee's Theme** — Miku turquoise and pink colours on JL's compact layout,
-  with group-only tabs, expandable rich
-  definitions, the personal dictionary editor and custom link/Anki actions.
-  Rich content and images are created only when expanded; see `themes/bee/`.
+- **Bee's Theme** — Girlypop blush and violet colours on JL's compact layout,
+  with group-only tabs, formatted definitions, enlarged image previews, the
+  personal dictionary editor and custom link/Anki actions; see `themes/bee/`.
 
 ## Distribution
 

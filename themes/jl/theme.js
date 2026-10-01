@@ -51,6 +51,10 @@ export function createView(options, enhanced = false) {
   }
   const highlighter = options.sourceHighlighter;
   let highlightEnabled = options.sourceHighlightEnabled;
+  // Bee enlarges a hovered or focused glossary image with Default's preview.
+  const preview = enhanced ? components.createImagePreview({ document, window: options.window, popup,
+    getCoordinateScale: () => components.popupCoordinateScale(options.getPageZoom?.() ?? 1, options.getPopupScalePercent?.() ?? 100),
+    getImageHoverPreview: options.getImageHoverPreview, scrollBounds: () => scroll }) : null;
   let activeSource, entries = [], bindings = [], selected = 0, labels = [], frequencies = [], tab = null, onTabSelected = null;
   let tools = [], groupTabs = [], groupContext = null, availableDictionaries = [], revision = 0;
   let customButtons = options.customButtons || [];
@@ -65,6 +69,7 @@ export function createView(options, enhanced = false) {
     tabs.replaceChildren(); nav.replaceChildren(); scroll.replaceChildren();
     entries = []; bindings = []; labels = []; frequencies = []; selected = 0; tab = null; onTabSelected = null; activeSource = null;
     highlighter?.clear();
+    preview?.hideImagePreview();
   }
   function finish(candidate, matched, context) {
     activeSource = { candidate, matched };
@@ -147,42 +152,32 @@ export function createView(options, enhanced = false) {
       definition: "", sentence: candidate?.sentence || "" };
   }
 
-  function richDefinition(parent, rows, dictionary, context, owner) {
-    const details = node("details", "bee-rich-definition");
-    details.append(node("summary", "", "Formatted definition"));
+  // Bee shows only the structured glossary: no JL text, tag brackets or disclosure.
+  function formattedDefinition(parent, rows, dictionary, context, owner) {
     const content = node("div", "gsm-hoshidicts-glossary-content bee-rich-content");
     content.dataset.hoshidictsDictionary = dictionary;
-    details.append(content); parent.append(details);
+    parent.append(content);
     const ownRevision = revision;
     const isCurrent = () => ownRevision === revision && owner.isConnected
       && context.isCurrentRequest?.() !== false;
-    let rendered = false;
-    details.addEventListener("toggle", () => {
-      details.firstElementChild.textContent = details.open ? "Plain definition" : "Formatted definition";
-      if (!details.open || rendered || !isCurrent()) return;
-      try {
-        content.replaceChildren();
-        for (const row of rows) {
-          const rowContent = node("div", "bee-rich-row");
-          const tags = brackets(tagGroups(row.definitionTags));
-          if (tags) rowContent.append(node("span", "bee-rich-tags", tags));
-          content.append(rowContent);
-          options.appendTextOnlyGlossary(document, rowContent, row.glossary, {
-            dictionary, generation: context.generation, isCurrent,
-            isCurrentLink: () => ownRevision === revision && owner.isConnected && !owner.hidden
-              && (context.isCurrentView || context.isCurrentRequest)?.() !== false,
-            onExternalLink: context.onExternalLink, onInternalLink: context.onInternalLink,
-            resolveMedia: context.resolveMedia, imageContext: context,
-            onImageCreated: image => images.add(image), onLayoutChange: options.positionPopup,
-          });
-        }
-        rendered = true;
-        options.positionPopup();
-      } catch (error) {
-        content.replaceChildren(node("div", "gsm-hoshidicts-lookup-failure", `Could not render definition: ${error.message}`));
+    try {
+      for (const row of rows) {
+        const rowContent = node("div", "bee-rich-row");
+        content.append(rowContent);
+        options.appendTextOnlyGlossary(document, rowContent, row.glossary, {
+          dictionary, generation: context.generation, isCurrent,
+          isCurrentLink: () => ownRevision === revision && owner.isConnected && !owner.hidden
+            && (context.isCurrentView || context.isCurrentRequest)?.() !== false,
+          onExternalLink: context.onExternalLink, onInternalLink: context.onInternalLink,
+          resolveMedia: context.resolveMedia, imageContext: context,
+          onImageCreated: image => images.add(image), onLayoutChange: options.positionPopup,
+          requestImagePreview: preview.requestImagePreview, refreshImagePreview: preview.refreshImagePreview,
+          hideImagePreview: preview.hideImagePreview,
+        });
       }
-    });
-    if (context.beeExpandedDefinitions?.includes(entries.length)) details.open = true;
+    } catch (error) {
+      content.replaceChildren(node("div", "gsm-hoshidicts-lookup-failure", `Could not render definition: ${error.message}`));
+    }
   }
 
   // The first pitch accent that fits the text, preferring Design's pitch dictionary.
@@ -232,7 +227,8 @@ export function createView(options, enhanced = false) {
       line.append(element);
     }
     const audio = components.createAudioControl(document, term.expression);
-    line.append(audio.element);
+    // JL puts audio after the reading; Bee groups it with the Anki and pencil buttons.
+    if (!enhanced) line.append(audio.element);
     const steps = components.deinflectionSteps(result);
     const matched = result.matched || "";
     const process = steps.length ? `～${steps.map(step => step.name).join("→")}` : "";
@@ -249,6 +245,7 @@ export function createView(options, enhanced = false) {
     const actions = node("div", "gsm-hoshidicts-entry-actions");
     actions.setAttribute("role", "group");
     actions.setAttribute("aria-label", "Entry actions");
+    if (enhanced) actions.append(audio.element);
     line.append(dictionaryLabel(dictionary), actions);
     return { line, audio, actions };
   }
@@ -283,17 +280,17 @@ export function createView(options, enhanced = false) {
     entry.addEventListener("click", () => { selected = index; });
     const { line, audio, actions } = topLine(result, dictionary, candidate, context);
     const definitions = node("div", "gsm-hoshidicts-definitions");
-    definitions.append(node("div", "gsm-hoshidicts-glossary-content", definitionText(rows)));
     const feedback = node("div", "gsm-hoshidicts-anki-feedback");
     feedback.hidden = true;
     entry.append(line, definitions, feedback);
-    if (enhanced) {
-      addTools(actions, entry, termPrefill(result, candidate), context);
-      richDefinition(definitions, rows, dictionary, context, entry);
-    }
     entries.push(entry);
     bindings.push({ audio: { button: audio.button, result: projected }, mining: { actions, feedback, result: projected } });
+    // Media ownership checks need the block attached before its images are requested.
     scroll.append(entry);
+    if (enhanced) {
+      addTools(actions, entry, termPrefill(result, candidate), context);
+      formattedDefinition(definitions, rows, dictionary, context, entry);
+    } else definitions.append(node("div", "gsm-hoshidicts-glossary-content", definitionText(rows)));
   }
   // Like Default's tabs, core binds only the blocks the selected tab shows, so
   // keybinds and autoplay follow the tab.
@@ -387,7 +384,8 @@ export function createView(options, enhanced = false) {
     clear();
     navigation(context);
     for (const entry of kanji.entries) {
-      const lines = [components.glossaryToPlainText(entry.definitions)];
+      // Bee shows the structured meanings; JL shows them as text.
+      const lines = enhanced ? [] : [components.glossaryToPlainText(entry.definitions)];
       for (const [label, value] of [["On", entry.onyomi], ["Kun", entry.kunyomi]]) {
         const readings = kanjiTokens(value);
         if (readings.length) lines.push(`${label}: ${readings.join("、")}`);
@@ -396,14 +394,15 @@ export function createView(options, enhanced = false) {
       const block = node("article", "jl-entry jl-kanji");
       const line = node("div", "jl-top");
       line.append(node("span", "jl-spelling", kanji.character), dictionaryLabel(entry.dictionary));
-      block.append(line, node("div", "jl-kanji-text", lines.filter(Boolean).join("\n")));
+      block.append(line);
+      scroll.append(block);
       if (enhanced) {
         block.dataset.dictionary = entry.dictionary;
         addTools(line, block, { term: kanji.character, reading: "", definition: "", sentence: candidate?.sentence || "" }, context);
-        richDefinition(block, [{ glossary: JSON.stringify(entry.definitions) }], entry.dictionary, context, block);
+        formattedDefinition(block, [{ glossary: JSON.stringify(entry.definitions) }], entry.dictionary, context, block);
         entries.push(block);
       }
-      scroll.append(block);
+      block.append(node("div", "jl-kanji-text", lines.filter(Boolean).join("\n")));
     }
     if (enhanced) {
       onTabSelected = context.onDictionaryTabSelected;
@@ -431,7 +430,6 @@ export function createView(options, enhanced = false) {
   return {
     scrollElement: scroll, clear, renderResults, renderKanji, renderNotice, renderLookupFailure,
     captureTermView: () => ({ expandAll: true, restoreScrollTop: scroll.scrollTop,
-      ...(enhanced ? { beeExpandedDefinitions: entries.flatMap((entry, index) => entry.querySelector(".bee-rich-definition")?.open ? [index] : []) } : {}),
       selectedDictionaryTab: enhanced ? tab : tab === null ? null : { dictionary: tab } }),
     currentEntryIndex: () => Math.max(0, shown().indexOf(entries[selected])),
     focusEntry(target) {
@@ -457,6 +455,7 @@ export function createView(options, enhanced = false) {
       return true;
     },
     setDefinitionBlurState, updateDictionaryPresentation, flushDictionaryPresentation,
+    hideImagePreview() { preview?.hideImagePreview(); },
     closeNoteForm() { return tools.some(control => control.close()); },
     setCustomButtons(value) {
       customButtons = value || [];
@@ -468,7 +467,7 @@ export function createView(options, enhanced = false) {
       if (!enabled) highlighter?.clear();
       else if (activeSource) highlighter?.apply(activeSource.candidate, activeSource.matched);
     },
-    destroy() { clear(); popup.replaceChildren(); },
+    destroy() { clear(); preview?.destroy(); popup.replaceChildren(); },
   };
 }
 export default { schema: 2, slug: "jl", contentMode: "text", createView };
