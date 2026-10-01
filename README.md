@@ -19,16 +19,19 @@ The experimental Store in Hachidori shows screenshots, descriptions and benchmar
 results as carousel cards. **Use** selects the bundled renderer immediately.
 Enable it under Advanced → Experimental features, then open Design.
 
-- **Bee's Theme** — Miku turquoise and pink colours on JL's compact layout,
-  with group-only tabs, expandable rich
-  definitions, the personal dictionary editor and custom link/Anki actions.
-  Rich content and images are created only when expanded; see `themes/bee/`.
+- **Bee's Theme** — Girlypop blush and violet colours on JL's compact layout,
+  with group-only tabs, formatted definitions, enlarged image previews, the
+  personal dictionary editor and custom link/Anki actions; see `themes/bee/`.
 
 ## Distribution
 
 Theme modules are reviewed here and copied into a pinned Hachidori release.
 Hachidori does not download executable theme code at runtime. This repository's
 YAML describes sources; the extension reads its bundled JSON catalogue.
+Each `theme.yaml` lists in `designSettings` the Design settings its renderer
+implements (`all` or option keys), matching that catalogue; Hachidori's
+Settings → Design hides the others for that theme. See the
+[Design settings contract](https://github.com/bee-san/hachidori/blob/main/docs/themes/README.md#design-settings).
 
 The [version 2 view contract](https://github.com/bee-san/hachidori/blob/89e07c6f5b66599dda0b7bcd303a0b287b01f03d/docs/themes/README.md)
 explains renderer ownership, core callbacks, text/rich content, CSS, switching and

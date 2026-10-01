@@ -8,3 +8,4 @@ screenshot: screenshot.png
 upstream: https://github.com/wareya/nazeka
 upstreamRevision: 8b220fbfc6c20fe1959af8eed7e8d02e023d4b41
 benchmark: ../../benchmark/README.md
+designSettings: [kanjiClickDictionary]

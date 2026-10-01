@@ -51,8 +51,15 @@ export function createView(options, enhanced = false) {
   }
   const highlighter = options.sourceHighlighter;
   let highlightEnabled = options.sourceHighlightEnabled;
-  let activeSource, entries = [], bindings = [], selected = 0, labels = [], frequencies = [], tab = null, onTabSelected = null;
+  // Bee enlarges a hovered or focused glossary image with Default's preview.
+  const preview = enhanced ? components.createImagePreview({ document, window: options.window, popup,
+    getCoordinateScale: () => components.popupCoordinateScale(options.getPageZoom?.() ?? 1, options.getPopupScalePercent?.() ?? 100),
+    getImageHoverPreview: options.getImageHoverPreview, scrollBounds: () => scroll }) : null;
+  let activeSource, entries = [], bindings = [], selected = 0, labels = [], frequencies = [], markers = [], tab = null, onTabSelected = null;
   let tools = [], groupTabs = [], groupContext = null, availableDictionaries = [], revision = 0;
+  // Design's pitch switch and dictionary, as the markers were last painted.
+  let paintedPitch = "";
+  const pitchOptions = context => JSON.stringify([context.showPitchAccentFurigana !== false, context.pitchAccentFuriganaDictionary ?? ""]);
   let customButtons = options.customButtons || [];
   const images = new Set();
   let pendingPresentation = null;
@@ -63,8 +70,9 @@ export function createView(options, enhanced = false) {
     for (const control of tools) control.close(false);
     tools = []; images.clear(); groupTabs = []; groupContext = null; availableDictionaries = []; pendingPresentation = null;
     tabs.replaceChildren(); nav.replaceChildren(); scroll.replaceChildren();
-    entries = []; bindings = []; labels = []; frequencies = []; selected = 0; tab = null; onTabSelected = null; activeSource = null;
+    entries = []; bindings = []; labels = []; frequencies = []; markers = []; selected = 0; tab = null; onTabSelected = null; activeSource = null;
     highlighter?.clear();
+    preview?.hideImagePreview();
   }
   function finish(candidate, matched, context) {
     activeSource = { candidate, matched };
@@ -96,6 +104,13 @@ export function createView(options, enhanced = false) {
     for (const { element, groups } of frequencies) {
       element.textContent = groups.length === 1 ? `#${frequencyValue(groups[0])}`
         : groups.map(group => `${name(group.dictionary)}: ${frequencyValue(group)}`).join(", ");
+    }
+    // Markers hold no controls, so a pitch option change repaints them in place
+    // without moving focus or touching an open Note draft.
+    const pitch = pitchOptions(context);
+    if (pitch !== paintedPitch) {
+      paintedPitch = pitch;
+      for (const marker of markers) paintPitch(marker, context);
     }
     if (enhanced) {
       for (const image of images) image.updatePresentation(context);
@@ -147,42 +162,32 @@ export function createView(options, enhanced = false) {
       definition: "", sentence: candidate?.sentence || "" };
   }
 
-  function richDefinition(parent, rows, dictionary, context, owner) {
-    const details = node("details", "bee-rich-definition");
-    details.append(node("summary", "", "Formatted definition"));
+  // Bee shows only the structured glossary: no JL text, tag brackets or disclosure.
+  function formattedDefinition(parent, rows, dictionary, context, owner) {
     const content = node("div", "gsm-hoshidicts-glossary-content bee-rich-content");
     content.dataset.hoshidictsDictionary = dictionary;
-    details.append(content); parent.append(details);
+    parent.append(content);
     const ownRevision = revision;
     const isCurrent = () => ownRevision === revision && owner.isConnected
       && context.isCurrentRequest?.() !== false;
-    let rendered = false;
-    details.addEventListener("toggle", () => {
-      details.firstElementChild.textContent = details.open ? "Plain definition" : "Formatted definition";
-      if (!details.open || rendered || !isCurrent()) return;
-      try {
-        content.replaceChildren();
-        for (const row of rows) {
-          const rowContent = node("div", "bee-rich-row");
-          const tags = brackets(tagGroups(row.definitionTags));
-          if (tags) rowContent.append(node("span", "bee-rich-tags", tags));
-          content.append(rowContent);
-          options.appendTextOnlyGlossary(document, rowContent, row.glossary, {
-            dictionary, generation: context.generation, isCurrent,
-            isCurrentLink: () => ownRevision === revision && owner.isConnected && !owner.hidden
-              && (context.isCurrentView || context.isCurrentRequest)?.() !== false,
-            onExternalLink: context.onExternalLink, onInternalLink: context.onInternalLink,
-            resolveMedia: context.resolveMedia, imageContext: context,
-            onImageCreated: image => images.add(image), onLayoutChange: options.positionPopup,
-          });
-        }
-        rendered = true;
-        options.positionPopup();
-      } catch (error) {
-        content.replaceChildren(node("div", "gsm-hoshidicts-lookup-failure", `Could not render definition: ${error.message}`));
+    try {
+      for (const row of rows) {
+        const rowContent = node("div", "bee-rich-row");
+        content.append(rowContent);
+        options.appendTextOnlyGlossary(document, rowContent, row.glossary, {
+          dictionary, generation: context.generation, isCurrent,
+          isCurrentLink: () => ownRevision === revision && owner.isConnected && !owner.hidden
+            && (context.isCurrentView || context.isCurrentRequest)?.() !== false,
+          onExternalLink: context.onExternalLink, onInternalLink: context.onInternalLink,
+          resolveMedia: context.resolveMedia, imageContext: context,
+          onImageCreated: image => images.add(image), onLayoutChange: options.positionPopup,
+          requestImagePreview: preview.requestImagePreview, refreshImagePreview: preview.refreshImagePreview,
+          hideImagePreview: preview.hideImagePreview,
+        });
       }
-    });
-    if (context.beeExpandedDefinitions?.includes(entries.length)) details.open = true;
+    } catch (error) {
+      content.replaceChildren(node("div", "gsm-hoshidicts-lookup-failure", `Could not render definition: ${error.message}`));
+    }
   }
 
   // The first pitch accent that fits the text, preferring Design's pitch dictionary.
@@ -206,10 +211,22 @@ export function createView(options, enhanced = false) {
       parent.append(span);
     }
   }
-  function spelling(result, candidate, morae) {
-    const element = node("span", "gsm-hoshidicts-expression jl-spelling");
+  function paintPitch({ element, text, pitches }, context) {
+    const morae = context.showPitchAccentFurigana === false ? null
+      : pitchMorae(text, pitches, context.pitchAccentFuriganaDictionary);
+    element.textContent = morae ? "" : text;
     if (morae) appendMorae(element, morae);
-    else for (const character of result.term.expression) {
+  }
+  // Painted while its block is still detached; updateDictionaryPresentation repaints it.
+  function pitchMarker(element, text, term, context) {
+    const marker = { element, text, pitches: term.pitches ?? [] };
+    markers.push(marker);
+    paintPitch(marker, context);
+    return element;
+  }
+  function spelling(result, candidate) {
+    const element = node("span", "gsm-hoshidicts-expression jl-spelling");
+    for (const character of result.term.expression) {
       element.append(HAN.test(character)
         ? button("gsm-hoshidicts-kanji-link", character, event => options.onKanjiClick?.(character, result, candidate, event.currentTarget))
         : document.createTextNode(character));
@@ -221,18 +238,14 @@ export function createView(options, enhanced = false) {
     const term = result.term;
     const line = node("div", "jl-top");
     const reading = term.reading && term.reading !== term.expression ? term.reading : "";
+    const expression = spelling(result, candidate);
+    line.append(expression);
+    if (reading) line.append(pitchMarker(node("span", "jl-reading"), reading, term, context));
     // Without a reading JL marks the spelling itself, which only works for kana.
-    const pitchText = reading || (HAN.test(term.expression) ? "" : term.expression);
-    const morae = pitchText && context.showPitchAccentFurigana !== false
-      ? pitchMorae(pitchText, term.pitches ?? [], context.pitchAccentFuriganaDictionary) : null;
-    line.append(spelling(result, candidate, reading ? null : morae));
-    if (reading) {
-      const element = node("span", "jl-reading", morae ? null : reading);
-      if (morae) appendMorae(element, morae);
-      line.append(element);
-    }
+    else if (!HAN.test(term.expression)) pitchMarker(expression, term.expression, term, context);
     const audio = components.createAudioControl(document, term.expression);
-    line.append(audio.element);
+    // JL puts audio after the reading; Bee groups it with the Anki and pencil buttons.
+    if (!enhanced) line.append(audio.element);
     const steps = components.deinflectionSteps(result);
     const matched = result.matched || "";
     const process = steps.length ? `～${steps.map(step => step.name).join("→")}` : "";
@@ -249,6 +262,7 @@ export function createView(options, enhanced = false) {
     const actions = node("div", "gsm-hoshidicts-entry-actions");
     actions.setAttribute("role", "group");
     actions.setAttribute("aria-label", "Entry actions");
+    if (enhanced) actions.append(audio.element);
     line.append(dictionaryLabel(dictionary), actions);
     return { line, audio, actions };
   }
@@ -283,17 +297,17 @@ export function createView(options, enhanced = false) {
     entry.addEventListener("click", () => { selected = index; });
     const { line, audio, actions } = topLine(result, dictionary, candidate, context);
     const definitions = node("div", "gsm-hoshidicts-definitions");
-    definitions.append(node("div", "gsm-hoshidicts-glossary-content", definitionText(rows)));
     const feedback = node("div", "gsm-hoshidicts-anki-feedback");
     feedback.hidden = true;
     entry.append(line, definitions, feedback);
-    if (enhanced) {
-      addTools(actions, entry, termPrefill(result, candidate), context);
-      richDefinition(definitions, rows, dictionary, context, entry);
-    }
     entries.push(entry);
     bindings.push({ audio: { button: audio.button, result: projected }, mining: { actions, feedback, result: projected } });
+    // Media ownership checks need the block attached before its images are requested.
     scroll.append(entry);
+    if (enhanced) {
+      addTools(actions, entry, termPrefill(result, candidate), context);
+      formattedDefinition(definitions, rows, dictionary, context, entry);
+    } else definitions.append(node("div", "gsm-hoshidicts-glossary-content", definitionText(rows)));
   }
   // Like Default's tabs, core binds only the blocks the selected tab shows, so
   // keybinds and autoplay follow the tab.
@@ -366,6 +380,7 @@ export function createView(options, enhanced = false) {
 
   function renderResults(results, candidate, context = {}) {
     clear();
+    paintedPitch = pitchOptions(context);
     onTabSelected = context.onDictionaryTabSelected;
     const found = [];
     for (const result of results) {
@@ -387,7 +402,8 @@ export function createView(options, enhanced = false) {
     clear();
     navigation(context);
     for (const entry of kanji.entries) {
-      const lines = [components.glossaryToPlainText(entry.definitions)];
+      // Bee shows the structured meanings; JL shows them as text.
+      const lines = enhanced ? [] : [components.glossaryToPlainText(entry.definitions)];
       for (const [label, value] of [["On", entry.onyomi], ["Kun", entry.kunyomi]]) {
         const readings = kanjiTokens(value);
         if (readings.length) lines.push(`${label}: ${readings.join("、")}`);
@@ -396,14 +412,15 @@ export function createView(options, enhanced = false) {
       const block = node("article", "jl-entry jl-kanji");
       const line = node("div", "jl-top");
       line.append(node("span", "jl-spelling", kanji.character), dictionaryLabel(entry.dictionary));
-      block.append(line, node("div", "jl-kanji-text", lines.filter(Boolean).join("\n")));
+      block.append(line);
+      scroll.append(block);
       if (enhanced) {
         block.dataset.dictionary = entry.dictionary;
         addTools(line, block, { term: kanji.character, reading: "", definition: "", sentence: candidate?.sentence || "" }, context);
-        richDefinition(block, [{ glossary: JSON.stringify(entry.definitions) }], entry.dictionary, context, block);
+        formattedDefinition(block, [{ glossary: JSON.stringify(entry.definitions) }], entry.dictionary, context, block);
         entries.push(block);
       }
-      scroll.append(block);
+      block.append(node("div", "jl-kanji-text", lines.filter(Boolean).join("\n")));
     }
     if (enhanced) {
       onTabSelected = context.onDictionaryTabSelected;
@@ -431,7 +448,6 @@ export function createView(options, enhanced = false) {
   return {
     scrollElement: scroll, clear, renderResults, renderKanji, renderNotice, renderLookupFailure,
     captureTermView: () => ({ expandAll: true, restoreScrollTop: scroll.scrollTop,
-      ...(enhanced ? { beeExpandedDefinitions: entries.flatMap((entry, index) => entry.querySelector(".bee-rich-definition")?.open ? [index] : []) } : {}),
       selectedDictionaryTab: enhanced ? tab : tab === null ? null : { dictionary: tab } }),
     currentEntryIndex: () => Math.max(0, shown().indexOf(entries[selected])),
     focusEntry(target) {
@@ -457,6 +473,7 @@ export function createView(options, enhanced = false) {
       return true;
     },
     setDefinitionBlurState, updateDictionaryPresentation, flushDictionaryPresentation,
+    hideImagePreview() { preview?.hideImagePreview(); },
     closeNoteForm() { return tools.some(control => control.close()); },
     setCustomButtons(value) {
       customButtons = value || [];
@@ -468,7 +485,7 @@ export function createView(options, enhanced = false) {
       if (!enabled) highlighter?.clear();
       else if (activeSource) highlighter?.apply(activeSource.candidate, activeSource.matched);
     },
-    destroy() { clear(); popup.replaceChildren(); },
+    destroy() { clear(); preview?.destroy(); popup.replaceChildren(); },
   };
 }
 export default { schema: 2, slug: "jl", contentMode: "text", createView };
