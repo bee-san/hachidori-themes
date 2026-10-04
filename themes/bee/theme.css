@@ -53,7 +53,7 @@
 /* JL's separator between results, counting only the selected tab's. Its element
  * is 2 px tall, but the WPF Separator template draws a 1 px line. */
 .jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid #95618c; }
-.jl-top { display: flex; flex-wrap: wrap; align-items: center; }
+.jl-top { display: flex; flex-wrap: wrap; align-items: center; position: relative; }
 .jl-spelling { margin-left: 2px; color: #9a236c; font-size: 21px; }
 .jl-reading { margin-left: 7px; color: #6442aa; font-size: 19px; }
 .jl-deconj { margin-left: 7px; color: #665064; }
@@ -83,7 +83,7 @@
 .gsm-hoshidicts-popup .gsm-hoshidicts-audio-button, .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button,
 .gsm-hoshidicts-popup .gsm-hoshidicts-note-button {
   display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
-  margin: 0; padding: 0; background: transparent; border: 0; border-radius: 4px; color: inherit; cursor: pointer;
+  flex: none; margin: 0; padding: 0; background: transparent; border: 0; border-radius: 4px; color: inherit; cursor: pointer;
 }
 .gsm-hoshidicts-popup .gsm-hoshidicts-audio-button::before,
 .gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
@@ -117,16 +117,18 @@
 }
 :host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
 :host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
-.gsm-hoshidicts-entry-actions { flex: 0 0 auto; align-items: center; gap: 4px; }
+.gsm-hoshidicts-entry-actions { flex: 0 1 auto; min-width: 0; max-width: calc(100% - 3px); align-items: center; gap: 4px; }
 .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; margin: 0; }
-.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { margin-left: 0; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { flex: none; margin-left: 0; }
 .gsm-hoshidicts-popup .gsm-hoshidicts-text-action-button {
+  flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   box-sizing: border-box; height: 22px; padding: 0 4px; background: #f2d6ec; border: 1px solid #95618c;
   border-radius: 3px; font-size: 12px;
 }
-.bee-more-actions { position: relative; font-size: 15px; }
+.bee-more-actions { flex: none; font-size: 15px; }
 .bee-more-actions > summary { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; cursor: pointer; list-style: none; padding: 0; }
-.bee-action-menu { position: absolute; z-index: 2; top: 100%; right: 0; width: max-content; max-width: 280px; padding: 4px; background: #fbe9f5; border: 1px solid #95618c; display: flex; flex-wrap: wrap; gap: 4px; }
+.jl-nav { position: relative; }
+.bee-action-menu { position: absolute; z-index: 2; top: 100%; right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 100%); padding: 4px; background: #fbe9f5; border: 1px solid #95618c; display: flex; flex-wrap: wrap; gap: 4px; }
 .gsm-hoshidicts-note-form { display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1px solid #95618c; background: #fbe9f5; }
 .gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; color: #6442aa; }
 .gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
