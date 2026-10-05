@@ -20,8 +20,12 @@ results as carousel cards. **Use** selects the bundled renderer immediately.
 Enable it under Advanced → Experimental features, then open Design.
 
 - **Bee's Theme** — Girlypop blush and violet colours on JL's compact layout,
-  with group-only tabs, formatted definitions, enlarged image previews, the
-  personal dictionary editor and custom link/Anki actions; see `themes/bee/`.
+  with JL-style group tabs, formatted definitions, enlarged image previews, the
+  personal dictionary editor and custom link/Anki actions. Entry actions share
+  one gap, long dictionary names use an ellipsis with the full name on hover,
+  and Back sits at the popup's upper left. Design supports compact glossaries,
+  frequency dictionary names, abbreviated frequency numbers, frequency averages
+  and contour/overline pitch markings; see `themes/bee/`.
 
 ## Distribution
 
