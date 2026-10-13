@@ -46,6 +46,11 @@ proposal code must be ported to direct rendering before inclusion.
 
 ## Checking changes
 
+Bee's group row always starts with **All**, selected for each fresh lookup.
+Named groups such as **Grammar** filter the returned definitions only when
+selected; ungrouped dictionaries remain accessible through All. Back restores
+an explicitly selected group. Removing or renaming a group preserves tab focus.
+
 ```sh
 for theme in themes/*/theme.js; do node --check "$theme"; done
 ```

@@ -338,6 +338,7 @@ export function createView(options, enhanced = false) {
   function renderTabs(dictionaries, context) {
     if (enhanced) {
       groupContext = context; availableDictionaries = dictionaries;
+      tab = context.selectedDictionaryTab?.groupId ? { groupId: context.selectedDictionaryTab.groupId } : null;
       renderGroupTabs(dictionaries, context);
       return;
     }
@@ -356,9 +357,10 @@ export function createView(options, enhanced = false) {
   }
 
   function selectGroup(descriptor, notify) {
-    tab = descriptor ? { groupId: descriptor.groupId } : null;
+    const filtered = !!descriptor?.groupId;
+    tab = filtered ? { groupId: descriptor.groupId } : null;
     for (const element of tabs.children) element.setAttribute("aria-pressed", String(element.dataset.groupId === descriptor?.groupId));
-    for (const entry of entries) entry.hidden = !!descriptor && !descriptor.dictionaries.has(entry.dataset.dictionary);
+    for (const entry of entries) entry.hidden = filtered && !descriptor.dictionaries.has(entry.dataset.dictionary);
     selected = Math.max(0, entries.findIndex(entry => !entry.hidden));
     if (notify) {
       scroll.scrollTop = 0;
@@ -367,19 +369,27 @@ export function createView(options, enhanced = false) {
     }
   }
   function renderGroupTabs(dictionaries, context, notify = false) {
-    const descriptors = components.createDictionaryTabs(dictionaries, context).tabs.filter(item => item.groupId);
-    const selectedGroup = (tab || context.selectedDictionaryTab)?.groupId;
+    const descriptors = components.createDictionaryTabs(dictionaries, context).tabs.filter(item => item.key === "all" || item.groupId);
+    const selectedGroup = tab?.groupId;
     const active = descriptors.find(item => item.groupId === selectedGroup) || descriptors[0];
     const previous = JSON.stringify(groupTabs.map(item => [item.groupId, item.label, [...item.dictionaries]]));
     const next = JSON.stringify(descriptors.map(item => [item.groupId, item.label, [...item.dictionaries]]));
     if (previous !== next) {
+      const focused = popup.getRootNode().activeElement;
+      const focusedTab = focused && tabs.contains(focused);
       tabs.replaceChildren();
       for (const descriptor of descriptors) {
         const element = button("jl-tab", descriptor.label, () => selectGroup(descriptor, true));
-        element.dataset.groupId = descriptor.groupId; element.title = descriptor.title;
+        if (descriptor.groupId) element.dataset.groupId = descriptor.groupId;
+        element.title = descriptor.title;
         tabs.append(element);
       }
       groupTabs = descriptors;
+      if (focusedTab) {
+        const replacement = [...tabs.children].find(element => element.dataset.groupId === focused.dataset.groupId)
+          || tabs.firstElementChild;
+        replacement?.focus({ preventScroll: true });
+      }
     }
     const changed = tab?.groupId !== active?.groupId;
     selectGroup(active, false);
