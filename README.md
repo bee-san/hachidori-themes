@@ -26,6 +26,10 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **Steins;Gate** — an unofficial fan theme on Bee's renderer: nixie-tube amber
+  headwords, lab-coat cream text and brass borders on a warm black CRT, with a
+  decorative `1.048596` divergence meter above the tabs. It has Bee's features
+  and Design settings; see `themes/steins-gate/`.
 
 ## Distribution
 
