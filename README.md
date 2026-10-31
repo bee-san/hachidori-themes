@@ -26,6 +26,12 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **FFXIV Aetheryte** — an unofficial fan theme on Bee's renderer, inspired by
+  FINAL FANTASY XIV's windows and by [KonyAHS/HachidoriFfxiv](https://github.com/KonyAHS/HachidoriFfxiv):
+  midnight crystal glass with a gold double frame, filigree corners and tank,
+  healer and DPS crystals set in its top edge, gold small-caps tabs and
+  dictionary rows, crystal-blue readings and gem frequency chips. It has Bee's
+  features and Design settings; see `themes/ffxiv-aetheryte/`.
 
 ## Distribution
 
