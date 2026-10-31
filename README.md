@@ -26,6 +26,12 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **FFXIV Dark** — an unofficial, restrained nod to FFXIV's Dark window theme on
+  Bee's renderer: charcoal glass with a light blur, one khaki-gold hairline, serif
+  small caps for dictionary names and tabs, and gold readings and pitch lines.
+  Inspired by [KonyAHS/HachidoriFfxiv](https://github.com/KonyAHS/HachidoriFfxiv),
+  which shows Hachidori popups inside the game. It has Bee's features and Design
+  settings, and uses no Square Enix assets; see `themes/ffxiv-dark/`.
 
 ## Distribution
 
