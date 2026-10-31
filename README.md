@@ -26,6 +26,12 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **Pompom Post** — an unofficial FFXIV-inspired fan theme on Bee's renderer,
+  inspired by [KonyAHS/HachidoriFfxiv](https://github.com/KonyAHS/HachidoriFfxiv).
+  Each lookup arrives as a letter by moogle post: airmail stripes, an envelope
+  flap sealed with a winged pom-pom, postage-stamp frequencies and postmark
+  dictionary names, all drawn in CSS and SVG with no game assets. It has Bee's
+  features and Design settings; see `themes/pompom-post/`.
 
 ## Distribution
 
