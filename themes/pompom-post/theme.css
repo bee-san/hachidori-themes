@@ -1,0 +1,458 @@
+/* Pompom Post: an unofficial FFXIV-inspired fan theme. Each lookup arrives as
+ * a letter by moogle post: airmail stripes round the edge, an envelope flap
+ * sealed with a winged pom-pom, a stamp and postmark, postage-stamp frequency
+ * chips, postmark dictionary names and airmail dashes between entries.
+ * Original CSS and SVG only: no Square Enix artwork, logos or fonts.
+ * The layout is Bee's Theme's, which follows JL's defaults in rampaa/JL
+ * (Apache-2.0, see ../jl/ATTRIBUTION.md): ConfigManager.cs,
+ * PopupContentGenerator.cs, PopupWindow.
+ * SPDX-License-Identifier: GPL-3.0-or-later */
+:host {
+  color-scheme: light;
+  /* Cream letter paper, dark brown ink, post-box red and airmail blue. At the
+   * default 85% Background opacity every text colour keeps 4.5:1 over white
+   * and black pages. */
+  --pp-paper: #fffaf0; --pp-ink: #33251c; --pp-red: #a3192b; --pp-blue: #2f3192; --pp-postmark: #2b4796;
+  --pp-soft: #66513f; --pp-line: #8c6f57; --pp-surface: #fff3dc; --pp-label: #fffdf8; --pp-thread: #c22d3a;
+  --pp-stripe-red: #c8333c; --pp-stripe-blue: #3553b0;
+  --pp-flap: #f0d9ae; --pp-flap-edge: #b8996a;
+  /* The frame: 7 px of airmail stripes, then paper. The top holds the flap. */
+  --pp-frame: 13px; --pp-frame-top: 31px; --pp-frame-bottom: 13px; --pp-stripes: 7px;
+  --pp-font: "Zen Maru Gothic", "M PLUS Rounded 1c", "Rounded Mplus 1c", "Kosugi Maru", Meiryo, "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  --hoshidicts-accent: var(--pp-red); --hoshidicts-text: var(--pp-ink);
+  --text-color: var(--pp-ink); --text-color-light1: var(--pp-blue); --text-color-light3: var(--pp-soft);
+  --accent-color: var(--pp-red); --accent-color-dark: var(--pp-blue); --link-color: var(--pp-postmark);
+  --font-size-no-units: 17; --line-height: 1.5; --gloss-image-background-color: var(--pp-surface);
+}
+.gsm-hoshidicts-popup {
+  position: fixed; z-index: 2147483647; pointer-events: auto;
+  box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
+  padding: var(--pp-frame-top) var(--pp-frame) var(--pp-frame-bottom);
+  color: var(--pp-ink); background: color-mix(in srgb, var(--pp-paper) var(--gsm-hoshidicts-popup-opacity, 80%), transparent);
+  border: 0; border-radius: 6px; box-shadow: 0 6px 18px rgba(40, 20, 10, .28);
+  font: 17px/1.5 var(--pp-font); text-align: left; white-space: normal;
+  /* WPF keeps adjacent full-width punctuation full width; Chrome's default halves it. */
+  text-spacing-trim: space-all;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+}
+/* Decorations live in the frame only, so they never cover text. ::before
+ * paints the airmail stripes as a ring; ::after the flap, seal, postmark and stamp. */
+.gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+}
+.gsm-hoshidicts-popup::before {
+  /* Stripes in the border, opaque paper in the padding: the envelope stays
+   * crisp at any Background opacity, which applies to the letter inside. */
+  border: var(--pp-stripes) solid transparent;
+  padding: calc(var(--pp-frame-top) - var(--pp-stripes)) calc(var(--pp-frame) - var(--pp-stripes)) calc(var(--pp-frame-bottom) - var(--pp-stripes));
+  background: linear-gradient(var(--pp-paper) 0 0) padding-box,
+    repeating-linear-gradient(-45deg, var(--pp-stripe-red) 0 10px, var(--pp-paper) 10px 15px,
+      var(--pp-stripe-blue) 15px 25px, var(--pp-paper) 25px 30px) border-box;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0) border-box;
+}
+.gsm-hoshidicts-popup::after {
+  background:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 28'><g fill='%237d5cc6' stroke='%234b2f8f' stroke-width='.9' stroke-linejoin='round'><path d='M24 11.5C20.5 6 13 3 3.5 3.8c2.3 2 2.9 4 2.3 6.2 2.6-1 4.8-.4 5.8 1.8 2.2-1.4 4.6-.8 5.6 1.6 2.2-1.4 4.6-.8 6.8.8z'/><path d='M40 11.5C43.5 6 51 3 60.5 3.8c-2.3 2-2.9 4-2.3 6.2-2.6-1-4.8-.4-5.8 1.8-2.2-1.4-4.6-.8-5.6 1.6-2.2-1.4-4.6-.8-6.8.8z'/></g><g fill='none' stroke='%23b9a2ec' stroke-width='.8' stroke-linecap='round'><path d='M22 11.2C17 7.5 11 5.6 6 5.2M44 11.2C49 7.5 55 5.6 58 5.2'/></g><g fill='%23a3192b'><circle cx='32' cy='14' r='11'/><circle cx='42.3' cy='17.8' r='2.4'/><circle cx='33.9' cy='24.8' r='2.4'/><circle cx='23.6' cy='21.1' r='2.4'/><circle cx='21.7' cy='10.2' r='2.4'/><circle cx='30.1' cy='3.2' r='2.4'/><circle cx='40.4' cy='6.9' r='2.4'/></g><circle cx='32' cy='14' r='8' fill='none' stroke='%23e8707a' stroke-width='1.2' stroke-dasharray='2 1.6'/><path d='M31 20c0-3.6.6-6.4 3.2-8.6' fill='none' stroke='%23ffe1d6' stroke-width='1.4' stroke-linecap='round'/><circle cx='35.2' cy='10' r='3' fill='%23ffe1d6'/></svg>") center top 3px / 64px 28px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 28'><g fill='none' stroke='%232b4796' stroke-width='1.3' opacity='.85'><circle cx='31' cy='14' r='11'/><circle cx='31' cy='14' r='7.5'/><path d='M1 8.5c3-2 5 2 8 0s5 2 8 0M1 14c3-2 5 2 8 0s5 2 8 0M1 19.5c3-2 5 2 8 0s5 2 8 0'/></g><path d='M31 9.6 32.3 12.6 35.5 12.8 33 14.9 33.8 18 31 16.3 28.2 18 29 14.9 26.5 12.8 29.7 12.6z' fill='%232b4796' opacity='.85'/></svg>") right 34px top 2px / 46px 28px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26'><path d='M0 0h22v26H0z' fill='%23fffef9'/><g fill='%23d9c7a8'><circle cx='0' cy='3' r='1.3'/><circle cx='0' cy='8' r='1.3'/><circle cx='0' cy='13' r='1.3'/><circle cx='0' cy='18' r='1.3'/><circle cx='0' cy='23' r='1.3'/><circle cx='22' cy='3' r='1.3'/><circle cx='22' cy='8' r='1.3'/><circle cx='22' cy='13' r='1.3'/><circle cx='22' cy='18' r='1.3'/><circle cx='22' cy='23' r='1.3'/><circle cx='3' cy='0' r='1.3'/><circle cx='8' cy='0' r='1.3'/><circle cx='14' cy='0' r='1.3'/><circle cx='19' cy='0' r='1.3'/><circle cx='3' cy='26' r='1.3'/><circle cx='8' cy='26' r='1.3'/><circle cx='14' cy='26' r='1.3'/><circle cx='19' cy='26' r='1.3'/></g><rect x='3' y='3' width='16' height='20' fill='%23cfe3ff' stroke='%232b4796' stroke-width='1'/><path d='M3.5 18.5Q11 13.5 18.5 17.5V22.5h-15z' fill='%2395c97a'/><path d='M14 11c-.7 2 .6 3.8 0 5.6' fill='none' stroke='%23a3192b' stroke-width='.8' stroke-linecap='round'/><circle cx='14' cy='8.4' r='2.8' fill='%23c8333c'/></svg>") right 11px top 3px / 22px 26px no-repeat,
+    linear-gradient(to bottom left, var(--pp-flap) calc(50% - .7px), var(--pp-flap-edge) calc(50% - .7px) calc(50% + .7px), transparent calc(50% + .7px))
+      left var(--pp-stripes) top var(--pp-stripes) / calc(50% - var(--pp-stripes)) calc(var(--pp-frame-top) - var(--pp-stripes)) no-repeat,
+    linear-gradient(to bottom right, var(--pp-flap) calc(50% - .7px), var(--pp-flap-edge) calc(50% - .7px) calc(50% + .7px), transparent calc(50% + .7px))
+      right var(--pp-stripes) top var(--pp-stripes) / calc(50% - var(--pp-stripes)) calc(var(--pp-frame-top) - var(--pp-stripes)) no-repeat;
+}
+.gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
+.gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup button:disabled { cursor: default; }
+.gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid var(--pp-postmark); outline-offset: 2px; }
+.jl-header { flex: none; }
+/* The x stays top right; the kanji view's Back sits top left, inside the letter. */
+.jl-nav { display: flex; justify-content: flex-end; align-items: center; min-height: 20px; margin: 0; position: relative; }
+.jl-nav:has(> .gsm-hoshidicts-kanji-back) { justify-content: flex-start; }
+.jl-nav > .gsm-hoshidicts-popup-close { margin-left: auto; margin-right: 6px; }
+.jl-tabs { display: flex; flex-wrap: wrap; margin: 2px 2px 0; }
+.jl-nav:empty, .jl-tabs:empty { display: none; }
+/* Tabs and Back are address labels; the chosen tab is post-box red. */
+.gsm-hoshidicts-popup :is(.jl-tab, .gsm-hoshidicts-kanji-back) {
+  min-width: 0; max-width: 100%; margin: 0 0 2px 2px; padding: 2px 8px; background: var(--pp-label); color: var(--pp-blue);
+  border: 1.5px solid var(--pp-blue); border-radius: 4px; font-size: 12px; font-weight: 700; line-height: 20px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back { margin: 0; }
+.gsm-hoshidicts-popup .jl-tab:first-child { margin-left: 0; }
+.gsm-hoshidicts-popup :is(.jl-tab, .gsm-hoshidicts-kanji-back):focus-visible { position: relative; z-index: 1; outline-offset: -2px; }
+/* The underline makes the selected group identifiable without colour. */
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: var(--pp-red); background: var(--pp-red); color: var(--pp-paper);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px;
+}
+/* A cream ring keeps the blue focus outline visible on the red tab. */
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"]:focus-visible { box-shadow: inset 0 0 0 3.5px var(--pp-paper); }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close { padding: 0 4px; background: none; border: 0; font: 700 16px/20px var(--pp-font); color: var(--pp-red); }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before { display: none; }
+.jl-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--pp-line) transparent; }
+.jl-entry { margin: 0 4px 0 8px; padding-top: 9px; }
+/* An airmail dash between the selected tab's entries. */
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
+  margin-top: 4px; border-top: 3px solid transparent;
+  border-image: repeating-linear-gradient(90deg, var(--pp-stripe-red) 0 12px, transparent 12px 18px,
+    var(--pp-stripe-blue) 18px 30px, transparent 30px 36px) 3;
+}
+.jl-top { display: flex; flex-wrap: wrap; align-items: center; position: relative; }
+/* Word and frequencies wrap independently; the dictionary and controls keep
+ * their own row, with enough space for a short source name to stay legible. */
+.bee-source-actions { display: flex; flex: 1 0 100%; align-items: center; gap: 4px; margin-top: 3px; min-width: 0; }
+.jl-spelling { margin-left: 2px; color: var(--pp-red); font-size: 24px; font-weight: 700; line-height: 1.35; }
+.jl-reading { margin-left: 8px; color: var(--pp-blue); font-size: 19px; font-weight: 500; }
+.jl-deconj { margin-left: 8px; color: var(--pp-soft); font-size: 14px; }
+.jl-frequency { display: inline-flex; flex: 1 1 auto; flex-wrap: wrap; gap: 4px; min-width: 0; max-width: calc(100% - 8px); margin-left: 8px; color: var(--pp-red); }
+/* Dictionary names are postmarks. */
+.jl-dictionary {
+  flex: 0 1 auto; min-width: min(12ch, 35%); max-width: 24ch; margin-left: 2px; padding: 0 9px;
+  color: var(--pp-postmark); border: 1.5px solid currentColor; border-radius: 999px; transform: rotate(-1.5deg);
+  font-size: 12.5px; font-weight: 700; letter-spacing: .02em; line-height: 1.6;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.jl-top > :is(.jl-spelling, .jl-reading, .jl-deconj) { flex: 0 0 auto; max-width: 100%; }
+/* Frequencies are postage stamps with perforated edges. */
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  max-width: 100%; overflow-wrap: anywhere; padding: 0 5px; font-size: 12px; font-weight: 700; line-height: 1.6;
+  color: var(--pp-red); border: 3px solid transparent; border-radius: 0;
+  background: linear-gradient(#fff, #fff) padding-box,
+    radial-gradient(circle at 2.5px 2.5px, transparent 1.3px, #fff 1.6px) -1px -1px / 5px 5px border-box;
+  outline: 1px solid var(--pp-red); outline-offset: -4px; filter: drop-shadow(0 1px 0 rgba(90, 50, 20, .35));
+}
+.gsm-hoshidicts-frequency-source { margin-right: 4px; color: var(--pp-postmark); }
+/* Pitch is a red thread over the high morae and under the low ones. */
+.jl-mora { border: 0 dashed var(--pp-thread); }
+.jl-mora[data-pitch="high"] { border-top-width: 2px; }
+.jl-mora[data-pitch="low"] { border-bottom-width: 2px; }
+.jl-mora[data-transition] { margin-right: -2px; border-right-width: 2px; }
+[data-pitch-style="overline"] .jl-mora { border-style: solid; }
+[data-pitch-style="overline"] .jl-mora[data-pitch="low"] { border-bottom-width: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link { padding: 0; background: none; border: 0; cursor: pointer; }
+.gsm-hoshidicts-audio-control { position: relative; display: inline-flex; margin-left: 3px; }
+.gsm-hoshidicts-entry-actions { display: inline-flex; margin-left: 3px; }
+.gsm-hoshidicts-entry-actions:empty { display: none; }
+/* Built-in and inline custom actions share 22 px buttons and 16 px icons
+ * from Hachidori's outline set, in the ink colour. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button, .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-text-action-button {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+  flex: none; margin: 0; padding: 0; background: transparent; border: 0; border-radius: 4px; color: inherit; cursor: pointer;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button::before,
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-icon,
+.gsm-hoshidicts-popup .bee-custom-action-icon { width: 16px; height: 16px; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-text-action-button):is(:hover, [aria-expanded="true"]):not(:disabled) {
+  background: color-mix(in srgb, var(--pp-postmark) 16%, transparent);
+}
+/* Duplicate warnings stand out; "View existing notes in Anki" is an ordinary
+ * action, so its book icon keeps the ink colour like audio and pencil. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
+  [data-state="overwrite"]) { color: var(--pp-red); }
+.gsm-hoshidicts-definitions, .jl-kanji-text { margin: 6px 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.jl-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
+.jl-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
+/* Blurred definitions that a click reveals are a button (#598). The blur would
+   blur its focus ring too, so the entry shows it. */
+.jl-entry:has(> [data-definition-reveal]:focus-visible) { outline: 2px solid var(--pp-postmark); outline-offset: -2px; }
+.jl-entry > [data-definition-reveal]:focus-visible { outline: none; }
+.gsm-hoshidicts-popup [data-definition-reveal] { cursor: pointer; }
+.gsm-hoshidicts-anki-feedback { margin: 0 2px; font-size: 12px; }
+.gsm-hoshidicts-lookup-notice, .gsm-hoshidicts-lookup-failure { margin: 4px; }
+.gsm-hoshidicts-lookup-failure button { margin-left: 6px; padding: 1px 6px; background: var(--pp-label); color: var(--pp-blue); border: 1.5px solid var(--pp-blue); border-radius: 4px; }
+.gsm-hoshidicts-audio-menu {
+  position: absolute; right: 8px; top: 32px; z-index: 2; min-width: 180px; max-height: calc(100% - 48px);
+  overflow: auto; padding: 6px; background: var(--pp-surface); border: 1px solid var(--pp-line); border-radius: 4px; font-size: 12px;
+}
+.gsm-hoshidicts-audio-menu button { display: block; width: 100%; padding: 2px 4px; text-align: left; background: var(--pp-label); border: 1px solid var(--pp-line); }
+.gsm-hoshidicts-resize-handle { position: absolute; right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; }
+
+/* Bee's additions: group tabs, the personal dictionary editor and custom actions. */
+:host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
+:host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
+.gsm-hoshidicts-entry-actions { flex: 0 1 auto; min-width: 0; max-width: calc(100% - 3px); align-items: center; gap: 4px; }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { margin-left: auto; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; margin: 0; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { flex: none; margin-left: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-text-action-button {
+  display: inline-flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%;
+  box-sizing: border-box; padding: 4px 6px; background: transparent; border: 0;
+  border-radius: 4px; font-size: 12px; text-align: left;
+}
+.gsm-hoshidicts-text-action-label.bee-custom-action-icon { font-size: 0; }
+.bee-custom-action-icon { order: -1; }
+.bee-action-menu .gsm-hoshidicts-text-action-label { overflow-wrap: anywhere; }
+.bee-more-actions { flex: none; font-size: 15px; }
+.bee-more-actions > summary { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; cursor: pointer; list-style: none; padding: 0; }
+.bee-action-menu {
+  position: absolute; z-index: 2; top: 100%; right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 100%);
+  padding: 4px; background: var(--pp-surface); border: 1px solid var(--pp-line); border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(40, 20, 10, .2); display: flex; flex-direction: column; gap: 2px;
+}
+/* The note editor is a postcard. */
+.gsm-hoshidicts-note-form {
+  display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1.5px solid var(--pp-line); border-radius: 4px;
+  background: var(--pp-surface);
+}
+.gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; font-weight: 700; color: var(--pp-blue); }
+.gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
+  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid var(--pp-line); border-radius: 3px;
+  background: var(--pp-paper); color: var(--pp-ink); font: inherit;
+}
+.gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
+.gsm-hoshidicts-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button {
+  background: var(--pp-label); color: var(--pp-blue); border: 1.5px solid var(--pp-blue); border-radius: 4px; padding: 2px 8px; font-weight: 700;
+}
+.gsm-hoshidicts-note-error { color: var(--pp-red); font-size: 12px; }
+.bee-rich-content { white-space: normal; }
+.bee-rich-row + .bee-rich-row { margin-top: 4px; }
+/* Glosses are listed with little red hearts. */
+.bee-rich-content .gloss-list {
+  margin: 0; padding-left: 1.2em;
+  list-style-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M5 9.2 1.3 5.4A2.3 2.3 0 0 1 5 2.6a2.3 2.3 0 0 1 3.7 2.8z' fill='%23c8333c'/></svg>");
+}
+.bee-rich-content .gloss-list[data-count="1"] { padding-left: 0; list-style: none; }
+.bee-rich-content :is(ul, ol) { margin-block: 0; }
+.bee-rich-content rt { color: var(--pp-blue); }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.bee-rich-content, .gloss-item, .gloss-content,
+  .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li) { display: inline; }
+:host([data-hoshidicts-glossary-layout="compact"]) .gloss-separator { display: inline; font-size: 0; opacity: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.gloss-list, .gloss-sc-ul[data-sc-content="glossary"]) { display: inline; list-style: none; padding-left: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.gloss-item, .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li):not(:first-child)::before {
+  content: "  ♥  " / ""; white-space: pre-wrap; color: var(--pp-red); font-size: .6em; vertical-align: .15em;
+}
+.bee-rich-content a { color: var(--pp-postmark); cursor: pointer; text-decoration: underline; }
+.bee-rich-content .gloss-sc-table-container { max-width: 100%; overflow-x: auto; }
+.bee-rich-content .gloss-link-external-icon { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: middle; }
+
+/* Enlarged copy of a hovered or focused glossary image, as in Default. It is a
+ * sibling of the popup in the shadow root, so it escapes the scroll clipping. */
+.gsm-hoshidicts-image-hover-preview {
+  position: fixed; z-index: 2147483647; display: inline-block; overflow: hidden; line-height: 0;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+  padding: 6px; background: var(--pp-paper); border: 3px solid var(--pp-stripe-blue); border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(40, 20, 10, .3); pointer-events: none;
+}
+.gsm-hoshidicts-image-hover-preview img {
+  display: block; object-fit: contain;
+  width: min(92vw, calc(var(--gsm-hoshidicts-popup-width, 560px) + 360px));
+  height: min(92vh, calc(var(--gsm-hoshidicts-popup-height, 420px) + 360px));
+  max-width: calc(100vw - 16px); max-height: calc(100vh - 16px);
+}
+.gsm-hoshidicts-image-hover-preview img,
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { animation: pp-image-emerge 150ms ease-out both; }
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"]) img,
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"])::after { image-rendering: pixelated; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"] img { visibility: hidden; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after {
+  content: ""; position: absolute; inset: 6px; background: var(--pp-ink);
+  mask: var(--image) center / contain no-repeat; forced-color-adjust: none;
+}
+@keyframes pp-image-emerge { from { opacity: 0; transform: scale(0.86); } }
+@media (prefers-reduced-motion: reduce) {
+  .gsm-hoshidicts-image-hover-preview img,
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { animation: none; }
+}
+
+/* Windows contrast themes: no stripes, seal or stamps, just system colours. */
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  .gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after { display: none; }
+  .jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-image: none; border-top: 1px solid CanvasText; }
+  .jl-frequency .gsm-hoshidicts-tag-frequency { background: Canvas; border: 1px solid CanvasText; outline: 0; filter: none; }
+  .jl-dictionary { transform: none; }
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none;
+    background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}
+
+/* Shared glossary media styling from Hachidori. */
+.gloss-image-container {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  max-height: 100vh;
+  position: relative;
+  vertical-align: top;
+  line-height: 0;
+  /* Yomitan: calc(1em / var(--font-size-no-units)), one CSS pixel at its 14px
+     text, and converted dictionaries write their gaiji rules against that
+     (`width: 15em` means 15px). The glossary text here is 16px, so the same
+     unit keeps dictionary CSS at the size its author saw. */
+  font-size: calc(1em / 16);
+  overflow: hidden;
+}
+
+.gloss-image-link[data-background="true"] > .gloss-image-container {
+  background-color: var(--gloss-image-background-color);
+}
+
+.gloss-image-link {
+  cursor: inherit;
+  color: var(--accent-color);
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  max-width: 100%;
+}
+
+.gloss-image-link:hover {
+  color: var(--accent-color-dark);
+  cursor: pointer;
+}
+
+.gloss-image-source {
+  display: inline-block;
+  margin-inline: 0.4em;
+  color: var(--text-color-light1);
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+.gloss-image-container-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: calc(1em * var(--font-size-no-units));
+  line-height: var(--line-height);
+  display: table;
+  table-layout: fixed;
+  white-space: normal;
+  color: var(--text-color-light3);
+}
+
+.gloss-image-background {
+  --image: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color);
+  mask: var(--image) center / contain no-repeat;
+  forced-color-adjust: none;
+  display: none;
+}
+
+@media (forced-colors: active) {
+  .gloss-image-background {
+    background: CanvasText;
+  }
+}
+
+.gloss-image {
+  display: inline-block;
+  vertical-align: top;
+  object-fit: contain;
+  border: none;
+  outline: none;
+}
+
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image,
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image-background,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image-background {
+  image-rendering: pixelated;
+}
+
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image-sizer {
+  display: inline-block;
+  width: 0;
+  vertical-align: top;
+  font-size: 0;
+}
+
+.gloss-image-link-text {
+  display: none;
+  line-height: var(--line-height);
+}
+
+.gloss-image-link-text::before {
+  content: "[";
+}
+
+.gloss-image-link-text::after {
+  content: "]";
+}
+
+.gloss-image-description {
+  display: block;
+  white-space: pre-line;
+}
+
+/* Hachidori (#322): a monochrome image is drawn in the text colour. The
+   background layer paints var(--text-color) through the image's alpha once the
+   media reply has set its --image. The <img> stays laid out but unpainted, as
+   it remains the load and error target, the keyboard focus anchor and the
+   preview's source. */
+.gloss-image-link[data-appearance="monochrome"] .gloss-image {
+  visibility: hidden;
+}
+
+.gloss-image-link[data-appearance="monochrome"][data-image-load-state="loaded"] .gloss-image-background {
+  display: block;
+}
+
+.gloss-image-link[data-size-units="em"] .gloss-image-container {
+  font-size: 1em;
+}
+
+.gloss-image-link[data-vertical-align="baseline"] { vertical-align: baseline; }
+.gloss-image-link[data-vertical-align="sub"] { vertical-align: sub; }
+.gloss-image-link[data-vertical-align="super"] { vertical-align: super; }
+.gloss-image-link[data-vertical-align="text-top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="text-bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-vertical-align="middle"] { vertical-align: middle; }
+.gloss-image-link[data-vertical-align="top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="bottom"] { vertical-align: bottom; }
+
+.gloss-image-link[data-collapsed="true"] {
+  vertical-align: baseline;
+}
+
+.gloss-image-link[data-collapsed="true"] .gloss-image-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+}
+
+.gloss-image-link[data-collapsed="true"]:hover .gloss-image-container,
+.gloss-image-link[data-collapsed="true"]:focus .gloss-image-container {
+  display: block;
+}
+
+.gloss-image-link[data-collapsed="true"] .gloss-image-link-text,
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-link-text {
+  display: inline;
+}
+
+.gloss-image-link[data-collapsed="true"] ~ .gloss-image-description {
+  display: inline;
+}
+
+/* Hachidori: a failed image shows its label, not an empty box. */
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-container {
+  display: none;
+}
