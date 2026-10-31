@@ -266,6 +266,7 @@
   .jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-image: none; border-top: 1px solid CanvasText; }
   .jl-frequency .gsm-hoshidicts-tag-frequency { background: Canvas; border: 1px solid CanvasText; outline: 0; filter: none; }
   .jl-dictionary { transform: none; }
+  .bee-rich-content .gloss-list { list-style-image: none; }
   .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
   .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
     forced-color-adjust: none;
