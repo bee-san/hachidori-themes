@@ -1,0 +1,98 @@
+{
+  "bee": {
+    "profiles": 6,
+    "coldFirstMs": {
+      "n": 6,
+      "median": 17.2,
+      "p95": 18.2
+    },
+    "coldCompleteMs": {
+      "n": 6,
+      "median": 33.2,
+      "p95": 33.3
+    },
+    "warmFirstMs": {
+      "n": 144,
+      "median": 16.9,
+      "p95": 17.1
+    },
+    "warmCompleteMs": {
+      "n": 144,
+      "median": 33.3,
+      "p95": 33.5
+    },
+    "renderMs": {
+      "n": 144,
+      "median": 1.4,
+      "p95": 3
+    },
+    "scriptMs": {
+      "n": 144,
+      "median": 0.629,
+      "p95": 0.872
+    },
+    "styleMs": {
+      "n": 144,
+      "median": 0.332,
+      "p95": 0.795
+    },
+    "layoutMs": {
+      "n": 144,
+      "median": 0.459,
+      "p95": 1.164
+    },
+    "nodes": {
+      "n": 144,
+      "median": 68,
+      "p95": 273
+    }
+  },
+  "aetheryte": {
+    "profiles": 6,
+    "coldFirstMs": {
+      "n": 6,
+      "median": 20.5,
+      "p95": 23.1
+    },
+    "coldCompleteMs": {
+      "n": 6,
+      "median": 34.7,
+      "p95": 35.1
+    },
+    "warmFirstMs": {
+      "n": 144,
+      "median": 16.9,
+      "p95": 17.2
+    },
+    "warmCompleteMs": {
+      "n": 144,
+      "median": 33.3,
+      "p95": 33.5
+    },
+    "renderMs": {
+      "n": 144,
+      "median": 1.45,
+      "p95": 3.2
+    },
+    "scriptMs": {
+      "n": 144,
+      "median": 0.644,
+      "p95": 0.875
+    },
+    "styleMs": {
+      "n": 144,
+      "median": 0.402,
+      "p95": 0.9
+    },
+    "layoutMs": {
+      "n": 144,
+      "median": 0.529,
+      "p95": 1.418
+    },
+    "nodes": {
+      "n": 144,
+      "median": 68,
+      "p95": 273
+    }
+  }
+}

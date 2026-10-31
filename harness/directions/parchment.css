@@ -1,0 +1,125 @@
+/* Direction D: Parchment. The Light theme's warm paper with a bronze frame and
+ * filigree corners, a lit amber selected tab, rust headwords and deep-teal
+ * crystal readings.
+palette
+  --pal-bg: #f7e7c9;
+  --pal-text: #3a2614;
+  --pal-accent: #7e2f10;
+  --pal-accent2: #0f5a70;
+  --pal-muted: #5c4429;
+  --pal-freq: #2d531c;
+  --pal-surface: #efd8ae;
+  --pal-control: #edd4a6;
+  --pal-border: #92683a;
+  --pal-focus: #a14a0c;
+  --pal-danger: #a3261b;
+  --pal-scheme: light;
+*/
+/* svg gem
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 14'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#bff0f2'/><stop offset='.5' stop-color='#2f9bb0'/><stop offset='1' stop-color='#0f4f66'/></linearGradient></defs>
+<path d='M5 .6 9.2 5 5 13.4 .8 5Z' fill='url(#g)' stroke='#0c3d4f' stroke-width='.5'/>
+<path d='M.8 5h8.4M5 .6 3.5 5 5 13.4 6.5 5Z' fill='none' stroke='#ffffff' stroke-opacity='.5' stroke-width='.45'/>
+</svg>
+*/
+/* svg corner-tl
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#8c6232' stroke-linecap='round'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#2f9bb0' stroke='#0c3d4f' stroke-width='.5'/>
+</svg>
+*/
+/* svg corner-tr
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#8c6232' stroke-linecap='round'>
+<g transform='translate(26 0) scale(-1 1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#2f9bb0' stroke='#0c3d4f' stroke-width='.5'/>
+</g></svg>
+*/
+/* svg corner-bl
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#8c6232' stroke-linecap='round'>
+<g transform='translate(0 26) scale(1 -1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#2f9bb0' stroke='#0c3d4f' stroke-width='.5'/>
+</g></svg>
+*/
+/* svg corner-br
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#8c6232' stroke-linecap='round'>
+<g transform='translate(26 26) scale(-1 -1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#2f9bb0' stroke='#0c3d4f' stroke-width='.5'/>
+</g></svg>
+*/
+.gsm-hoshidicts-popup {
+  padding: 7px 5px 5px; border-radius: 10px; border-color: #7a5428;
+  font: 16px/1.55 "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Source Han Sans JP", sans-serif;
+  box-shadow: inset 0 0 22px rgb(146 104 58 / 22%), 0 0 0 1px rgb(255 248 230 / 60%), 0 10px 26px rgb(58 38 20 / 35%);
+}
+.gsm-hoshidicts-popup::after {
+  content: ""; position: absolute; inset: 3px; z-index: -1; pointer-events: none;
+  border: 1px solid rgb(146 104 58 / 50%); border-radius: 7px;
+  background: url("svg:corner-tl") top left / 26px no-repeat, url("svg:corner-tr") top right / 26px no-repeat,
+    url("svg:corner-bl") bottom left / 26px no-repeat, url("svg:corner-br") bottom right / 26px no-repeat;
+}
+.jl-header:has(> .jl-tabs:not(:empty))::after {
+  content: ""; display: block; height: 12px; margin: 1px 18px 0;
+  background: url("svg:gem") center / 8px 11px no-repeat,
+    linear-gradient(90deg, transparent, #92683a 18%, #92683a 82%, transparent) center / 100% 1px no-repeat;
+}
+.jl-tabs { margin: 3px 8px 0 10px; gap: 3px; }
+.gsm-hoshidicts-popup .jl-tab {
+  margin: 0; padding: 2px 10px; border-color: #7a5428; border-radius: 4px;
+  font: 13px/20px "Noto Serif", serif; font-variant-caps: small-caps; letter-spacing: .05em;
+}
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  background-color: #e3953a; background-image: linear-gradient(#f8c878, #e3953a); color: #2e1704; border-color: #7a4210;
+  box-shadow: 0 0 6px rgb(227 149 58 / 50%);
+}
+.jl-entry { margin: 0 10px 0 15px; padding: 8px 0 4px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
+  border-top: 1px solid #92683a;
+  border-image: linear-gradient(90deg, transparent, #92683a 12%, #92683a 88%, transparent) 1;
+}
+.jl-spelling { font-size: 23px; }
+.jl-reading { font-size: 18px; }
+.jl-deconj { font-size: 14px; }
+.jl-dictionary { font: 14.5px/1.4 "Noto Serif", serif; font-variant-caps: small-caps; letter-spacing: .05em; color: #5a3a1a; }
+.jl-dictionary::before {
+  content: ""; display: inline-block; width: 7px; height: 10px; margin-right: 6px; vertical-align: -1px;
+  background: url("svg:gem") center / contain no-repeat;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0 6px 0 4px;
+  border-color: #b28a55; border-radius: 9px; font-size: 12.5px; line-height: 18px;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 7px; height: 10px; background: url("svg:gem") center / contain no-repeat;
+}
+.jl-mora { border-color: #0f5a70; }
+.bee-rich-content .gloss-list:not([data-count="1"]) { list-style: none; padding-left: 1.1em; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item { position: relative; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item::before {
+  content: ""; position: absolute; left: -.85em; top: .62em; width: 5px; height: 5px;
+  background: #1f7d93; transform: rotate(45deg);
+}
+.bee-rich-content ol > li::marker { color: #7e2f10; }
+.jl-scroll { scrollbar-color: #92683a transparent; }
+.gsm-hoshidicts-image-hover-preview { box-shadow: 0 12px 32px rgb(58 38 20 / 30%); }
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup::after, .jl-header::after, .jl-dictionary::before,
+  .jl-frequency .gsm-hoshidicts-tag-frequency::before, .gloss-item::before { display: none; }
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}

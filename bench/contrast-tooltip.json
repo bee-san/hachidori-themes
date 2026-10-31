@@ -1,0 +1,944 @@
+{
+  "label": "tooltip",
+  "css": "<work>/previews/css/ffxiv-tooltip.css",
+  "pages": {
+    "light": {
+      "taberu": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4.79,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-deconj [actual page]",
+            "ratio": 5.7,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-deconj [white/black]",
+            "ratio": 5.7,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-mora [actual page]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-reading [actual page]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-reading [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [actual page]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kanji": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4.79,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [actual page]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [actual page]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gloss-sc-span [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gloss-sc-span [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "bouken": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4.79,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [actual page]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [actual page]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text div.gloss-sc-div [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "no": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4.79,
+            "minimum": 3
+          },
+          {
+            "key": "text span.gloss-sc-span [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gloss-sc-span [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text rt.gloss-sc-rt [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text rt.gloss-sc-rt [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 9.09,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kesshou": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4.79,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [actual page]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [actual page]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [actual page]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      }
+    },
+    "dark": {
+      "taberu": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "text span.jl-deconj [white/black]",
+            "ratio": 5.7,
+            "minimum": 4.5
+          },
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 7.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-reading [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-deconj [actual page]",
+            "ratio": 8.61,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gloss-content [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kanji": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 7.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gloss-sc-span [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text em.gloss-sc-em [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text th.gloss-sc-th [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text td.gloss-sc-td [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "bouken": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 7.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text div.gloss-sc-div [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text rt.gloss-sc-rt [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "no": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 7.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.gloss-sc-span [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text rt.gloss-sc-rt [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 9.51,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kesshou": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 7.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.88,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.gsm-hoshidicts-frequency-value [white/black]",
+            "ratio": 9.03,
+            "minimum": 4.5
+          },
+          {
+            "key": "text li.gloss-sc-li [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text ruby.gloss-sc-ruby [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text rt.gloss-sc-rt [white/black]",
+            "ratio": 9.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 9.09,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      }
+    }
+  },
+  "renderer": "bee",
+  "layout": {
+    "light/taberu": {
+      "contentHeight": 418,
+      "entries": 2,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "light/kanji": {
+      "contentHeight": 1920,
+      "entries": 2,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "light/bouken": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "light/no": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "light/kesshou": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/taberu": {
+      "contentHeight": 418,
+      "entries": 2,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "dark/kanji": {
+      "contentHeight": 1920,
+      "entries": 2,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "dark/bouken": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/no": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/kesshou": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 33,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    }
+  },
+  "pixel": {
+    "light": {
+      "taberu": {
+        "lowest": [
+          {
+            "key": "span.jl-deconj",
+            "p5": 5.71,
+            "min": 5.71
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 7.89,
+            "min": 7.89
+          },
+          {
+            "key": "span.jl-reading",
+            "p5": 7.89,
+            "min": 7.89
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 9.05,
+            "min": 9.05
+          },
+          {
+            "key": "span.gloss-content",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.52,
+            "min": 9.52
+          }
+        ],
+        "below": []
+      },
+      "kanji": {
+        "lowest": [
+          {
+            "key": "span.jl-mora",
+            "p5": 7.89,
+            "min": 7.89
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 9.05,
+            "min": 9.05
+          },
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "em.gloss-sc-em",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "th.gloss-sc-th",
+            "p5": 9.11,
+            "min": 9.11
+          }
+        ],
+        "below": []
+      },
+      "bouken": {
+        "lowest": [
+          {
+            "key": "span.jl-mora",
+            "p5": 7.89,
+            "min": 7.89
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 9.05,
+            "min": 9.05
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "div.gloss-sc-div",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.11,
+            "min": 9.11
+          }
+        ],
+        "below": []
+      },
+      "no": {
+        "lowest": [
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.53,
+            "min": 11.53
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 12.25,
+            "min": 12.25
+          }
+        ],
+        "below": []
+      },
+      "kesshou": {
+        "lowest": [
+          {
+            "key": "span.jl-mora",
+            "p5": 7.89,
+            "min": 7.89
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 9.05,
+            "min": 9.05
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.11,
+            "min": 9.11
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.52,
+            "min": 9.52
+          }
+        ],
+        "below": []
+      }
+    },
+    "dark": {
+      "taberu": {
+        "lowest": [
+          {
+            "key": "span.jl-deconj",
+            "p5": 8.66,
+            "min": 8.66
+          },
+          {
+            "key": "span.jl-reading",
+            "p5": 9.11,
+            "min": 8.25
+          },
+          {
+            "key": "span.gloss-content",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.96,
+            "min": 9.96
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.53,
+            "min": 11.53
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 11.96,
+            "min": 11.96
+          }
+        ],
+        "below": []
+      },
+      "kanji": {
+        "lowest": [
+          {
+            "key": "span.jl-mora",
+            "p5": 8.25,
+            "min": 8.25
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 9.46,
+            "min": 9.46
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "td.gloss-sc-td",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "span.gloss-content",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "th.gloss-sc-th",
+            "p5": 9.66,
+            "min": 9.52
+          }
+        ],
+        "below": []
+      },
+      "bouken": {
+        "lowest": [
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.96,
+            "min": 9.96
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.53,
+            "min": 11.53
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 11.96,
+            "min": 10.85
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 13.71,
+            "min": 13.71
+          },
+          {
+            "key": "div.gloss-sc-div",
+            "p5": 13.8,
+            "min": 9.52
+          }
+        ],
+        "below": []
+      },
+      "no": {
+        "lowest": [
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.96,
+            "min": 9.96
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.53,
+            "min": 11.53
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 13.8,
+            "min": 13.8
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 13.8,
+            "min": 13.8
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 15.31,
+            "min": 12.8
+          }
+        ],
+        "below": []
+      },
+      "kesshou": {
+        "lowest": [
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.52,
+            "min": 9.52
+          },
+          {
+            "key": "span.jl-dictionary",
+            "p5": 9.96,
+            "min": 9.96
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.53,
+            "min": 11.53
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 11.96,
+            "min": 11.96
+          }
+        ],
+        "below": []
+      }
+    }
+  },
+  "errors": []
+}

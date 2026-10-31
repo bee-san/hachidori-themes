@@ -1,0 +1,944 @@
+{
+  "label": "aetheryte",
+  "css": "<hachidori-themes>/themes/ffxiv-aetheryte/theme.css",
+  "pages": {
+    "light": {
+      "taberu": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-deconj [actual page]",
+            "ratio": 6.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-deconj [white/black]",
+            "ratio": 6.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [actual page]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kanji": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [actual page]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "bouken": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [actual page]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "no": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [actual page]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kesshou": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 4,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [actual page]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [actual page]",
+            "ratio": 6.9,
+            "minimum": 3
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      }
+    },
+    "dark": {
+      "taberu": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "text span.jl-deconj [white/black]",
+            "ratio": 6.09,
+            "minimum": 4.5
+          },
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 6.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.53,
+            "minimum": 4.5
+          },
+          {
+            "key": "text span.jl-reading [white/black]",
+            "ratio": 7.53,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kanji": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 6.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.53,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.gsm-hoshidicts-kanji-link [white/black]",
+            "ratio": 7.79,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.jl-tab [actual page]",
+            "ratio": 9.57,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "bouken": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 6.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.53,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.gsm-hoshidicts-kanji-link [white/black]",
+            "ratio": 7.79,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.jl-tab [actual page]",
+            "ratio": 9.57,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "no": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 6.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "text span.gsm-hoshidicts-expression.jl-spelling [white/black]",
+            "ratio": 7.79,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.jl-tab [actual page]",
+            "ratio": 9.57,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.jl-tab [white/black]",
+            "ratio": 9.57,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      },
+      "kesshou": {
+        "failures": [],
+        "lowest": [
+          {
+            "key": "border button.jl-tab [actual page]",
+            "ratio": 6.23,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-dictionary [white/black]",
+            "ratio": 6.9,
+            "minimum": 4.5
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-mine-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-audio-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "icon button.gsm-hoshidicts-note-button [white/black]",
+            "ratio": 6.9,
+            "minimum": 3
+          },
+          {
+            "key": "text span.jl-mora [white/black]",
+            "ratio": 7.53,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.gsm-hoshidicts-kanji-link [white/black]",
+            "ratio": 7.79,
+            "minimum": 4.5
+          },
+          {
+            "key": "text button.jl-tab [actual page]",
+            "ratio": 9.57,
+            "minimum": 4.5
+          }
+        ],
+        "size": [
+          560,
+          420
+        ]
+      }
+    }
+  },
+  "renderer": "ffxiv-aetheryte",
+  "layout": {
+    "light/taberu": {
+      "contentHeight": 418,
+      "entries": 2,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "light/kanji": {
+      "contentHeight": 1981,
+      "entries": 2,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "light/bouken": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "light/no": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "light/kesshou": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/taberu": {
+      "contentHeight": 418,
+      "entries": 2,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "dark/kanji": {
+      "contentHeight": 1981,
+      "entries": 2,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6,
+        61.6
+      ]
+    },
+    "dark/bouken": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/no": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    },
+    "dark/kesshou": {
+      "contentHeight": 418,
+      "entries": 1,
+      "headerRowHeight": 41,
+      "entryHeaderHeights": [
+        61.6
+      ]
+    }
+  },
+  "pixel": {
+    "light": {
+      "taberu": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 5.12,
+            "min": 5.01
+          },
+          {
+            "key": "span.jl-deconj",
+            "p5": 5.45,
+            "min": 5.43
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 6.82,
+            "min": 6.81
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 7.16,
+            "min": 7.15
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 7.25,
+            "min": 7.25
+          },
+          {
+            "key": "span.jl-reading",
+            "p5": 7.55,
+            "min": 7.55
+          }
+        ],
+        "below": []
+      },
+      "kanji": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 5.01,
+            "min": 4.89
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 6.82,
+            "min": 6.81
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 7.25,
+            "min": 7.25
+          },
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 9.48,
+            "min": 9.19
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.61,
+            "min": 9.61
+          },
+          {
+            "key": "th.gloss-sc-th",
+            "p5": 9.61,
+            "min": 9.61
+          }
+        ],
+        "below": []
+      },
+      "bouken": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 5.17,
+            "min": 5.09
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 6.81,
+            "min": 6.72
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 7.16,
+            "min": 7.15
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.33,
+            "min": 9.18
+          },
+          {
+            "key": "div.gloss-sc-div",
+            "p5": 9.61,
+            "min": 9.61
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.61,
+            "min": 9.61
+          }
+        ],
+        "below": []
+      },
+      "no": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 5.08,
+            "min": 4.94
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 7.25,
+            "min": 7.25
+          },
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 9.6,
+            "min": 9.49
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.61,
+            "min": 9.61
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.61,
+            "min": 9.61
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.29,
+            "min": 11.21
+          }
+        ],
+        "below": []
+      },
+      "kesshou": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 5.04,
+            "min": 5
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 6.82,
+            "min": 6.81
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 7.25,
+            "min": 7.18
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 9.45,
+            "min": 9.33
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 9.46,
+            "min": 9.18
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 9.61,
+            "min": 9.47
+          }
+        ],
+        "below": []
+      }
+    },
+    "dark": {
+      "taberu": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 7.27,
+            "min": 6.85
+          },
+          {
+            "key": "span.jl-deconj",
+            "p5": 8.49,
+            "min": 8.37
+          },
+          {
+            "key": "span.jl-reading",
+            "p5": 10.31,
+            "min": 10.18
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 10.47,
+            "min": 10.36
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 10.9,
+            "min": 10.4
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 11.06,
+            "min": 11.06
+          }
+        ],
+        "below": []
+      },
+      "kanji": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 7.49,
+            "min": 7.12
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 10.31,
+            "min": 10.18
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 10.66,
+            "min": 10.53
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.29,
+            "min": 11.21
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 12.87,
+            "min": 12.87
+          },
+          {
+            "key": "li.gloss-sc-li",
+            "p5": 13.12,
+            "min": 12.96
+          }
+        ],
+        "below": []
+      },
+      "bouken": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 7.19,
+            "min": 6.99
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 10.47,
+            "min": 10.32
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 10.96,
+            "min": 10.52
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.29,
+            "min": 11.21
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 12.87,
+            "min": 12.87
+          },
+          {
+            "key": "div.gloss-sc-div",
+            "p5": 13.12,
+            "min": 12.79
+          }
+        ],
+        "below": []
+      },
+      "no": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 7.39,
+            "min": 7.17
+          },
+          {
+            "key": "span.gsm-hoshidicts-expression.jl-spelling",
+            "p5": 11.16,
+            "min": 10.9
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.29,
+            "min": 11.21
+          },
+          {
+            "key": "span.gloss-sc-span",
+            "p5": 12.96,
+            "min": 12.79
+          },
+          {
+            "key": "ruby.gloss-sc-ruby",
+            "p5": 13.78,
+            "min": 13.29
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 14.72,
+            "min": 14.57
+          }
+        ],
+        "below": []
+      },
+      "kesshou": {
+        "lowest": [
+          {
+            "key": "span.jl-dictionary",
+            "p5": 7.27,
+            "min": 6.93
+          },
+          {
+            "key": "span.jl-mora",
+            "p5": 10.6,
+            "min": 10.45
+          },
+          {
+            "key": "button.jl-tab",
+            "p5": 11.29,
+            "min": 11.21
+          },
+          {
+            "key": "button.gsm-hoshidicts-kanji-link",
+            "p5": 11.33,
+            "min": 11.18
+          },
+          {
+            "key": "rt.gloss-sc-rt",
+            "p5": 12.8,
+            "min": 12.63
+          },
+          {
+            "key": "span.gsm-hoshidicts-frequency-value",
+            "p5": 12.87,
+            "min": 12.87
+          }
+        ],
+        "below": []
+      }
+    }
+  },
+  "errors": []
+}

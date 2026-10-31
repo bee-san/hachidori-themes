@@ -1,0 +1,92 @@
+/* Direction B: Duty Finder. A charcoal window whose dictionary blocks are list
+ * plates with a tank, healer or DPS strip, a gold-lit selected tab and a
+ * party-composition row of role crystals over the tabs.
+palette
+  --pal-bg: #1b1c20;
+  --pal-text: #ece9e1;
+  --pal-accent: #e9b94f;
+  --pal-accent2: #a9c8ff;
+  --pal-muted: #bcb8ae;
+  --pal-freq: #cdeec0;
+  --pal-surface: #25272d;
+  --pal-control: #2a2c33;
+  --pal-border: #8f7a52;
+  --pal-focus: #f3cf73;
+  --pal-danger: #ff8f80;
+  --pal-scheme: dark;
+*/
+/* svg roles
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 12'>
+<path d='M6 .8 10.4 6 6 11.2 1.6 6Z' fill='#5b8df0' stroke='#dbe7ff' stroke-width='.6'/>
+<path d='M23 .8 27.4 6 23 11.2 18.6 6Z' fill='#5fb35a' stroke='#e2f7dd' stroke-width='.6'/>
+<path d='M40 .8 44.4 6 40 11.2 35.6 6Z' fill='#d65c5c' stroke='#ffe0e0' stroke-width='.6'/>
+</svg>
+*/
+/* svg ilvl
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 12'>
+<path d='M5 .5 9.5 6 5 11.5 .5 6Z' fill='#e9b94f'/>
+<path d='M5 2.6 7.6 6 5 9.4 2.4 6Z' fill='#1b1c20' fill-opacity='.45'/>
+</svg>
+*/
+.gsm-hoshidicts-popup {
+  border-color: #8f7a52; border-radius: 9px;
+  font: 16px/1.5 "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Source Han Sans JP", sans-serif;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 55%), 0 10px 28px rgb(0 0 0 / 50%);
+}
+/* A title band holds the tabs; the role crystals sit at its right. */
+.jl-header:has(> .jl-tabs:not(:empty)) {
+  position: relative; padding: 5px 8px 6px;
+  background-color: #23252b; background-image: linear-gradient(#2e3037, #202227);
+  border-bottom: 1px solid #8f7a52;
+}
+.jl-header:has(> .jl-tabs:not(:empty))::after {
+  content: ""; position: absolute; right: 10px; top: 50%; width: 46px; height: 12px; margin-top: -6px;
+  background: url("svg:roles") center / contain no-repeat; pointer-events: none;
+}
+.jl-tabs { margin: 0; padding-right: 56px; gap: 3px; }
+.gsm-hoshidicts-popup .jl-tab {
+  margin: 0; padding: 2px 12px; border-color: #8f7a52; border-radius: 5px;
+  font-size: 12.5px; letter-spacing: .02em;
+}
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  background-color: #d9a83f; background-image: linear-gradient(#f6d27c, #d9a83f); color: #1c1405; border-color: #f6d27c;
+}
+/* Each block is one duty row: a plate with a role-coloured strip. */
+.jl-scroll { padding: 4px 6px 6px; scrollbar-color: #8f7a52 transparent; }
+.jl-entry {
+  --role: #5b8df0; margin: 6px 0 0; padding: 6px 8px 4px 11px;
+  background: #24262c; border: 1px solid #3a3d45; border-left: 4px solid var(--role); border-radius: 5px;
+}
+.jl-entry:nth-of-type(3n+2) { --role: #5fb35a; }
+.jl-entry:nth-of-type(3n) { --role: #d65c5c; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid #3a3d45; }
+.jl-spelling { color: #ffffff; font-size: 22px; }
+.jl-reading { color: #f0c674; font-size: 18px; }
+.jl-mora { border-color: #f0c674; }
+.jl-deconj { font-size: 13.5px; padding: 0 6px; border-radius: 9px; background: #3a2f46; color: #e6d9f5; }
+.jl-dictionary { color: #a9c8ff; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0 6px 0 4px;
+  border-color: #4f6b46; border-radius: 3px; background: #1f2a1e; font-size: 12.5px; line-height: 18px;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 8px; height: 10px; background: url("svg:ilvl") center / contain no-repeat;
+}
+.bee-rich-content .gloss-list:not([data-count="1"]) { list-style: none; padding-left: 1em; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item { position: relative; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item::before {
+  content: ""; position: absolute; left: -.8em; top: .6em; width: 6px; height: 6px; border-radius: 1px; background: var(--role);
+}
+.bee-rich-content ol > li::marker { color: #e9b94f; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button) { color: #e6dcc6; }
+@media (forced-colors: active) {
+  .jl-header::after, .jl-frequency .gsm-hoshidicts-tag-frequency::before, .gloss-item::before { display: none; }
+  .jl-entry { border-color: CanvasText; }
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}

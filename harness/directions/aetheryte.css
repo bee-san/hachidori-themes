@@ -1,0 +1,126 @@
+/* Direction A: Aetheryte. Midnight crystal glass, a gilt double frame with
+ * filigree corners, crystal-blue readings and gem chips.
+palette
+  --pal-bg: #0e1930;
+  --pal-text: #e8eef8;
+  --pal-accent: #f1d58c;
+  --pal-accent2: #9fdcff;
+  --pal-muted: #b4c0d6;
+  --pal-freq: #dcf2ff;
+  --pal-surface: #152747;
+  --pal-control: #1a2c4d;
+  --pal-border: #b8964f;
+  --pal-focus: #ffe7a3;
+  --pal-danger: #ff9a9a;
+  --pal-scheme: dark;
+*/
+/* svg gem
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 14'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f2fbff'/><stop offset='.45' stop-color='#8fd6ff'/><stop offset='1' stop-color='#2f78d0'/></linearGradient></defs>
+<path d='M5 .6 9.2 5 5 13.4 .8 5Z' fill='url(#g)'/>
+<path d='M.8 5h8.4M5 .6 3.5 5 5 13.4 6.5 5Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='.5' stroke-linejoin='round'/>
+</svg>
+*/
+/* svg corner-tl
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#d9b866' stroke-linecap='round'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#9fdcff' stroke='#f2fbff' stroke-width='.5'/>
+</svg>
+*/
+/* svg corner-tr
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#d9b866' stroke-linecap='round'>
+<g transform='translate(26 0) scale(-1 1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#9fdcff' stroke='#f2fbff' stroke-width='.5'/>
+</g></svg>
+*/
+/* svg corner-bl
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#d9b866' stroke-linecap='round'>
+<g transform='translate(0 26) scale(1 -1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#9fdcff' stroke='#f2fbff' stroke-width='.5'/>
+</g></svg>
+*/
+/* svg corner-br
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none' stroke='#d9b866' stroke-linecap='round'>
+<g transform='translate(26 26) scale(-1 -1)'>
+<path d='M1.5 19V8.5Q1.5 1.5 8.5 1.5H19' stroke-width='1.3'/>
+<path d='M19 1.5h3.5M1.5 19v3.5' stroke-width='.8' stroke-opacity='.6'/>
+<path d='M4.8 12V9.5Q4.8 4.8 9.5 4.8H12' stroke-width='.9' stroke-opacity='.75'/>
+<path d='M9 6.2 11.2 9 9 11.8 6.8 9Z' fill='#9fdcff' stroke='#f2fbff' stroke-width='.5'/>
+</g></svg>
+*/
+.gsm-hoshidicts-popup {
+  padding: 7px 5px 5px; border-radius: 11px; border-color: #b8964f;
+  font: 16px/1.55 "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Source Han Sans JP", sans-serif;
+  background-image: radial-gradient(120% 60% at 50% 0%, rgb(95 160 235 / 13%), transparent 70%);
+  box-shadow: 0 0 0 1px rgb(4 8 18 / 70%), 0 12px 32px rgb(0 0 0 / 50%);
+}
+/* The inner gilt line and filigree corners sit under the content. */
+.gsm-hoshidicts-popup::after {
+  content: ""; position: absolute; inset: 3px; z-index: -1; pointer-events: none;
+  border: 1px solid rgb(217 184 102 / 42%); border-radius: 8px;
+  background: url("svg:corner-tl") top left / 26px no-repeat, url("svg:corner-tr") top right / 26px no-repeat,
+    url("svg:corner-bl") bottom left / 26px no-repeat, url("svg:corner-br") bottom right / 26px no-repeat;
+}
+.jl-header:has(> .jl-tabs:not(:empty))::after {
+  content: ""; display: block; height: 12px; margin: 1px 18px 0;
+  background: url("svg:gem") center / 8px 11px no-repeat,
+    linear-gradient(90deg, transparent, #b8964f 18%, #f1d58c 50%, #b8964f 82%, transparent) center / 100% 1px no-repeat;
+}
+.jl-tabs { margin: 3px 8px 0 10px; gap: 3px; }
+.gsm-hoshidicts-popup .jl-tab {
+  margin: 0; padding: 2px 10px; border-color: #b8964f; border-radius: 4px;
+  font: 13px/20px "Noto Serif", serif; font-variant-caps: small-caps; letter-spacing: .05em;
+}
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  background-color: #d8b866; background-image: linear-gradient(#f7e6b0, #d8b866); color: #1a1405;
+  border-color: #f1d58c; box-shadow: 0 0 6px rgb(241 213 140 / 45%);
+}
+.jl-entry { margin: 0 10px 0 15px; padding: 8px 0 4px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
+  border-top: 1px solid #b8964f;
+  border-image: linear-gradient(90deg, transparent, #b8964f 12%, #b8964f 88%, transparent) 1;
+}
+.jl-spelling { font-size: 23px; text-shadow: 0 0 8px rgb(241 213 140 / 28%); }
+.jl-reading { font-size: 18px; }
+.jl-deconj { font-size: 14px; }
+.jl-dictionary { font: 15px/1.4 "Noto Serif", serif; font-variant-caps: small-caps; letter-spacing: .06em; color: #e2c98c; }
+.jl-dictionary::before {
+  content: ""; display: inline-block; width: 7px; height: 10px; margin-right: 6px; vertical-align: -1px;
+  background: url("svg:gem") center / contain no-repeat;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0 6px 0 4px;
+  border-color: #3f6c9f; border-radius: 9px; font-size: 12.5px; line-height: 18px;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 7px; height: 10px; background: url("svg:gem") center / contain no-repeat;
+}
+.jl-mora { border-color: #9fdcff; }
+.bee-rich-content .gloss-list:not([data-count="1"]) { list-style: none; padding-left: 1.1em; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item { position: relative; }
+.bee-rich-content .gloss-list:not([data-count="1"]) > .gloss-item::before {
+  content: ""; position: absolute; left: -.85em; top: .62em; width: 5px; height: 5px;
+  background: #9fdcff; transform: rotate(45deg);
+}
+.bee-rich-content ol > li::marker { color: #f1d58c; }
+.jl-scroll { scrollbar-color: #b8964f transparent; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button) { color: #e2c98c; }
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup::after, .jl-header::after, .jl-dictionary::before,
+  .jl-frequency .gsm-hoshidicts-tag-frequency::before, .gloss-item::before { display: none; }
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}

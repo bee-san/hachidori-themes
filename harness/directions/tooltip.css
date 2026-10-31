@@ -1,0 +1,63 @@
+/* Direction C: Item tooltip. A near-black tooltip with a sharp double line,
+ * a white headword, pale-yellow section headers whose rule runs to the
+ * actions, and frequencies set like an item-level line.
+palette
+  --pal-bg: #111216;
+  --pal-text: #dedede;
+  --pal-accent: #f2e3a8;
+  --pal-accent2: #a8d4ff;
+  --pal-muted: #b1b1b1;
+  --pal-freq: #c6e8a8;
+  --pal-surface: #1c1d22;
+  --pal-control: #22242a;
+  --pal-border: #9fa2aa;
+  --pal-focus: #f2e3a8;
+  --pal-danger: #ff8f8f;
+  --pal-scheme: dark;
+*/
+/* svg shard
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'>
+<path d='M4 .4 7.6 4.6 4 11.6 .4 4.6Z' fill='#a8d4ff'/>
+<path d='M.4 4.6h7.2M4 .4v11.2' stroke='#ffffff' stroke-opacity='.5' stroke-width='.5'/>
+</svg>
+*/
+.gsm-hoshidicts-popup {
+  border-color: #9fa2aa; border-radius: 3px;
+  font: 15.5px/1.55 "Noto Sans", "Noto Sans CJK JP", "Noto Sans JP", "Source Han Sans JP", sans-serif;
+  box-shadow: inset 0 0 0 1px #000, inset 0 0 0 2px #3a3c43, 0 8px 24px rgb(0 0 0 / 55%);
+}
+.jl-tabs { margin: 5px 8px 0; gap: 2px; }
+.gsm-hoshidicts-popup .jl-tab { margin: 0; border-color: #9fa2aa; border-radius: 2px; font-size: 12.5px; }
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] { background: #f2e3a8; color: #111216; border-color: #f2e3a8; }
+.jl-entry { margin: 0 9px 0 12px; padding: 9px 0 5px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid #45474f; }
+.jl-spelling { color: #ffffff; font-size: 23px; }
+.jl-reading { font-size: 17px; }
+.jl-mora { border-color: #a8d4ff; }
+.jl-deconj { color: #b1b1b1; font-size: 13.5px; }
+/* A section header: the dictionary, then a rule up to the actions. */
+.bee-source-actions { margin-top: 4px; }
+.bee-source-actions::after { content: ""; order: 1; flex: 1 1 12px; height: 1px; background: #5b5e66; }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { order: 2; margin-left: 0; }
+.jl-dictionary { flex: 0 1 auto; max-width: 60%; color: #f2e3a8; font-size: 13.5px; letter-spacing: .03em; }
+.jl-dictionary::before {
+  content: ""; display: inline-block; width: 6px; height: 10px; margin-right: 6px; vertical-align: -1px;
+  background: url("svg:shard") center / contain no-repeat;
+}
+.jl-frequency { color: #c6e8a8; }
+.jl-frequency .gsm-hoshidicts-tag-frequency { padding: 0 2px; border: 0; background: none; font-size: 13.5px; }
+.jl-frequency .gsm-hoshidicts-tag-frequency:not(:last-child)::after { content: "·" / ""; margin-left: 6px; color: #8d8f96; }
+.jl-frequency::before { content: "Freq." / ""; margin-right: 2px; color: #b1b1b1; font-size: 12px; letter-spacing: .04em; }
+.bee-rich-content .gloss-list:not([data-count="1"]) { list-style: square; padding-left: 1.1em; }
+.bee-rich-content .gloss-list ::marker, .bee-rich-content ol > li::marker { color: #8d8f96; }
+.jl-scroll { scrollbar-color: #6d7079 transparent; }
+@media (forced-colors: active) {
+  .jl-dictionary::before, .bee-source-actions::after { display: none; }
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}
