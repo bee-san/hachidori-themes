@@ -23,7 +23,8 @@
   --xiv-number: #e4dcc7;
   --xiv-chip-border: #75694f;
   --xiv-rule: #6a5e45;
-  --xiv-control-border: #6a604c;
+  /* Tab and button borders keep 3:1 against the window over white and black pages. */
+  --xiv-control-border: #97845c;
   --xiv-control-text: #dcd6c9;
   --xiv-surface: #1e2125;
   --xiv-field: #101215;
@@ -81,7 +82,7 @@
 .gsm-hoshidicts-popup .jl-tab:focus-visible { position: relative; z-index: 1; outline-offset: -2px; }
 /* The underline identifies the selected group without colour. */
 .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
-  border-color: var(--xiv-trim); background: var(--xiv-selected); color: var(--xiv-headword);
+  border-color: var(--xiv-gold); background: var(--xiv-selected); color: var(--xiv-headword);
   text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; text-decoration-color: var(--xiv-gold);
 }
 .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {

@@ -8,7 +8,7 @@ ships and recolours it as a restrained nod to FFXIV's Dark window theme:
 charcoal glass at Design's background opacity with a light blur behind it, one
 khaki-gold hairline, serif small caps for dictionary names and tabs, gold
 readings and pitch lines, entry separators that fade out at both ends, and a
-warm fill under the selected tab's underline.
+warm fill, gold outline and underline on the selected tab.
 
 The stylesheet also keeps a reading on one line when its pitch drops after the
 last mora (橋, 光), which wraps in Bee's and JL's stylesheets.
