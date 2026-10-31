@@ -8,7 +8,8 @@ ships and turns the popup into a letter delivered by moogle post: airmail
 stripes round the edge, an envelope flap sealed with a winged pom-pom, a stamp
 and postmark, postage-stamp frequency chips, postmark dictionary names, heart
 bullets and an airmail dash between entries. Pitch is a red thread over the
-reading. The decorations sit in the frame only, which stays opaque; Background
+reading. The envelope itself (stripes, flap, seal, stamp and postmark) is drawn
+in the popup's frame, which stays opaque, so it never covers text; Background
 opacity applies to the letter paper inside it.
 
 The layout follows JL; see [JL's attribution](../jl/ATTRIBUTION.md) and
