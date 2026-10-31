@@ -1,0 +1,27 @@
+/* Chosen direction (Hairline, refined): FFXIV's Dark window reduced to charcoal
+ * glass, one khaki-gold hairline and serif small caps for dictionary names and
+ * tabs; the selected tab gets the game's warm selection fill. */
+:host {
+  color-scheme: dark;
+  --ff-font: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --ff-label-font: "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif;
+  --ff-bg: #14161a; --ff-border: #8c7a52; --ff-radius: 5px;
+  --ff-text: #e9e6de; --ff-strong: #f6f3ea; --ff-reading: #dcc690; --ff-muted: #aea99f;
+  --ff-label: #d3bd84; --ff-freq: #e4dcc7; --ff-freq-bg: transparent; --ff-freq-border: #75694f;
+  --ff-rule: #6a5e45; --ff-control-bg: transparent; --ff-control-border: #6a604c; --ff-control-text: #dcd6c9;
+  --ff-active-bg: linear-gradient(180deg, rgba(201, 164, 90, 0.3), rgba(201, 164, 90, 0.1)); --ff-active-text: #fbf7ec; --ff-active-line: #dcc690; --ff-active-border: #8c7a52;
+  --ff-surface: #1e2125; --ff-input-bg: #101215; --ff-focus: #e8d39a; --ff-warn: #f2a08f; --ff-link: #e3cf98;
+  --ff-pitch: #dcc690; --ff-hover: rgba(220, 198, 144, 0.16); --ff-scroll: #6a604c; --ff-accent: #dcc690;
+}
+.gsm-hoshidicts-popup { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 18px rgba(0, 0, 0, 0.35); }
+.jl-dictionary, .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-frequency-source {
+  font-family: var(--ff-label-font); font-variant-caps: small-caps; letter-spacing: 0.04em;
+}
+.jl-dictionary { font-size: 15px; }
+.gsm-hoshidicts-popup .jl-tab { font-size: 13px; }
+/* Entry separators fade out at both ends, like the Dark theme's section rules. */
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--ff-rule) 12%, var(--ff-rule) 88%, transparent) 1;
+}
+.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: rgba(220, 198, 144, 0.1); }

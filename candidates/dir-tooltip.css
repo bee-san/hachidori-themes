@@ -1,0 +1,30 @@
+/* Direction 3, Tooltip: an item tooltip's anatomy on blue-black: the name,
+ * frequency at the right where Item Level sits, a category line for the
+ * reading, a full-width rule, then the definitions. Gold only for numbers. */
+:host {
+  color-scheme: dark;
+  --ff-font: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --ff-label-font: var(--ff-font);
+  --ff-bg: #0f1218; --ff-border: #6b7180; --ff-radius: 3px;
+  --ff-text: #e5e7eb; --ff-strong: #ffffff; --ff-reading: #d8c999; --ff-muted: #a9afba;
+  --ff-label: #aeb6c4; --ff-freq: #ecdcab; --ff-freq-bg: transparent; --ff-freq-border: transparent;
+  --ff-rule: #414754; --ff-control-bg: #171b23; --ff-control-border: #4c5363; --ff-control-text: #d5d9e0;
+  --ff-active-bg: #262c38; --ff-active-text: #ffffff; --ff-active-line: #ecdcab; --ff-active-border: #6b7180;
+  --ff-surface: #1a1e26; --ff-input-bg: #0c0e13; --ff-focus: #e9d69c; --ff-warn: #f3a191; --ff-link: #b9cdf0;
+  --ff-pitch: #d8c999; --ff-hover: rgba(255, 255, 255, 0.1); --ff-scroll: #4c5363; --ff-accent: #ecdcab;
+}
+.gsm-hoshidicts-popup { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.45); }
+/* Name and frequency, a forced break, then the category line and the source. */
+.jl-top { padding-bottom: 6px; border-bottom: 1px solid var(--ff-rule); }
+.jl-top::after { content: ""; order: 3; flex-basis: 100%; height: 0; }
+.jl-spelling { order: 1; font-size: 23px; }
+.jl-frequency { order: 2; flex: 0 1 auto; justify-content: flex-end; margin-left: auto; padding-left: 8px; }
+.jl-reading { order: 4; margin-left: 2px; font-size: 15px; }
+.jl-deconj { order: 5; font-size: 13px; }
+.bee-source-actions { order: 6; }
+.jl-dictionary { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.jl-frequency .gsm-hoshidicts-tag-frequency { padding: 0; font-size: 13px; letter-spacing: 0.02em; }
+.gsm-hoshidicts-frequency-source { color: var(--ff-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+.gsm-hoshidicts-popup .jl-tab { border-radius: 2px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top-color: transparent; margin-top: 6px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { box-shadow: 0 -1px 0 #2a2f39; }

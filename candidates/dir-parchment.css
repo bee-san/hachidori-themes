@@ -1,0 +1,20 @@
+/* Direction 4, Parchment: FFXIV's Light theme: parchment, bronze trim, brown
+ * serif small caps and the amber category bar for the selected tab. */
+:host {
+  color-scheme: light;
+  --ff-font: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --ff-label-font: "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif;
+  --ff-bg: #f3e7cd; --ff-border: #a07c43; --ff-radius: 6px;
+  --ff-text: #33271a; --ff-strong: #2a1d0f; --ff-reading: #6d420a; --ff-muted: #574632;
+  --ff-label: #644312; --ff-freq: #46310f; --ff-freq-bg: #ead8b0; --ff-freq-border: #a07c43;
+  --ff-rule: #c2a36a; --ff-control-bg: #ead8b0; --ff-control-border: #a07c43; --ff-control-text: #3d2c17;
+  --ff-active-bg: linear-gradient(90deg, #dcae5c, #ecdcb8); --ff-active-text: #2a1d0f; --ff-active-line: #5a3a0c; --ff-active-border: #a07c43;
+  --ff-surface: #efe0be; --ff-input-bg: #fbf4e3; --ff-focus: #7a4300; --ff-warn: #9b2c1f; --ff-link: #644312;
+  --ff-pitch: #7d520f; --ff-hover: rgba(160, 124, 67, 0.2); --ff-scroll: #a07c43; --ff-accent: #7d520f;
+}
+.gsm-hoshidicts-popup { box-shadow: inset 0 0 0 1px rgba(255, 250, 235, 0.6), 0 4px 16px rgba(60, 40, 10, 0.28); }
+.jl-dictionary, .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-frequency-source {
+  font-family: var(--ff-label-font); font-variant-caps: small-caps; letter-spacing: 0.04em;
+}
+.jl-dictionary { font-size: 15px; }
+.gsm-hoshidicts-popup .jl-tab { font-size: 13px; }
