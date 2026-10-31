@@ -108,6 +108,21 @@ function contrastProbe(rootSelector) {
     results.push({ element: `${element.tagName.toLowerCase()}.${element.className || ""}`.slice(0, 80), text: own.slice(0, 24),
       color: style.color, size, minimum: large ? 3 : 4.5, white: Number(per.white.toFixed(2)), black: Number(per.black.toFixed(2)) });
   }
+  // Non-text contrast: borders of interactive controls against what is behind them (3:1).
+  const controls = ".jl-tab, .gsm-hoshidicts-kanji-back, .gsm-hoshidicts-note-actions button, .gsm-hoshidicts-note-form input, "
+    + ".gsm-hoshidicts-note-form textarea, .gsm-hoshidicts-lookup-failure button, .gsm-hoshidicts-audio-menu button";
+  for (const element of popup.querySelectorAll(controls)) {
+    if (!element.getClientRects().length) continue;
+    const style = getComputedStyle(element);
+    if (!parseFloat(style.borderTopWidth) || style.borderTopStyle === "none") continue;
+    const colour = rgba(style.borderTopColor), per = {};
+    for (const [name, pageColour] of [["white", [255, 255, 255]], ["black", [0, 0, 0]]]) {
+      per[name] = Math.min(...backgrounds(element.parentElement, pageColour).map(back => ratio(blend(colour, back), back)));
+    }
+    results.push({ kind: "border", element: `${element.tagName.toLowerCase()}.${element.className || ""}`.slice(0, 80),
+      text: (element.textContent || "").trim().slice(0, 24), color: style.borderTopColor, minimum: 3,
+      white: Number(per.white.toFixed(2)), black: Number(per.black.toFixed(2)) });
+  }
   return results;
 }
 
@@ -243,8 +258,16 @@ try {
         const clip = await clipFor(tab, "hover");
         const file = `${slug}--${name}--${id}.png`;
         await tab.screenshot({ path: resolve(out, file), clip: { x: clip.x, y: clip.y, width: clip.width, height: clip.height } });
+        const geometry = await tab.evaluate(() => {
+          const popup = document.querySelector("hachidori-host").shadowRoot.querySelector(".gsm-hoshidicts-popup");
+          const scroll = popup.querySelector(".jl-scroll").getBoundingClientRect();
+          return { scrollTop: scroll.top - popup.getBoundingClientRect().top, entries: [...popup.querySelectorAll(".jl-entry:not([hidden])")].map(entry => {
+            const box = entry.getBoundingClientRect(), definitions = entry.querySelector(".gsm-hoshidicts-definitions").getBoundingClientRect();
+            return { dictionary: entry.dataset.dictionary, height: Math.round(box.height * 10) / 10, header: Math.round((definitions.top - box.top) * 10) / 10 };
+          }) };
+        });
         const contrast = await tab.evaluate(contrastProbe, "hover");
-        report.renders.push({ slug, page: name, word: id, file, clip, contrast });
+        report.renders.push({ slug, page: name, word: id, file, clip, contrast, geometry });
         console.log(`rendered ${file}`);
         if (withTops) {
           const top = await tab.evaluate(() => document.querySelector("hachidori-host").shadowRoot.querySelector(".jl-entry:not([hidden]) .jl-top").getBoundingClientRect().toJSON());
