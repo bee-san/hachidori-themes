@@ -1,0 +1,450 @@
+/* Shared base for the exploration skins: hachidori's vendored Bee stylesheet
+ * (JL layout, Apache-2.0 design, see ../jl/ATTRIBUTION.md) with its colours
+ * replaced by custom properties and a decorative frame drawn by ::before.
+ * SPDX-License-Identifier: GPL-3.0-or-later */
+:host {
+  color-scheme: light;
+  --fw-paper: #fffaf0; --fw-ink: #33251c; --fw-head: #a3192b; --fw-read: #3d3a9e; --fw-soft: #6a5446;
+  --fw-dict: #2f4a9a; --fw-line: #9a7b64; --fw-surface: #fff3dc; --fw-control: #f6e6cc; --fw-control-ink: #33251c;
+  --fw-accent: #a3192b; --fw-accent-ink: #fffaf0; --fw-focus: #2f4a9a; --fw-pitch: #a3192b; --fw-alert: #a32035;
+  --fw-chip: #fffef9; --fw-chip-ink: #8a1e28; --fw-chip-line: #a3192b; --fw-link: #2f4a9a; --fw-hover: #a3192b;
+  --fw-sep: #9a7b64;
+  --fw-frame: 12px; --fw-frame-top: 12px; --fw-frame-bottom: 12px; --fw-radius: 10px;
+  --fw-font: "Zen Maru Gothic", "M PLUS Rounded 1c", "Rounded Mplus 1c", "Kosugi Maru", Meiryo, "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  --fw-head-font: var(--fw-font);
+  --fw-label-font: var(--fw-font);
+  --hoshidicts-accent: var(--fw-accent); --hoshidicts-text: var(--fw-ink);
+  --text-color: var(--fw-ink); --text-color-light1: var(--fw-read); --text-color-light3: var(--fw-soft);
+  --accent-color: var(--fw-head); --accent-color-dark: var(--fw-read); --link-color: var(--fw-link);
+  --font-size-no-units: 17; --line-height: 1.5; --gloss-image-background-color: var(--fw-surface);
+}
+.gsm-hoshidicts-popup {
+  position: fixed; z-index: 2147483647; pointer-events: auto;
+  box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
+  padding: var(--fw-frame-top) var(--fw-frame) var(--fw-frame-bottom);
+  color: var(--fw-ink); background: color-mix(in srgb, var(--fw-paper) var(--gsm-hoshidicts-popup-opacity, 80%), transparent);
+  border: 0; border-radius: var(--fw-radius);
+  font: 17px/1.5 var(--fw-font); text-align: left; white-space: normal;
+  text-spacing-trim: space-all;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+}
+/* The frame: a ring in the popup's padding, drawn above the paper. */
+.gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+}
+.gsm-hoshidicts-popup::before {
+  padding: var(--fw-frame-top) var(--fw-frame) var(--fw-frame-bottom);
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
+.gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup button:disabled { cursor: default; }
+.gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid var(--fw-focus); outline-offset: 2px; }
+.jl-header { flex: none; position: relative; z-index: 1; }
+.jl-nav { display: flex; justify-content: flex-end; align-items: center; min-height: 20px; margin: 0; position: relative; }
+.jl-nav:has(> .gsm-hoshidicts-kanji-back) { justify-content: flex-start; }
+.jl-nav > .gsm-hoshidicts-popup-close { margin-left: auto; margin-right: 6px; }
+.jl-tabs { display: flex; flex-wrap: wrap; margin: 2px 2px 0; }
+.jl-nav:empty, .jl-tabs:empty { display: none; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  margin: 0; padding: 3px 8px; background: var(--fw-control); color: var(--fw-control-ink);
+  border: 1px solid var(--fw-line); border-radius: 3px; font: 12px/20px var(--fw-label-font);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back:focus-visible { outline-offset: -2px; }
+.gsm-hoshidicts-popup .jl-tab {
+  min-width: 0; max-width: 100%; margin: 0 0 2px 2px; padding: 3px 8px; background: var(--fw-control); color: var(--fw-control-ink);
+  border: 1px solid var(--fw-line); border-radius: 3px;
+  font: 12px/20px var(--fw-label-font); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.gsm-hoshidicts-popup .jl-tab:first-child { margin-left: 0; }
+.gsm-hoshidicts-popup .jl-tab:focus-visible { position: relative; z-index: 1; outline-offset: -2px; }
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: var(--fw-accent); background: var(--fw-accent); color: var(--fw-accent-ink);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
+  padding: 0 4px; background: none; border: 0; font: 16px/20px var(--fw-label-font);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before { display: none; }
+.jl-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--fw-line) transparent; }
+.jl-entry { margin: 0 4px 0 8px; padding-top: 9px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 1px solid var(--fw-sep); }
+.jl-top { display: flex; flex-wrap: wrap; align-items: center; position: relative; }
+.bee-source-actions { display: flex; flex: 1 0 100%; align-items: center; gap: 4px; margin-top: 2px; min-width: 0; }
+.jl-spelling { margin-left: 2px; color: var(--fw-head); font: 23px/1.35 var(--fw-head-font); }
+.jl-reading { margin-left: 8px; color: var(--fw-read); font-size: 19px; }
+.jl-deconj { margin-left: 8px; color: var(--fw-soft); font-size: 15px; }
+.jl-frequency { display: inline-flex; flex: 1 1 auto; flex-wrap: wrap; gap: 4px; min-width: 0; max-width: calc(100% - 8px); margin-left: 8px; color: var(--fw-chip-ink); }
+.jl-dictionary {
+  flex: 1 1 auto; min-width: min(12ch, 35%); max-width: 24ch; margin-left: 2px; color: var(--fw-dict); font: 14px/1.5 var(--fw-label-font);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.jl-top > :is(.jl-spelling, .jl-reading, .jl-deconj) { flex: 0 0 auto; max-width: 100%; }
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  max-width: 100%; overflow-wrap: anywhere; padding: 0 5px; border: 1px solid var(--fw-chip-line); border-radius: 3px;
+  font: 12px/1.6 var(--fw-label-font); background: var(--fw-chip); color: var(--fw-chip-ink);
+}
+.gsm-hoshidicts-frequency-source { margin-right: 4px; color: var(--fw-dict); }
+.jl-mora { border: 0 dotted var(--fw-pitch); }
+.jl-mora[data-pitch="high"] { border-top-width: 2px; }
+.jl-mora[data-pitch="low"] { border-bottom-width: 2px; }
+.jl-mora[data-transition] { margin-right: -2px; border-right-width: 2px; }
+[data-pitch-style="overline"] .jl-mora { border-style: solid; }
+[data-pitch-style="overline"] .jl-mora[data-pitch="low"] { border-bottom-width: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link { padding: 0; background: none; border: 0; cursor: pointer; }
+.gsm-hoshidicts-audio-control { position: relative; display: inline-flex; margin-left: 3px; }
+.gsm-hoshidicts-entry-actions { display: inline-flex; margin-left: 3px; }
+.gsm-hoshidicts-entry-actions:empty { display: none; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button, .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-text-action-button {
+  display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px;
+  flex: none; margin: 0; padding: 0; background: transparent; border: 0; border-radius: 6px; color: var(--fw-ink); cursor: pointer;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button::before,
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-icon,
+.gsm-hoshidicts-popup .bee-custom-action-icon { width: 16px; height: 16px; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-text-action-button):is(:hover, [aria-expanded="true"]):not(:disabled) {
+  background: color-mix(in srgb, var(--fw-hover) 16%, transparent);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
+  [data-state="overwrite"]) { color: var(--fw-alert); }
+.gsm-hoshidicts-definitions, .jl-kanji-text { margin: 6px 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.jl-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
+.jl-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
+.jl-entry:has(> [data-definition-reveal]:focus-visible) { outline: 2px solid var(--fw-focus); outline-offset: -2px; }
+.jl-entry > [data-definition-reveal]:focus-visible { outline: none; }
+.gsm-hoshidicts-popup [data-definition-reveal] { cursor: pointer; }
+.gsm-hoshidicts-anki-feedback { margin: 0 2px; font-size: 12px; }
+.gsm-hoshidicts-lookup-notice, .gsm-hoshidicts-lookup-failure { margin: 4px; }
+.gsm-hoshidicts-lookup-failure button { margin-left: 6px; padding: 1px 6px; background: var(--fw-control); color: var(--fw-control-ink); border: 1px solid var(--fw-line); border-radius: 3px; }
+.gsm-hoshidicts-audio-menu {
+  position: absolute; right: 8px; top: 32px; z-index: 2; min-width: 180px; max-height: calc(100% - 48px);
+  overflow: auto; padding: 6px; background: var(--fw-surface); border: 1px solid var(--fw-line); font-size: 12px;
+}
+.gsm-hoshidicts-audio-menu button { display: block; width: 100%; padding: 2px 4px; text-align: left; background: var(--fw-control); color: var(--fw-control-ink); border: 1px solid var(--fw-line); }
+.gsm-hoshidicts-resize-handle { position: absolute; right: 0; bottom: 0; z-index: 2; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; }
+:host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
+:host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
+.gsm-hoshidicts-entry-actions { flex: 0 1 auto; min-width: 0; max-width: calc(100% - 3px); align-items: center; gap: 4px; }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { margin-left: auto; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; margin: 0; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { flex: none; margin-left: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-text-action-button {
+  display: inline-flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%;
+  box-sizing: border-box; padding: 4px 6px; background: transparent; border: 0;
+  border-radius: 4px; font-size: 12px; text-align: left;
+}
+.gsm-hoshidicts-text-action-label.bee-custom-action-icon { font-size: 0; }
+.bee-custom-action-icon { order: -1; }
+.bee-action-menu .gsm-hoshidicts-text-action-label { overflow-wrap: anywhere; }
+.bee-more-actions { flex: none; font-size: 15px; }
+.bee-more-actions > summary { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 6px; cursor: pointer; list-style: none; padding: 0; }
+.bee-action-menu { position: absolute; z-index: 2; top: 100%; right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 100%); padding: 4px; background: var(--fw-surface); border: 1px solid var(--fw-line); border-radius: 6px; display: flex; flex-direction: column; gap: 2px; }
+.gsm-hoshidicts-note-form { display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1px solid var(--fw-line); border-radius: 6px; background: var(--fw-surface); }
+.gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; color: var(--fw-read); }
+.gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
+  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid var(--fw-line); border-radius: 4px;
+  background: var(--fw-paper); color: var(--fw-ink); font: inherit;
+}
+.gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
+.gsm-hoshidicts-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button { background: var(--fw-control); color: var(--fw-control-ink); border: 1px solid var(--fw-line); border-radius: 4px; padding: 3px 8px; }
+.gsm-hoshidicts-note-error { color: var(--fw-alert); font-size: 12px; }
+.bee-rich-content { white-space: normal; }
+.bee-rich-row + .bee-rich-row { margin-top: 4px; }
+.bee-rich-content .gloss-list { margin: 0; padding-left: 1.2em; }
+.bee-rich-content .gloss-list[data-count="1"] { padding-left: 0; list-style: none; }
+.bee-rich-content :is(ul, ol) { margin-block: 0; }
+.bee-rich-content rt { color: var(--fw-read); }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.bee-rich-content, .gloss-item, .gloss-content,
+  .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li) { display: inline; }
+:host([data-hoshidicts-glossary-layout="compact"]) .gloss-separator { display: inline; font-size: 0; opacity: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.gloss-list, .gloss-sc-ul[data-sc-content="glossary"]) { display: inline; list-style: none; padding-left: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.gloss-item, .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li):not(:first-child)::before {
+  content: " | " / ""; white-space: pre-wrap; color: var(--fw-soft);
+}
+.bee-rich-content a { color: var(--fw-link); cursor: pointer; text-decoration: underline; }
+.bee-rich-content .gloss-sc-table-container { max-width: 100%; overflow-x: auto; }
+.bee-rich-content .gloss-link-external-icon { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: middle; }
+
+.gsm-hoshidicts-image-hover-preview {
+  position: fixed; z-index: 2147483647; display: inline-block; overflow: hidden; line-height: 0;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+  padding: 6px; background: var(--fw-paper); border: 2px solid var(--fw-line); border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(40, 25, 15, 0.3); pointer-events: none;
+}
+.gsm-hoshidicts-image-hover-preview img {
+  display: block; object-fit: contain;
+  width: min(92vw, calc(var(--gsm-hoshidicts-popup-width, 560px) + 360px));
+  height: min(92vh, calc(var(--gsm-hoshidicts-popup-height, 420px) + 360px));
+  max-width: calc(100vw - 16px); max-height: calc(100vh - 16px);
+}
+.gsm-hoshidicts-image-hover-preview img,
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { animation: fw-image-emerge 150ms ease-out both; }
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"]) img,
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"])::after { image-rendering: pixelated; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"] img { visibility: hidden; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after {
+  content: ""; position: absolute; inset: 6px; background: var(--fw-ink);
+  mask: var(--image) center / contain no-repeat; forced-color-adjust: none;
+}
+@keyframes fw-image-emerge { from { opacity: 0; transform: scale(0.86); } }
+@media (prefers-reduced-motion: reduce) {
+  .gsm-hoshidicts-image-hover-preview img,
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { animation: none; }
+}
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  .gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after { display: none; }
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+    forced-color-adjust: none;
+    background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .jl-mora { border-color: CanvasText; }
+}
+/* Direction B, "Chocobo Meadow": a sunny stable yard. A sky band with clouds,
+ * a chocobo-yellow feather-scale frame, grassy hills along the bottom, leaf
+ * tabs, race-rosette frequencies, a wooden sign for the dictionary and a
+ * trail of three-toed footprints between entries. */
+:host {
+  --fw-paper: #fffdf2; --fw-ink: #3a2a12; --fw-head: #8f4300; --fw-read: #22631a; --fw-soft: #66512f;
+  --fw-dict: #fffaf0; --fw-line: #3b7424; --fw-surface: #fff6d6; --fw-control: #e6f5d6; --fw-control-ink: #1f5216;
+  --fw-accent: #22631a; --fw-accent-ink: #ffffff; --fw-focus: #1661a8; --fw-pitch: #1a6ab8; --fw-alert: #b3261e;
+  --fw-chip: #ffe36e; --fw-chip-ink: #4f3300; --fw-chip-line: #b07c00; --fw-link: #11508a; --fw-hover: #22631a;
+  --fw-sep: transparent;
+  --fw-frame: 13px; --fw-frame-top: 30px; --fw-frame-bottom: 16px; --fw-radius: 16px;
+  --fw-font: "M PLUS Rounded 1c", "Rounded Mplus 1c", "Zen Maru Gothic", "Kosugi Maru", Meiryo, "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  --fw-label-font: Fredoka, var(--fw-font);
+}
+.gsm-hoshidicts-popup { box-shadow: 0 6px 18px rgba(60, 40, 0, .3); }
+.gsm-hoshidicts-popup::before {
+  box-shadow: inset 0 0 0 2px #7a5414;
+  background:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 20'><g fill='%23ffffff'><circle cx='12' cy='12' r='6'/><circle cx='20' cy='9' r='7.5'/><circle cx='29' cy='11' r='6'/><circle cx='36' cy='13' r='4.5'/><rect x='8' y='12' width='31' height='6' rx='3'/></g></svg>") left 18% top 5px / 46px 20px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 20'><g fill='%23ffffff' opacity='.9'><circle cx='12' cy='12' r='5'/><circle cx='20' cy='9' r='6.5'/><circle cx='28' cy='12' r='5'/><rect x='8' y='12' width='24' height='5' rx='2.5'/></g></svg>") left 62% top 7px / 38px 17px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g stroke='%23f2a900' stroke-width='2' stroke-linecap='round'><path d='M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1'/></g><circle cx='12' cy='12' r='5.5' fill='%23ffd23f' stroke='%23f2a900' stroke-width='1.2'/></svg>") left 14px top 3px / 22px 22px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'><path d='M4 21C9 12 17 5 27 3c-2 6-6 12-12 15-4 2-8 3-11 3z' fill='%23ffcf33' stroke='%23b07c00' stroke-width='1.2' stroke-linejoin='round'/><path d='M4 21C11 14 17 9 24 5.5' fill='none' stroke='%23b07c00' stroke-width='1.1' stroke-linecap='round'/><path d='M12 14l-1.5-4M16 11l-1-4.2M19.6 8.6 19 5' stroke='%23b07c00' stroke-width='.9' stroke-linecap='round'/></svg>") right 16px top 2px / 27px 22px no-repeat,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 15' preserveAspectRatio='none'><path d='M0 15V8C5 2 9 2 14 7s9 5 14-1v9z' fill='%2367b346'/><path d='M0 8C5 2 9 2 14 7s9 5 14-1' fill='none' stroke='%233f7d26' stroke-width='1.4'/></svg>") left bottom / 30px 16px repeat-x,
+    linear-gradient(#93d3ff, #d8f1ff) top / 100% 30px no-repeat,
+    radial-gradient(circle at 50% 100%, #ffdc55 0 6px, #d99a12 6.6px 7.8px, transparent 8.3px) 0 0 / 15px 10px,
+    #ffd84a;
+}
+/* An inner wooden rim where the frame meets the page. */
+.gsm-hoshidicts-popup::after {
+  inset: calc(var(--fw-frame-top) - 2px) calc(var(--fw-frame) - 2px) calc(var(--fw-frame-bottom) - 2px);
+  border: 2px solid #7a5414; border-radius: 6px;
+}
+.jl-spelling { font-weight: 800; font-size: 24px; letter-spacing: .01em; }
+.jl-reading { font-weight: 700; }
+.jl-mora { border-style: solid; }
+.gsm-hoshidicts-popup .jl-tab {
+  border: 1.5px solid #3b7424; border-radius: 11px 3px 11px 3px; font-weight: 600; padding: 2px 10px;
+}
+.gsm-hoshidicts-popup .jl-tab + .jl-tab { margin-left: 4px; }
+/* Race rosettes. */
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 3px; border: 2px solid #b07c00; border-radius: 999px; padding: 0 7px 0 4px; font-weight: 700;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; width: 11px; height: 11px; flex: none;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><circle cx='6' cy='5' r='4' fill='%23e0442e'/><circle cx='6' cy='5' r='2' fill='%23fff3b0'/><path d='M3.6 8 2.5 11.5 4.6 10.6 5.5 12 6.4 8.6M8.4 8l1.1 3.5-2.1-.9L6.5 12' fill='%23e0442e'/></svg>") center / contain no-repeat;
+}
+/* Wooden sign for the dictionary. */
+.jl-dictionary {
+  flex: 0 1 auto; padding: 0 8px; border-radius: 3px; background: #8a5626; box-shadow: 0 2px 0 #5a3512;
+  font-size: 12.5px; font-weight: 600; line-height: 1.55;
+}
+.gsm-hoshidicts-frequency-source { color: inherit; }
+/* A trail of three-toed footprints between entries. */
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
+  border-top: 0; padding-top: 22px;
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 16'><g fill='none' stroke='%23a8730a' stroke-width='2.2' stroke-linecap='round'><path d='M9 12.5 4.5 5.5M9 12.5 9.5 3.5M9 12.5 14 6.5'/><path d='M35 10 30.5 3M35 10 35.5 1.2M35 10 40 4'/></g><g fill='%23a8730a'><ellipse cx='9' cy='13' rx='2.6' ry='2.2'/><ellipse cx='35' cy='10.5' rx='2.6' ry='2.2'/></g></svg>") left 2px top 3px / 52px 16px repeat-x;
+}
+.bee-rich-content .gloss-list { list-style-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 12 12'><path d='M2 10C3 5 6 2 11 1.5 10.5 6 7.5 9.5 2 10z' fill='%235aa63a'/><path d='M2 10 8 4.5' stroke='%232f6b1d' stroke-width='1'/></svg>"); }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back { border: 1.5px solid #3b7424; border-radius: 11px 3px 11px 3px; font-weight: 600; }
+/* Shared glossary media styling from Hachidori. */
+.gloss-image-container {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  max-height: 100vh;
+  position: relative;
+  vertical-align: top;
+  line-height: 0;
+  /* Yomitan: calc(1em / var(--font-size-no-units)), one CSS pixel at its 14px
+     text, and converted dictionaries write their gaiji rules against that
+     (`width: 15em` means 15px). The glossary text here is 16px, so the same
+     unit keeps dictionary CSS at the size its author saw. */
+  font-size: calc(1em / 16);
+  overflow: hidden;
+}
+
+.gloss-image-link[data-background="true"] > .gloss-image-container {
+  background-color: var(--gloss-image-background-color);
+}
+
+.gloss-image-link {
+  cursor: inherit;
+  color: var(--accent-color);
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  max-width: 100%;
+}
+
+.gloss-image-link:hover {
+  color: var(--accent-color-dark);
+  cursor: pointer;
+}
+
+.gloss-image-source {
+  display: inline-block;
+  margin-inline: 0.4em;
+  color: var(--text-color-light1);
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+.gloss-image-container-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: calc(1em * var(--font-size-no-units));
+  line-height: var(--line-height);
+  display: table;
+  table-layout: fixed;
+  white-space: normal;
+  color: var(--text-color-light3);
+}
+
+.gloss-image-background {
+  --image: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color);
+  mask: var(--image) center / contain no-repeat;
+  forced-color-adjust: none;
+  display: none;
+}
+
+@media (forced-colors: active) {
+  .gloss-image-background {
+    background: CanvasText;
+  }
+}
+
+.gloss-image {
+  display: inline-block;
+  vertical-align: top;
+  object-fit: contain;
+  border: none;
+  outline: none;
+}
+
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image,
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image-background,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image-background {
+  image-rendering: pixelated;
+}
+
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image-sizer {
+  display: inline-block;
+  width: 0;
+  vertical-align: top;
+  font-size: 0;
+}
+
+.gloss-image-link-text {
+  display: none;
+  line-height: var(--line-height);
+}
+
+.gloss-image-link-text::before {
+  content: "[";
+}
+
+.gloss-image-link-text::after {
+  content: "]";
+}
+
+.gloss-image-description {
+  display: block;
+  white-space: pre-line;
+}
+
+/* Hachidori (#322): a monochrome image is drawn in the text colour. The
+   background layer paints var(--text-color) through the image's alpha once the
+   media reply has set its --image. The <img> stays laid out but unpainted, as
+   it remains the load and error target, the keyboard focus anchor and the
+   preview's source. */
+.gloss-image-link[data-appearance="monochrome"] .gloss-image {
+  visibility: hidden;
+}
+
+.gloss-image-link[data-appearance="monochrome"][data-image-load-state="loaded"] .gloss-image-background {
+  display: block;
+}
+
+.gloss-image-link[data-size-units="em"] .gloss-image-container {
+  font-size: 1em;
+}
+
+.gloss-image-link[data-vertical-align="baseline"] { vertical-align: baseline; }
+.gloss-image-link[data-vertical-align="sub"] { vertical-align: sub; }
+.gloss-image-link[data-vertical-align="super"] { vertical-align: super; }
+.gloss-image-link[data-vertical-align="text-top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="text-bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-vertical-align="middle"] { vertical-align: middle; }
+.gloss-image-link[data-vertical-align="top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="bottom"] { vertical-align: bottom; }
+
+.gloss-image-link[data-collapsed="true"] {
+  vertical-align: baseline;
+}
+
+.gloss-image-link[data-collapsed="true"] .gloss-image-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+}
+
+.gloss-image-link[data-collapsed="true"]:hover .gloss-image-container,
+.gloss-image-link[data-collapsed="true"]:focus .gloss-image-container {
+  display: block;
+}
+
+.gloss-image-link[data-collapsed="true"] .gloss-image-link-text,
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-link-text {
+  display: inline;
+}
+
+.gloss-image-link[data-collapsed="true"] ~ .gloss-image-description {
+  display: inline;
+}
+
+/* Hachidori: a failed image shows its label, not an empty box. */
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-container {
+  display: none;
+}
