@@ -1,0 +1,502 @@
+/* Grimoire: theme idea 1 of bee-san/hachidori-themes#24. Dark grey bands
+ * over parchment pages in a fine gold frame, with crimson-and-gold buttons
+ * and blue crystals. The ornaments are original CSS and inline SVG; no fonts
+ * are bundled. Default's reader.css is never loaded beneath it.
+ * SPDX-License-Identifier: GPL-3.0-or-later */
+:host {
+  color-scheme: dark;
+  --grimoire-frame: #25272c;
+  --grimoire-band: #303339;
+  --grimoire-plate: #3b3f47;
+  --grimoire-gold: #c9a55b;
+  --grimoire-gold-bright: #ead08e;
+  --grimoire-gold-deep: #8b6a34;
+  --grimoire-cream: #f6efdf;
+  --grimoire-headword: #fdf9f0;
+  --grimoire-muted: #c6cbd3;
+  --grimoire-parchment: #f3ecdb;
+  --grimoire-ink: #2a231c;
+  --grimoire-ink-soft: #54493b;
+  --grimoire-ink-gold: #6b4a16;
+  --grimoire-chip: #67615a;
+  --grimoire-crimson: #a33a3a;
+  --grimoire-ring: #e3c171;
+  --grimoire-focus-light: #8fd8ff;
+  --grimoire-focus-dark: #0d4f9e;
+  --grimoire-serif: "Noto Serif", "Source Serif 4", "Source Serif Pro", Georgia, Cambria, "Times New Roman",
+    "Noto Serif CJK JP", "Noto Serif JP", "Source Han Serif JP", "Yu Mincho", YuMincho, "Hiragino Mincho ProN",
+    "BIZ UDPMincho", "MS PMincho", serif;
+  --grimoire-mincho: "Noto Serif CJK JP", "Noto Serif JP", "Source Han Serif JP", "Yu Mincho", YuMincho,
+    "Hiragino Mincho ProN", "BIZ UDPMincho", "MS PMincho", var(--grimoire-serif);
+  /* Shared glossary media variables: definitions sit on parchment. */
+  --text-color: #2a231c; --text-color-light1: #6b4a16; --text-color-light3: #54493b;
+  --accent-color: #0d4f9e; --accent-color-dark: #083a78; --link-color: #0d4f9e;
+  --font-size-no-units: 16; --line-height: 1.5; --gloss-image-background-color: #fbf7ee;
+}
+:host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
+:host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
+
+/* The frame, bands and pages take Design's opacity; controls stay opaque. */
+.gsm-hoshidicts-popup {
+  --grimoire-alpha: var(--gsm-hoshidicts-popup-opacity, 85%);
+  --grimoire-focus: var(--grimoire-focus-light);
+  position: fixed; z-index: 2147483647; pointer-events: auto;
+  box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
+  padding: 6px 7px 7px;
+  color: var(--grimoire-cream);
+  background-color: color-mix(in srgb, var(--grimoire-frame) var(--grimoire-alpha), transparent);
+  /* A fine double frame: a gold line, a dark channel and a dim gold hairline. */
+  border: 1px solid #d3b066; border-radius: 7px;
+  box-shadow: inset 0 0 0 2px rgb(12 15 21 / 0.85), inset 0 0 0 3px var(--grimoire-gold-deep), 0 10px 28px rgb(4 6 10 / 0.5);
+  /* Page text behind the translucent frame blurs into haze. */
+  backdrop-filter: blur(6px);
+  font: 15px/1.5 var(--grimoire-serif); text-align: left; white-space: normal;
+  text-spacing-trim: space-all;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+}
+.gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
+.gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup button:disabled { cursor: default; }
+.gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid var(--grimoire-focus); outline-offset: 2px; }
+
+/* The rail: Back and the group tabs at the left, Close and a crystal at the right. */
+.grimoire-bar {
+  flex: none; display: flex; align-items: center; gap: 4px; min-height: 22px; padding: 0 1px 6px;
+  /* A gold rail behind the tabs runs to the crest. */
+  background: linear-gradient(90deg, var(--grimoire-gold-deep), var(--grimoire-gold) 60%) left 11px / 100% 1px no-repeat;
+}
+/* Without tabs, Back, Close or a notice's pencil the rail would hold only the crest. */
+.grimoire-bar:not(:has(.grimoire-tab, .grimoire-nav > *)) { display: none; }
+.grimoire-nav { display: contents; }
+.grimoire-tabs { order: 1; flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.grimoire-nav > :not(.gsm-hoshidicts-kanji-back) { order: 2; }
+.grimoire-nav > .gsm-hoshidicts-popup-close { order: 3; }
+.gsm-hoshidicts-popup .grimoire-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  min-width: 0; max-width: 100%; margin: 0; padding: 1px 12px 2px;
+  border: 1px solid var(--grimoire-gold); border-radius: 3px;
+  /* The colour is the gradient's lighter stop, so contrast checks see the worst case. */
+  background: var(--grimoire-plate) linear-gradient(var(--grimoire-plate), #222429);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 1px 2px rgb(0 0 0 / 0.45);
+  color: #f2e5c4; font-size: 13px; font-weight: 600; line-height: 19px; font-variant-caps: small-caps; letter-spacing: 0.07em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+/* The selected group is crystal blue with a gem, and underlined so it does not rely on colour. */
+.gsm-hoshidicts-popup .grimoire-tab[aria-pressed="true"] {
+  border-color: #92d2f3; color: #ffffff;
+  background: #2b5f98 linear-gradient(#2b5f98, #183c66);
+  box-shadow: inset 0 0 0 1px rgb(8 26 52 / 0.55), 0 0 7px rgb(110 196 255 / 0.4);
+  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+}
+.gsm-hoshidicts-popup .grimoire-tab[aria-pressed="true"]::before {
+  content: ""; display: inline-block; width: 8px; height: 13px; margin: 0 6px 0 -3px; vertical-align: -1px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(115deg, #f4fdff 0 22%, #86dcff 36%, #3fa4ea 64%, #d8f3ff);
+}
+.gsm-hoshidicts-popup .grimoire-tab:hover:not([aria-pressed="true"]),
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back:hover { background: #474b54 linear-gradient(#474b54, #2a2d33); }
+/* The crest: a blue crystal in a thin gold ring, as at the mock-up's top right. */
+.grimoire-crest {
+  order: 4; flex: none; position: relative; width: 20px; height: 20px; margin: 0 1px 0 2px; border-radius: 50%;
+  background: radial-gradient(circle, #1b3556 0 58%, #15171b 60%);
+  box-shadow: inset 0 0 0 1.5px var(--grimoire-gold), 0 0 6px rgb(110 196 255 / 0.35);
+}
+.grimoire-crest::before {
+  content: ""; position: absolute; left: 5.5px; top: 2.5px; width: 9px; height: 15px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(115deg, #f4fdff 0 20%, #7fd5ff 34%, #2a8fdc 64%, #114d93);
+}
+
+.grimoire-scroll {
+  flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 0 1px 1px; container: grimoire / inline-size;
+  scrollbar-width: thin; scrollbar-color: var(--grimoire-gold-deep) transparent;
+}
+/* An entry: a grey band over a parchment page, in a gold rule. A gold
+ * diamond with a crystal separates entries. */
+.grimoire-entry { position: relative; border: 1px solid var(--grimoire-gold); border-radius: 5px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.45); }
+.grimoire-entry:not([hidden]) ~ .grimoire-entry:not([hidden]) { margin-top: 17px; }
+.grimoire-entry:not([hidden]) ~ .grimoire-entry:not([hidden])::before {
+  content: ""; position: absolute; left: 12%; right: 12%; top: -14px; height: 11px; pointer-events: none;
+  background: /* svg:divider */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 .8 11.2 6 6 11.2.8 6Z' fill='%2325272c' stroke='%23d9b866' stroke-width='1.1' stroke-linejoin='round'/%3E%3Cpath d='M6 3.4 8.6 6 6 8.6 3.4 6Z' fill='%2364c7f4'/%3E%3C/svg%3E") center / 11px 11px no-repeat,
+    linear-gradient(90deg, transparent, var(--grimoire-gold) 20%, var(--grimoire-gold) 80%, transparent) center / 100% 1px no-repeat;
+}
+/* The band: spelling, reading, deinflection and frequencies. Its foot leaves
+ * room for the banner, which sits on the seam below it. */
+.grimoire-band {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 9px; min-width: 0;
+  padding: 4px 10px 14px; border-radius: 4px 4px 0 0; border-bottom: 1px solid var(--grimoire-gold);
+  background-color: color-mix(in srgb, var(--grimoire-band) var(--grimoire-alpha), transparent);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05), inset 0 -10px 14px -10px rgb(0 0 0 / 0.35);
+}
+.grimoire-spelling { color: var(--grimoire-headword); font: 600 24px/1.3 var(--grimoire-mincho); letter-spacing: 0.01em; text-shadow: 0 1px 2px rgb(0 0 0 / 0.55); }
+.grimoire-reading { color: var(--grimoire-gold-bright); font: 500 17px/1.4 var(--grimoire-mincho); }
+.grimoire-deconj { color: var(--grimoire-muted); font: 13px/1.4 var(--grimoire-mincho); word-break: keep-all; overflow-wrap: anywhere; }
+/* A word's later entries repeat only its spelling and reading. */
+.grimoire-entry[data-grimoire-repeat="true"] > .grimoire-band > :is(.grimoire-deconj, .grimoire-frequency) { display: none; }
+.grimoire-kanji-character { font-size: 40px; line-height: 1.2; }
+/* Pitch: a gold line over high morae and under low ones, joined at each change. */
+.grimoire-mora { border: 0 solid currentColor; padding: 0 0.5px; }
+.grimoire-mora[data-pitch="high"] { border-top-width: 1.5px; }
+.grimoire-mora[data-pitch="low"] { border-bottom-width: 1.5px; }
+.grimoire-mora[data-transition] { margin-right: -1.5px; border-right-width: 1.5px; }
+[data-pitch-style="overline"] .grimoire-mora[data-pitch="low"] { border-bottom-width: 0; }
+[data-pitch-style="overline"] .grimoire-mora[data-transition="rise"] { border-right-width: 0; margin-right: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link { padding: 0; background: none; border: 0; border-radius: 3px; color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link:hover { color: var(--grimoire-gold-bright); }
+/* Frequency badges: gold-edged, an open book for corpus counts and crossed swords for ranks. */
+.grimoire-frequency { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; align-self: center; min-width: 0; max-width: 100%; }
+.grimoire-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 100%; box-sizing: border-box;
+  padding: 0 7px 0 5px; border: 1px solid var(--grimoire-gold); border-radius: 3px;
+  background: #18191d; color: var(--grimoire-cream); font-size: 12.5px; line-height: 19px;
+  font-variant-numeric: lining-nums tabular-nums; overflow-wrap: anywhere;
+}
+.grimoire-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 13px; height: 13px; background: var(--grimoire-gold-bright);
+  mask: /* svg:swords */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M2.4 2.4 10.5 10.5M13.6 2.4 5.5 10.5' stroke-width='1.6'/%3E%3Cpath d='M8.9 11.9 11.9 8.9M4.1 8.9 7.1 11.9' stroke-width='1.5'/%3E%3Cpath d='M11.1 11.1 13.6 13.6M4.9 11.1 2.4 13.6' stroke-width='2.1'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.grimoire-frequency .gsm-hoshidicts-tag-frequency[data-grimoire-icon="book"]::before { mask-image: /* svg:book */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7.3 3.5C5.8 2.5 3.8 2.1 1 2.2v10.5c2.7-.1 4.7.4 6.3 1.4Z'/%3E%3Cpath d='M8.7 3.5c1.5-1 3.5-1.4 6.3-1.3v10.5c-2.7-.1-4.7.4-6.3 1.4Z'/%3E%3C/svg%3E"); }
+.gsm-hoshidicts-frequency-source { color: var(--grimoire-gold-bright); font-variant-caps: small-caps; letter-spacing: 0.03em; }
+
+/* The page: parchment with dark ink. */
+.grimoire-page {
+  --grimoire-focus: var(--grimoire-focus-dark);
+  color-scheme: light;
+  display: flow-root; position: relative; padding: 0 10px 7px; border-radius: 0 0 4px 4px;
+  color: var(--grimoire-ink);
+  background-color: color-mix(in srgb, var(--grimoire-parchment) var(--grimoire-alpha), transparent);
+  box-shadow: inset 0 0 16px rgb(128 92 38 / 0.2);
+}
+/* The banner straddles the seam: the plaque at the left, the controls at the
+ * right, the band's gold rule running between them. */
+.grimoire-banner {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 6px; min-width: 0;
+  height: 24px; margin: -12px -5px 1px -6px;
+}
+.grimoire-plaque {
+  position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 6px; flex: 0 1 auto; min-width: 0;
+  box-sizing: border-box; height: 22px; padding: 0 17px 0 5px;
+  /* Hidden under the plaque's fill; its lighter stop, for contrast checks. */
+  background: var(--grimoire-plate) content-box; color: #f4e7c6;
+}
+.grimoire-plaque::before, .grimoire-plaque::after { content: ""; position: absolute; z-index: -1; }
+.grimoire-plaque::before {
+  inset: 0; background: linear-gradient(#ecd08b, #a9823b);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.4));
+}
+.grimoire-plaque::after {
+  inset: 1.5px 2px 1.5px 1.5px; background: linear-gradient(var(--grimoire-plate), #26292e);
+  clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 50%, calc(100% - 11px) 100%, 0 100%);
+}
+.grimoire-gem { position: relative; flex: none; width: 10px; height: 16px; background: #e3c171; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.grimoire-gem::before {
+  content: ""; position: absolute; inset: 1.6px 1.4px; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: linear-gradient(115deg, #f4fdff 0 22%, #7fd5ff 34%, #2a8fdc 64%, #114d93);
+}
+.grimoire-dictionary {
+  min-width: 0; font-size: 12.5px; font-weight: 600; line-height: 16px; font-variant-caps: small-caps; letter-spacing: 0.08em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.grimoire-banner > .gsm-hoshidicts-entry-actions { margin-left: auto; flex: none; }
+
+/* Controls: Anki, audio, the pencil and custom actions as crimson medallions in gold rings.
+ * :where() keeps the menu exclusion from raising specificity, so the focus and
+ * Anki-state rules below still apply. */
+.gsm-hoshidicts-entry-actions { display: inline-flex; align-items: center; gap: 5px; min-width: 0; }
+.gsm-hoshidicts-entry-actions:empty { display: none; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { position: relative; display: inline-flex; flex: none; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-entry-actions .gsm-hoshidicts-text-action-button, .grimoire-more-actions > summary,
+  .gsm-hoshidicts-popup-close):where(:not(.grimoire-action-menu *)) {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: 24px; height: 24px; flex: none;
+  margin: 0; padding: 0; border: 0; border-radius: 50%; color: #fff4dc; cursor: pointer;
+  /* The colour is the gradient's lighter stop, for contrast checks. */
+  background: var(--grimoire-crimson) radial-gradient(circle at 50% 30%, var(--grimoire-crimson), #842627 55%, #5c1617);
+  box-shadow: inset 0 0 0 1.5px var(--grimoire-ring), inset 0 0 0 2.5px rgb(58 10 10 / 0.5), 0 1px 2px rgb(0 0 0 / 0.45);
+}
+/* Hover and an open menu or Note brighten the medallion in whatever state colour it has. */
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-entry-actions .gsm-hoshidicts-text-action-button, .grimoire-more-actions > summary,
+  .gsm-hoshidicts-popup-close):where(:not(.grimoire-action-menu *)):is(:hover, [aria-expanded="true"]):not(:disabled) {
+  filter: brightness(1.15);
+}
+/* On the seam a dark ring and a light halo keep focus visible over the band and the page. */
+.grimoire-banner :is(button, summary):not(.grimoire-action-menu *, .gsm-hoshidicts-audio-menu *):focus-visible {
+  outline-offset: 1px; box-shadow: inset 0 0 0 1.5px var(--grimoire-ring), 0 0 0 4px #f6efdf;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:disabled { opacity: 0.55; }
+/* A note already in Anki turns the medallion gold. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"], [data-state="overwrite"]) {
+  color: #2a1803; background: #d7a845 radial-gradient(circle at 50% 30%, #f5d98e, #d7a845 55%, #b98a35);
+  box-shadow: inset 0 0 0 1.5px #3a2706, 0 0 0 1px #f6efdf, 0 1px 2px rgb(0 0 0 / 0.45);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button::before,
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-icon,
+.gsm-hoshidicts-popup .grimoire-custom-action-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before { width: 15px; height: 15px; }
+.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon { font-size: 0; }
+.grimoire-custom-action-icon { order: -1; }
+.grimoire-more-actions { position: relative; flex: none; }
+.grimoire-more-actions > summary { list-style: none; font-size: 15px; line-height: 1; }
+.grimoire-more-actions > summary::-webkit-details-marker { display: none; }
+.grimoire-action-menu, .gsm-hoshidicts-audio-menu {
+  --grimoire-focus: var(--grimoire-focus-light);
+  color-scheme: dark; box-sizing: border-box; padding: 4px;
+  background: var(--grimoire-band); color: var(--grimoire-cream);
+  border: 1px solid var(--grimoire-gold); border-radius: 4px; box-shadow: 0 6px 18px rgb(0 0 0 / 0.45);
+}
+.grimoire-action-menu {
+  position: absolute; z-index: 3; top: calc(100% + 4px); right: 0; width: max-content; max-width: min(260px, 80vw);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.gsm-hoshidicts-popup .grimoire-action-menu .gsm-hoshidicts-text-action-button {
+  display: flex; align-items: center; gap: 6px; width: 100%; height: auto; min-height: 28px; justify-content: flex-start;
+  margin: 0; padding: 3px 8px; border-radius: 3px; background: transparent; box-shadow: none;
+  color: var(--grimoire-cream); font-size: 14px; text-align: left;
+}
+.gsm-hoshidicts-popup .grimoire-action-menu .gsm-hoshidicts-text-action-button:hover { background: rgb(201 165 91 / 0.2); }
+.grimoire-action-menu .gsm-hoshidicts-text-action-label { overflow-wrap: anywhere; }
+.gsm-hoshidicts-audio-menu { position: absolute; right: 0; top: 30px; z-index: 3; min-width: 180px; max-height: 60vh; overflow: auto; font-size: 13px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-menu button {
+  display: block; width: 100%; padding: 2px 6px; text-align: left; background: #222429; border: 1px solid var(--grimoire-gold-deep);
+  border-radius: 3px; color: var(--grimoire-cream);
+}
+
+/* Senses: numbers in grey diamonds, grey tag chips, then the glossary. */
+.gsm-hoshidicts-definitions { margin: 0; overflow-wrap: anywhere; }
+.grimoire-senses { margin: 0; padding: 0; list-style: none; counter-reset: grimoire-sense; }
+.grimoire-sense {
+  counter-increment: grimoire-sense; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 9px;
+  align-items: start; padding: 5px 0 4px;
+}
+.grimoire-sense + .grimoire-sense { border-top: 1px solid rgb(122 96 56 / 0.3); }
+.grimoire-sense::before {
+  content: counter(grimoire-sense); grid-row: 1 / span 2; box-sizing: border-box; width: 22px; height: 22px; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  background: /* svg:diamond */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.2 22.8 12 12 22.8 1.2 12Z' fill='%232b2e34' stroke='%23c9a55b' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M12 3.9 20.1 12 12 20.1 3.9 12Z' fill='none' stroke='%238b6a34' stroke-width='.7'/%3E%3C/svg%3E") center / contain no-repeat;
+  color: var(--grimoire-cream); font-size: 11.5px; font-weight: 600; line-height: 1;
+}
+.grimoire-sense > * { grid-column: 2; }
+.grimoire-senses[data-count="1"] > .grimoire-sense { display: block; padding: 3px 0 1px; }
+.grimoire-senses[data-count="1"] > .grimoire-sense::before { content: none; }
+.grimoire-tags { display: flex; flex-wrap: wrap; gap: 3px 5px; margin: 1px 0 3px; }
+.grimoire-shared-tags { margin: 3px 0 0; }
+.grimoire-tag {
+  display: inline-block; max-width: 100%; box-sizing: border-box; padding: 0 7px;
+  background: var(--grimoire-chip); border: 1px solid var(--grimoire-chip); border-radius: 3px;
+  color: #fbf8f1; font-size: 12px; line-height: 18px; overflow-wrap: anywhere;
+}
+.grimoire-gloss { min-width: 0; font-size: 15px; line-height: 1.5; white-space: normal; }
+.grimoire-gloss :is(ul, ol) { margin-block: 0; }
+.grimoire-gloss > .gloss-list { margin: 0; padding: 0; list-style: none; }
+/* Plain glosses run on one line, joined with semicolons; structured ones keep their blocks. */
+.grimoire-gloss > .gloss-list > .gloss-item { display: inline; }
+.grimoire-gloss > .gloss-list > .gloss-item:first-child > .gloss-separator { display: none; }
+.grimoire-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator::before { content: ";"; }
+.grimoire-gloss > .gloss-list > .gloss-item:has(> .structured-content) { display: block; }
+.grimoire-gloss > .gloss-list > .gloss-item:has(> .structured-content) > .gloss-separator,
+.grimoire-gloss > .gloss-list > .gloss-item:has(> .structured-content) + .gloss-item > .gloss-separator { display: none; }
+.grimoire-gloss .structured-content { display: block; }
+/* Defaults for dictionary content, at zero specificity so a dictionary's own
+ * stylesheet always wins. */
+:where(.grimoire-gloss) :where(rt) { color: var(--grimoire-ink-soft); font-size: 0.55em; letter-spacing: 0.06em; }
+:where(.grimoire-gloss) :where(li)::marker { color: var(--grimoire-ink-gold); }
+:where(.grimoire-gloss) :where(:lang(ja)) { font-family: var(--grimoire-mincho); }
+/* Example sentences sit behind a dark rule. */
+:where(.grimoire-gloss) :where([data-sc-content="example-sentence"], [data-sc-content="example-sentences"], blockquote) {
+  margin: 3px 0 2px; padding: 0 0 0 11px; border-left: 3px solid #7a705f;
+}
+:where(.grimoire-gloss) :where([data-sc-content="example-sentence-a"]) { font-family: var(--grimoire-mincho); font-size: 1.04em; }
+:where(.grimoire-gloss) :where([data-sc-content="example-sentence-b"]) { color: #3d3429; font-size: 0.93em; }
+/* Jitendex-style tags in a definition look like the sense's own tag chips. */
+:where(.grimoire-gloss) :where([data-sc-class~="tag"]) {
+  display: inline-block; margin: 0 5px 3px 0; padding: 0 7px; background: var(--grimoire-chip); border: 1px solid var(--grimoire-chip);
+  border-radius: 3px; color: #fbf8f1; font-size: 12px; line-height: 18px;
+}
+:where(.grimoire-gloss) :where(a) { color: var(--link-color); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+:where(.grimoire-gloss) :where(th, td) { padding: 1px 6px; border: 1px solid rgb(122 96 56 / 0.5); }
+:where(.grimoire-gloss) :where(table) { border-collapse: collapse; }
+:where(.grimoire-gloss) :where(summary) { color: var(--grimoire-ink-gold); cursor: pointer; }
+.grimoire-gloss .gloss-sc-table-container { max-width: 100%; overflow-x: auto; }
+.grimoire-gloss .gloss-link-external-icon { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: middle; }
+/* Compact glossaries: senses share lines, glosses joined by bars. */
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-senses > .grimoire-sense { display: inline; margin: 0 8px 0 0; padding: 0; border: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-sense::before {
+  display: inline-flex; vertical-align: -5px; width: 20px; height: 20px; margin-right: 4px; font-size: 11px;
+}
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.grimoire-sense > .grimoire-tags, .grimoire-gloss, .grimoire-gloss > .gloss-list,
+  .grimoire-gloss > .gloss-list > .gloss-item, .grimoire-gloss .structured-content) { display: inline; }
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-sense > .grimoire-tags { margin-right: 2px; }
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-sense > .grimoire-tags > .grimoire-tag { margin: 0 4px 2px 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator {
+  display: inline; font-size: 0;
+}
+:host([data-hoshidicts-glossary-layout="compact"]) .grimoire-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator::before {
+  content: " | " / ""; white-space: pre-wrap; color: var(--grimoire-ink-gold); font-size: 15px;
+}
+/* Definition blur. Blurred definitions that a click reveals are a button (#598);
+ * the blur would blur its focus ring too, so the page shows it. */
+.grimoire-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
+.grimoire-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
+.grimoire-page:has(> [data-definition-reveal]:focus-visible) { outline: 2px solid var(--grimoire-focus-dark); outline-offset: -3px; }
+.grimoire-page > [data-definition-reveal]:focus-visible { outline: none; }
+.gsm-hoshidicts-popup [data-definition-reveal] { cursor: pointer; }
+
+/* Kanji: meanings, then On and Kun readings and statistics. */
+.grimoire-kanji > .grimoire-page > .grimoire-gloss { padding-top: 3px; }
+.grimoire-kanji-details { display: grid; gap: 4px; margin: 6px 0 0; }
+.grimoire-kanji-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.grimoire-kanji-label { min-width: 3.2em; color: var(--grimoire-ink-gold); font-weight: 600; font-variant-caps: small-caps; letter-spacing: 0.06em; }
+.grimoire-kanji-readings { font-family: var(--grimoire-mincho); font-size: 17px; }
+
+.gsm-hoshidicts-anki-feedback { margin: 2px 0; font-size: 13px; }
+.gsm-hoshidicts-lookup-notice, .gsm-hoshidicts-lookup-failure { margin: 8px 6px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-lookup-failure button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button {
+  margin-left: 6px; padding: 2px 12px; border: 0; border-radius: 12px; color: #fff4dc; font-size: 14px;
+  background: var(--grimoire-crimson) linear-gradient(var(--grimoire-crimson), #6f1d1e);
+  box-shadow: inset 0 0 0 1.5px var(--grimoire-ring), 0 1px 2px rgb(0 0 0 / 0.35);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions .gsm-hoshidicts-note-cancel {
+  color: var(--grimoire-ink); background: #f3ecdb; box-shadow: inset 0 0 0 1px #7a6a52;
+}
+/* Personal dictionary editor, a sheet of brighter paper on the page. */
+.gsm-hoshidicts-note-form {
+  --grimoire-focus: var(--grimoire-focus-dark);
+  color-scheme: light; display: grid; gap: 7px; margin: 3px 0 6px; padding: 9px 10px;
+  background: #fbf7ee; border: 1px solid var(--grimoire-gold-deep); border-radius: 4px; color: var(--grimoire-ink);
+}
+.gsm-hoshidicts-note-field { display: grid; gap: 3px; color: #5a4630; font-size: 13px; font-weight: 600; font-variant-caps: small-caps; letter-spacing: 0.05em; }
+.gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
+  box-sizing: border-box; width: 100%; padding: 5px 7px; border: 1px solid #7a6a52; border-radius: 3px;
+  background: #fffdf8; color: var(--grimoire-ink); font: 15px/1.4 var(--grimoire-serif);
+  font-variant-caps: normal; font-weight: 400; letter-spacing: normal;
+}
+.gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
+.gsm-hoshidicts-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
+.gsm-hoshidicts-note-error { color: #8a1c1c; font-size: 13px; }
+.gsm-hoshidicts-resize-handle {
+  position: absolute; right: 0; bottom: 0; z-index: 2; width: 18px; height: 18px; cursor: nwse-resize; touch-action: none;
+}
+
+/* Narrow popups keep the word and controls inside the frame. */
+@container grimoire (max-width: 340px) {
+  .grimoire-band { padding-inline: 8px; gap: 1px 7px; }
+  .grimoire-spelling { font-size: 22px; }
+  .grimoire-page { padding-inline: 8px; }
+  .grimoire-banner { margin-inline: -4px -5px; gap: 4px; }
+  .grimoire-banner > .gsm-hoshidicts-entry-actions { gap: 3px; }
+  .gsm-hoshidicts-popup .grimoire-banner :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+    .gsm-hoshidicts-text-action-button, .grimoire-more-actions > summary):where(:not(.grimoire-action-menu *)) { width: 22px; height: 22px; }
+}
+
+/* Enlarged copy of a hovered or focused glossary image, as in Default. It is a
+ * sibling of the popup, so it escapes the scroll clipping. */
+.gsm-hoshidicts-image-hover-preview {
+  position: fixed; z-index: 2147483647; display: inline-block; overflow: hidden; line-height: 0;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+  padding: 6px; background: var(--grimoire-parchment); border: 1px solid var(--grimoire-gold); border-radius: 6px;
+  box-shadow: 0 12px 32px rgb(4 6 10 / 0.55); pointer-events: none;
+}
+.gsm-hoshidicts-image-hover-preview img {
+  display: block; object-fit: contain;
+  width: min(92vw, calc(var(--gsm-hoshidicts-popup-width, 560px) + 360px));
+  height: min(92vh, calc(var(--gsm-hoshidicts-popup-height, 420px) + 360px));
+  max-width: calc(100vw - 16px); max-height: calc(100vh - 16px);
+}
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"]) img,
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"])::after { image-rendering: pixelated; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"] img { visibility: hidden; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after {
+  content: ""; position: absolute; inset: 6px; background: var(--grimoire-ink);
+  mask: var(--image) center / contain no-repeat; forced-color-adjust: none;
+}
+
+/* Windows contrast themes: system colours, no ornaments. */
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; box-shadow: none; }
+  .grimoire-crest, .grimoire-gem, .gsm-hoshidicts-popup .grimoire-tab[aria-pressed="true"]::before { display: none; }
+  .grimoire-bar { background: none; }
+  .grimoire-plaque::before, .grimoire-plaque::after,
+  .grimoire-entry:not([hidden]) ~ .grimoire-entry:not([hidden])::before { display: none; }
+  .grimoire-entry:not([hidden]) ~ .grimoire-entry:not([hidden]) { margin-top: 10px; }
+  .grimoire-entry, .grimoire-band, .grimoire-page { background: Canvas; color: CanvasText; border-color: CanvasText; box-shadow: none; }
+  .grimoire-plaque { background: Canvas; color: CanvasText; border: 1px solid CanvasText; padding: 0 6px; }
+  .grimoire-sense::before { background: none; border: 1px solid CanvasText; color: CanvasText; }
+  .grimoire-sense + .grimoire-sense { border-top-color: CanvasText; }
+  .gsm-hoshidicts-popup :is(.grimoire-tab, .gsm-hoshidicts-kanji-back, .grimoire-tag, .gsm-hoshidicts-tag-frequency,
+    .grimoire-action-menu, .gsm-hoshidicts-audio-menu, .gsm-hoshidicts-note-form, .gsm-hoshidicts-note-actions button) {
+    background: Canvas; color: CanvasText; border: 1px solid CanvasText; box-shadow: none;
+  }
+  .gsm-hoshidicts-popup .grimoire-tab[aria-pressed="true"] {
+    forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+    .gsm-hoshidicts-entry-actions .gsm-hoshidicts-text-action-button, .grimoire-more-actions > summary,
+    .gsm-hoshidicts-popup-close):where(:not(.grimoire-action-menu *)) {
+    filter: none; background: ButtonFace; color: ButtonText; border: 1px solid ButtonText; box-shadow: none;
+  }
+  .grimoire-frequency .gsm-hoshidicts-tag-frequency::before { forced-color-adjust: none; background: CanvasText; }
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .grimoire-page:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; box-shadow: none; }
+  .grimoire-mora { border-color: CanvasText; }
+}
+
+/* Shared glossary media styling from Hachidori. */
+.gloss-image-container {
+  display: inline-block; white-space: nowrap; max-width: 100%; max-height: 100vh; position: relative;
+  vertical-align: top; line-height: 0;
+  /* Yomitan's calc(1em / var(--font-size-no-units)): one CSS pixel at its text
+     size, the unit converted dictionaries write their gaiji rules against. */
+  font-size: calc(1em / 16); overflow: hidden;
+}
+.gloss-image-link[data-background="true"] > .gloss-image-container { background-color: var(--gloss-image-background-color); }
+.gloss-image-link { cursor: inherit; color: var(--accent-color); display: inline-block; position: relative; line-height: 1; max-width: 100%; }
+.gloss-image-link:hover { color: var(--accent-color-dark); cursor: pointer; }
+.gloss-image-source { display: inline-block; margin-inline: 0.4em; color: var(--text-color-light1); font-size: 0.8em; line-height: 1.4; }
+.gloss-image-container-overlay {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  font-size: calc(1em * var(--font-size-no-units)); line-height: var(--line-height);
+  display: table; table-layout: fixed; white-space: normal; color: var(--text-color-light3);
+}
+.gloss-image-background {
+  --image: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  background-color: var(--text-color); mask: var(--image) center / contain no-repeat; forced-color-adjust: none; display: none;
+}
+@media (forced-colors: active) { .gloss-image-background { background: CanvasText; } }
+.gloss-image { display: inline-block; vertical-align: top; object-fit: contain; border: none; outline: none; }
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image,
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image-background,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image-background { image-rendering: pixelated; }
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image-sizer { display: inline-block; width: 0; vertical-align: top; font-size: 0; }
+.gloss-image-link-text { display: none; line-height: var(--line-height); }
+.gloss-image-link-text::before { content: "["; }
+.gloss-image-link-text::after { content: "]"; }
+.gloss-image-description { display: block; white-space: pre-line; }
+/* Hachidori (#322): a monochrome image is drawn in the text colour through the
+   image's alpha once the media reply has set its --image. */
+.gloss-image-link[data-appearance="monochrome"] .gloss-image { visibility: hidden; }
+.gloss-image-link[data-appearance="monochrome"][data-image-load-state="loaded"] .gloss-image-background { display: block; }
+.gloss-image-link[data-size-units="em"] .gloss-image-container { font-size: 1em; }
+.gloss-image-link[data-vertical-align="baseline"] { vertical-align: baseline; }
+.gloss-image-link[data-vertical-align="sub"] { vertical-align: sub; }
+.gloss-image-link[data-vertical-align="super"] { vertical-align: super; }
+.gloss-image-link[data-vertical-align="text-top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="text-bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-vertical-align="middle"] { vertical-align: middle; }
+.gloss-image-link[data-vertical-align="top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-collapsed="true"] { vertical-align: baseline; }
+.gloss-image-link[data-collapsed="true"] .gloss-image-container { display: none; position: absolute; left: 0; top: 100%; z-index: 1; }
+.gloss-image-link[data-collapsed="true"]:hover .gloss-image-container,
+.gloss-image-link[data-collapsed="true"]:focus .gloss-image-container { display: block; }
+.gloss-image-link[data-collapsed="true"] .gloss-image-link-text,
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-link-text { display: inline; }
+.gloss-image-link[data-collapsed="true"] ~ .gloss-image-description { display: inline; }
+/* Hachidori: a failed image shows its label, not an empty box. */
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-container { display: none; }
