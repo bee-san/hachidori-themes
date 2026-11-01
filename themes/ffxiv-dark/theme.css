@@ -1,49 +1,66 @@
-/* FFXIV Dark: an unofficial, restrained nod to FFXIV's Dark window theme:
- * charcoal glass, one khaki-gold hairline, serif small caps for dictionary
- * names and tabs, and a warm fill on the selected tab. Original CSS only; no
- * Square Enix assets or fonts (see ATTRIBUTION.md).
- * Layout: Bee's Theme stylesheet as Hachidori ships it (JL's layout, rampaa/JL,
- * Apache-2.0, see ../jl/ATTRIBUTION.md), recoloured through the palette below.
- * Default reader.css is never loaded beneath it.
+/* FFXIV Dark: an unofficial, non-commercial FINAL FANTASY XIV fan theme. The
+ * game's Dark window colours in a gilt double frame with filigree corners and
+ * a crystal; tab plates; each dictionary in a framed panel whose name sits on
+ * a bronze plate with a blue gem. After the owner's mockups 4 and 5 in
+ * bee-san/hachidori-themes#24. Every ornament is original SVG or CSS drawn for
+ * this theme; it uses no Square Enix files or fonts (see ATTRIBUTION.md).
+ * Layout: Bee's Theme stylesheet as Hachidori ships it (JL's layout,
+ * rampaa/JL, Apache-2.0, see ../jl/ATTRIBUTION.md). Default reader.css is
+ * never loaded beneath it.
  * SPDX-License-Identifier: GPL-3.0-or-later */
 :host {
   color-scheme: dark;
   /* Text uses the Japanese stack Hachidori's Default names. Labels name only
-     freely licensed serifs (Latin, then Japanese for kanji in dictionary
-     names), then the system serif, then that Japanese stack. */
+     freely licensed fonts: Cinzel (SIL OFL) when it is installed, otherwise
+     OFL serifs in small caps, then the system serif. */
   --xiv-font: "Noto Sans CJK JP", "Noto Sans JP", "Yu Gothic UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  --xiv-label-font: "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif, var(--xiv-font);
-  --xiv-window: #14161a;
-  --xiv-trim: #8c7a52;
-  --xiv-text: #e9e6de;
-  --xiv-headword: #f6f3ea;
-  --xiv-gold: #dcc690;
-  --xiv-label: #d3bd84;
-  --xiv-muted: #aea99f;
-  --xiv-number: #e4dcc7;
-  --xiv-chip-border: #75694f;
-  --xiv-rule: #6a5e45;
+  --xiv-label-font: "Cinzel", "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif, var(--xiv-font);
+  --xiv-number-font: "Noto Serif", "Source Serif 4", serif;
+  --xiv-window: #141318;
+  --xiv-panel: rgba(38, 35, 44, 0.78);
+  --xiv-plate: #3d2d15;
+  --xiv-frame-bright: #d8b670;
+  --xiv-frame: #a8874c;
+  --xiv-frame-dim: #6c5630;
+  --xiv-text: #ece7dc;
+  --xiv-headword: #fbf8f0;
+  --xiv-gold: #e8cd8c;
+  --xiv-label: #f1dfae;
+  --xiv-muted: #b5b1a7;
+  --xiv-number: #efe6cf;
+  --xiv-chip-border: #8a7444;
   /* Tab and button borders keep 3:1 against the window over white and black pages. */
-  --xiv-control-border: #97845c;
-  --xiv-control-text: #dcd6c9;
-  --xiv-surface: #1e2125;
-  --xiv-field: #101215;
-  --xiv-focus: #e8d39a;
+  --xiv-control-border: #a8874c;
+  --xiv-control-text: #ebe2ca;
+  --xiv-tab: linear-gradient(180deg, #2b2831, #19171d);
+  --xiv-tab-hover: linear-gradient(180deg, #37333e, #211f26);
+  --xiv-selected: linear-gradient(180deg, #7a5b2a, #4e3819);
+  --xiv-surface: #24212a;
+  --xiv-field: #0e0d11;
+  --xiv-focus: #ffe7a3;
   --xiv-warn: #f2a08f;
-  --xiv-link: #e3cf98;
-  --xiv-hover: rgba(220, 198, 144, 0.16);
-  --xiv-selected: linear-gradient(180deg, rgba(201, 164, 90, 0.3), rgba(201, 164, 90, 0.1));
+  --xiv-link: #f0d79a;
+  --xiv-hover: rgba(232, 205, 140, 0.16);
+  /* Ornaments: three original inline SVGs. Each image costs a parse on the
+     first popup, so the four corners and the crystal share one. */
+  --xiv-frame-art: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='cl' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23c8f3ff'/><stop offset='1' stop-color='%232b7ee0'/></linearGradient><linearGradient id='cr' x1='1' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f2feff'/><stop offset='1' stop-color='%234fa9f4'/></linearGradient><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23f6e2a6'/><stop offset='1' stop-color='%23a07a3a'/></linearGradient><g id='k'><path d='M2.5 26 V9 Q2.5 2.5 9 2.5 H26' fill='none' stroke='%23e2c27c' stroke-width='1.6'/><path d='M6.6 2.6 L10.6 6.6 L6.6 10.6 L2.6 6.6 Z' fill='%23e2c27c' stroke='%233a2b14' stroke-width='.6'/><path d='M6.6 4.6 L8.6 6.6 L6.6 8.6 L4.6 6.6 Z' fill='%23fff1c8' fill-opacity='.55'/><path d='M27 .6 L28.9 2.5 L27 4.4 L25.1 2.5 Z' fill='%23e2c27c'/><path d='M.6 27 L2.5 25.1 L4.4 27 L2.5 28.9 Z' fill='%23e2c27c'/></g></defs><use href='%23k'/><svg x='100%25' overflow='visible'><use href='%23k' transform='scale(-1 1)'/></svg><svg y='100%25' overflow='visible'><use href='%23k' transform='scale(1 -1)'/></svg><svg x='100%25' y='100%25' overflow='visible'><use href='%23k' transform='scale(-1 -1)'/></svg><svg x='100%25' overflow='visible'><g transform='translate(-49 1)'><path d='M3 21 L8 18.6 H36 L41 21 L36 23.4 H8 Z' fill='url(%23g)' stroke='%235a4320' stroke-width='.6'/><circle cx='2' cy='21' r='1.6' fill='%23e2c27c'/><circle cx='42' cy='21' r='1.6' fill='%23e2c27c'/><path d='M22.00 1.00 L29.00 12.00 L26.50 31.00 L22.00 39.00 L17.50 31.00 L15.00 12.00 Z' fill='%230f3a7a'/><path d='M22.00 4.00 L16.60 12.60 L18.80 30.40 L22.00 36.00 Z' fill='url(%23cl)'/><path d='M22.00 4.00 L27.40 12.60 L25.20 30.40 L22.00 36.00 Z' fill='url(%23cr)'/><path d='M22.00 4.00 L16.60 12.60 L22.00 15.00 L27.40 12.60 Z' fill='%23f4feff' fill-opacity='.85'/><path d='M22.00 15.00 L22.00 36.00' stroke='%23ffffff' stroke-opacity='.45' stroke-width='0.60'/><path d='M18.60 16.00 L19.90 28.00' stroke='%23ffffff' stroke-opacity='.8' stroke-width='0.90' stroke-linecap='round'/></g></svg></svg>");
+  --xiv-plate-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 24'><defs><linearGradient id='p' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23614a25'/><stop offset='.5' stop-color='%233d2d15'/><stop offset='1' stop-color='%232a1f0e'/></linearGradient></defs><path d='M.8 12 L6.4 1 H53.6 L59.2 12 L53.6 23 H6.4 Z' fill='url(%23p)' stroke='%23e2c27c' stroke-width='1'/><path d='M3.7 12 L7.7 3.7 H52.3 L56.3 12 L52.3 20.3 H7.7 Z' fill='none' stroke='%23f3dc9c' stroke-opacity='.3' stroke-width='.6'/><path d='M13.50 6.00 L19.50 12.00 L13.50 18.00 L7.50 12.00 Z' fill='%2316488f' stroke='%23e2c27c' stroke-width='.9'/><path d='M13.50 7.56 L17.94 12.00 L13.50 12.00 Z' fill='%23d4f6ff'/><path d='M13.50 7.56 L9.06 12.00 L13.50 12.00 Z' fill='%237cc8ff'/><path d='M9.06 12.00 L13.50 16.44 L13.50 12.00 Z' fill='%232c7ddf'/><path d='M17.94 12.00 L13.50 16.44 L13.50 12.00 Z' fill='%234ea2f1'/></svg>");
+  --xiv-book: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M1 3.4 C3.4 2.4 5.9 2.7 7.4 3.9 V13.6 C5.9 12.5 3.4 12.3 1 13.1 Z M15 3.4 C12.6 2.4 10.1 2.7 8.6 3.9 V13.6 C10.1 12.5 12.6 12.3 15 13.1 Z'/></svg>");
   --hoshidicts-accent: var(--xiv-gold); --hoshidicts-text: var(--xiv-text);
   --text-color: var(--xiv-text); --text-color-light1: var(--xiv-link); --text-color-light3: var(--xiv-muted);
   --accent-color: var(--xiv-gold); --accent-color-dark: var(--xiv-link); --link-color: var(--xiv-link);
   --font-size-no-units: 16; --line-height: 1.5; --gloss-image-background-color: var(--xiv-surface);
 }
+/* The window: a gold rim, a dark channel and a dim gold hairline. */
 .gsm-hoshidicts-popup {
   position: fixed; z-index: 2147483647; pointer-events: auto;
   box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
-  color: var(--xiv-text); background: color-mix(in srgb, var(--xiv-window) var(--gsm-hoshidicts-popup-opacity, 85%), transparent);
-  border: 1px solid var(--xiv-trim); border-radius: 5px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 18px rgba(0, 0, 0, 0.35);
+  color: var(--xiv-text); background-color: color-mix(in srgb, var(--xiv-window) var(--gsm-hoshidicts-popup-opacity, 85%), transparent);
+  background-image: radial-gradient(120% 55% at 50% 0%, rgba(150, 140, 170, 0.1), rgba(150, 140, 170, 0) 70%),
+    radial-gradient(55% 45% at 92% 30%, rgba(112, 90, 180, 0.1), rgba(112, 90, 180, 0));
+  border: 1px solid var(--xiv-frame-bright); border-radius: 7px;
+  box-shadow: inset 0 0 0 3px #0c0b0f, inset 0 0 0 4px var(--xiv-frame-dim),
+    0 0 0 1px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.45);
   /* The window stays translucent; the blur keeps page text behind it from
      competing with the definitions. */
   backdrop-filter: blur(6px);
@@ -51,71 +68,133 @@
   text-spacing-trim: space-all;
   zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
 }
+/* Corner filigree, and a glowing crystal on a gold bar at the top right. The
+ * ornament sits under the content and never takes the pointer. */
+.gsm-hoshidicts-popup::before {
+  content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none;
+  background: var(--xiv-frame-art) 0 0 / 100% 100% no-repeat,
+    radial-gradient(closest-side, rgba(126, 206, 255, 0.45), rgba(126, 206, 255, 0)) right 12px top 1px / 30px 40px no-repeat;
+}
+.jl-header, .jl-scroll { position: relative; z-index: 1; }
 .gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
 .gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: pointer; }
 .gsm-hoshidicts-popup button:disabled { cursor: default; }
 .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid var(--xiv-focus); outline-offset: 2px; }
 /* Serif small caps, after the game's menu labels. */
-.jl-dictionary, .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-frequency-source {
-  font-family: var(--xiv-label-font); font-variant-caps: small-caps; letter-spacing: 0.04em;
+.jl-dictionary, .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back, .gsm-hoshidicts-frequency-source {
+  font-family: var(--xiv-label-font); font-variant-caps: small-caps; letter-spacing: 0.07em;
 }
 .jl-header { flex: none; }
-/* JL's 20 px title row holds the x; the tab row sits 2 px below it. */
-.jl-nav { display: flex; justify-content: flex-end; align-items: center; min-height: 20px; margin: 0; }
-/* The x stays top right; the kanji view's Back sits top left. */
+/* Tab plates, then a gold rule running to the crystal, and a hairline under the row. */
+.jl-header:has(.jl-tab)::after {
+  content: ""; display: block; height: 1px; margin: 6px 12px 0;
+  background: linear-gradient(90deg, rgba(108, 86, 48, 0), var(--xiv-frame-dim) 12%, var(--xiv-frame-dim) 88%, rgba(108, 86, 48, 0));
+}
+/* The 20 px title row holds a nested popup's close button or the kanji view's Back. */
+.jl-nav { position: relative; display: flex; justify-content: flex-end; align-items: center; min-height: 20px; margin: 0; }
 .jl-nav:has(> .gsm-hoshidicts-kanji-back) { justify-content: flex-start; }
-.jl-nav > .gsm-hoshidicts-popup-close { margin-left: auto; margin-right: 10px; }
-.jl-tabs { display: flex; flex-wrap: wrap; margin: 2px 2px 0; }
+.jl-tabs { display: flex; flex-wrap: wrap; align-items: center; margin: 9px 50px 0 11px; }
+.jl-tabs::after {
+  content: ""; flex: 1 1 0; min-width: 0; height: 1px; margin: 0 0 2px 8px;
+  background: linear-gradient(90deg, var(--xiv-frame), var(--xiv-frame-dim) 70%, rgba(108, 86, 48, 0));
+}
 .jl-nav:empty, .jl-tabs:empty { display: none; }
+/* Back hangs from the window's left edge like a bookmark. */
 .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
-  margin: 0; padding: 3px 8px; background: transparent; color: var(--xiv-control-text);
-  border: 1px solid var(--xiv-control-border); border-radius: 3px; font-size: 12px; line-height: 20px;
+  margin: 8px 0 0; padding: 2px 13px 2px 12px; background: var(--xiv-tab); color: var(--xiv-control-text);
+  border: 1px solid var(--xiv-control-border); border-left: 0; border-radius: 0 12px 12px 0; font-size: 13px; line-height: 20px;
 }
 .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back:focus-visible { outline-offset: -2px; }
 .gsm-hoshidicts-popup .jl-tab {
-  min-width: 0; max-width: 100%; margin: 0 0 2px 2px; padding: 3px 8px; background: transparent; color: var(--xiv-control-text);
+  min-width: 0; max-width: 100%; margin: 0 0 2px 2px; padding: 3px 11px; background: var(--xiv-tab); color: var(--xiv-control-text);
   border: 1px solid var(--xiv-control-border); border-radius: 3px;
-  font-size: 13px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 14px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .gsm-hoshidicts-popup .jl-tab:first-child { margin-left: 0; }
-.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: rgba(220, 198, 144, 0.1); }
+.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: var(--xiv-tab-hover); }
 .gsm-hoshidicts-popup .jl-tab:focus-visible { position: relative; z-index: 1; outline-offset: -2px; }
-/* The underline identifies the selected group without colour. */
+/* The selected plate is gilt and lit; the underline identifies it without colour. */
 .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
-  border-color: var(--xiv-gold); background: var(--xiv-selected); color: var(--xiv-headword);
-  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; text-decoration-color: var(--xiv-gold);
+  border-color: var(--xiv-frame-bright); background: var(--xiv-selected); color: #fff6dc;
+  box-shadow: inset 0 1px 0 rgba(255, 236, 190, 0.35), 0 0 8px rgba(226, 190, 112, 0.35);
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: var(--xiv-frame-bright);
 }
+/* A nested popup's close button is a gold-ringed disc left of the crystal. */
+.jl-nav > .gsm-hoshidicts-popup-close { margin: 7px 50px 0 auto; }
 .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
-  padding: 0; background: none; border: 0; font: 16px/20px var(--xiv-font);
+  width: 22px; height: 22px; padding: 0; border: 1px solid var(--xiv-frame); border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #37333e, #121115); color: var(--xiv-headword); font: 14px/20px var(--xiv-font);
 }
 .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before { display: none; }
-.jl-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--xiv-control-border) transparent; }
-/* JL's list item padding and 2 px item margin put results about 13 px in. */
-.jl-entry { margin: 0 6px 0 13px; padding-top: 9px; }
-/* Separators between the selected tab's results fade out at both ends, like
- * the Dark theme's section rules. */
-.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) {
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(90deg, transparent, var(--xiv-rule) 12%, var(--xiv-rule) 88%, transparent) 1;
+.jl-scroll {
+  flex: 1; min-height: 0; margin: 2px 4px 8px; overflow: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--xiv-frame) transparent;
 }
+.gsm-hoshidicts-popup:not(:has(.jl-header button)) .jl-scroll { margin-top: 6px; }
+.jl-entry { margin: 0 8px 0 10px; padding: 10px 0 2px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { padding-top: 14px; }
 .jl-top { display: flex; flex-wrap: wrap; align-items: center; position: relative; }
-/* Word and frequencies wrap independently; the dictionary and controls keep
- * their own row, with enough space for a short source name to stay legible. */
-.bee-source-actions { display: flex; flex: 1 0 100%; align-items: center; gap: 4px; margin-top: 2px; min-width: 0; }
-.jl-spelling { margin-left: 2px; color: var(--xiv-headword); font-size: 22px; }
-.jl-reading { margin-left: 7px; color: var(--xiv-gold); font-size: 18px; }
+.jl-spelling { margin-left: 2px; color: var(--xiv-headword); font-size: 24px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85); }
+.jl-reading { margin-left: 7px; color: var(--xiv-gold); font-size: 18px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); }
 .jl-deconj { margin-left: 7px; color: var(--xiv-muted); font-size: 14px; }
 .jl-frequency { display: inline-flex; flex: 1 1 auto; flex-wrap: wrap; gap: 4px; min-width: 0; max-width: calc(100% - 7px); margin-left: 7px; color: var(--xiv-number); }
-.jl-dictionary {
-  flex: 1 1 auto; min-width: min(12ch, 35%); max-width: 24ch; margin-left: 2px; color: var(--xiv-label); font-size: 15px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
 .jl-top > :is(.jl-spelling, .jl-reading, .jl-deconj) { flex: 0 0 auto; max-width: 100%; }
+/* Frequencies are framed chips with a book and tabular figures. */
 .jl-frequency .gsm-hoshidicts-tag-frequency {
-  max-width: 100%; overflow-wrap: anywhere; padding: 0 5px; border: 1px solid var(--xiv-chip-border); border-radius: 3px;
-  font-size: 12px; background: transparent; font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: center; gap: 4px; max-width: 100%; overflow-wrap: anywhere; padding: 0 6px 0 5px;
+  border: 1px solid var(--xiv-chip-border); border-radius: 3px; background: rgba(4, 4, 6, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-size: 12px; line-height: 18px; font-variant-numeric: tabular-nums;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 12px; height: 12px; background: var(--xiv-gold); mask: var(--xiv-book) center / contain no-repeat;
 }
 .gsm-hoshidicts-frequency-source { margin-right: 4px; color: var(--xiv-label); }
+
+/* Each dictionary is a panel. Its top row holds the name plate, a gold rule
+ * and the actions at half height; the definitions close the panel with its
+ * sides, bottom edge and corner brackets. */
+.bee-source-actions {
+  display: flex; flex: 1 0 100%; align-items: center; gap: 4px; min-width: 0; min-height: 24px; margin-top: 7px;
+  background:
+    linear-gradient(var(--xiv-frame), var(--xiv-frame)) left bottom / 1px 50% no-repeat,
+    linear-gradient(var(--xiv-frame), var(--xiv-frame)) right bottom / 1px 50% no-repeat,
+    linear-gradient(var(--xiv-panel), var(--xiv-panel)) left bottom / 100% 50% no-repeat;
+}
+.bee-source-actions::before {
+  content: ""; order: 1; flex: 1 1 0; min-width: 0; height: 1px;
+  background: linear-gradient(90deg, var(--xiv-frame-bright), var(--xiv-frame) 40%);
+}
+.bee-source-actions::after { content: ""; order: 3; flex: 0 1 8px; min-width: 0; height: 1px; background: var(--xiv-frame); }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { order: 2; }
+/* The name plate: a bronze bar with pointed ends and a gem, drawn as a
+ * border image so it stretches with the name; the colour underneath is its
+ * fallback. Long names end in an ellipsis with the full name on hover. */
+.jl-dictionary {
+  flex: 0 1 auto; box-sizing: border-box; min-width: min(12ch, 35%); max-width: 24ch; height: 24px; margin-left: -4px;
+  padding: 2px 3px 2px 2px; border-style: solid; border-color: transparent; border-width: 0 10px 0 23px;
+  border-image: var(--xiv-plate-image) 0 10 0 23 fill / 0 10px 0 23px stretch;
+  background: var(--xiv-plate) padding-box;
+  color: var(--xiv-label); font-size: 14px; line-height: 20px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text {
+  position: relative; margin: 0; padding: 5px 12px 8px;
+  border: 1px solid var(--xiv-frame); border-top: 0; border-radius: 0 0 4px 4px; background: var(--xiv-panel);
+}
+/* Bright gold brackets with a bead close the panel's lower corners, in its
+ * padding, where no text reaches. */
+.jl-entry > .gsm-hoshidicts-definitions::after, .jl-kanji > .jl-kanji-text::after {
+  --xiv-bracket: linear-gradient(var(--xiv-frame-bright), var(--xiv-frame-bright));
+  --xiv-bead: radial-gradient(circle, var(--xiv-frame-bright) 1.2px, rgba(216, 182, 112, 0) 1.9px);
+  content: ""; position: absolute; right: -1px; bottom: -1px; left: -1px; height: 10px; pointer-events: none;
+  background: var(--xiv-bracket) left bottom / 10px 2px no-repeat, var(--xiv-bracket) left bottom / 2px 10px no-repeat,
+    var(--xiv-bracket) right bottom / 10px 2px no-repeat, var(--xiv-bracket) right bottom / 2px 10px no-repeat,
+    var(--xiv-bead) left 1px bottom 1px / 6px 6px no-repeat, var(--xiv-bead) right 1px bottom 1px / 6px 6px no-repeat;
+}
+.jl-kanji > .bee-rich-content { padding-bottom: 2px; border-bottom: 0; border-radius: 0; background: var(--xiv-panel); }
+.jl-kanji > .jl-kanji-text { padding-top: 2px; }
 /* Pitch: solid gold lines over high morae and under low ones, joined where
  * the pitch changes; the overline style draws the high lines only. */
 .jl-mora { border: 0 solid var(--xiv-gold); }
@@ -150,7 +229,7 @@
  * action, so its book icon keeps the text colour like audio and pencil. */
 .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
   [data-state="overwrite"]) { color: var(--xiv-warn); }
-.gsm-hoshidicts-definitions, .jl-kanji-text { margin: 6px 2px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.gsm-hoshidicts-definitions, .jl-kanji-text { white-space: pre-wrap; overflow-wrap: anywhere; }
 .jl-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
 .jl-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
 /* Blurred definitions that a click reveals are a button (#598). The blur would
@@ -163,16 +242,16 @@
 .gsm-hoshidicts-lookup-failure button { margin-left: 6px; padding: 1px 6px; background: transparent; border: 1px solid var(--xiv-control-border); border-radius: 3px; }
 .gsm-hoshidicts-audio-menu {
   position: absolute; right: 8px; top: 32px; z-index: 2; min-width: 180px; max-height: calc(100% - 48px);
-  overflow: auto; padding: 6px; background: var(--xiv-surface); border: 1px solid var(--xiv-trim); font-size: 12px;
+  overflow: auto; padding: 6px; background: var(--xiv-surface); border: 1px solid var(--xiv-frame); font-size: 12px;
 }
 .gsm-hoshidicts-audio-menu button { display: block; width: 100%; padding: 2px 4px; text-align: left; background: transparent; border: 1px solid var(--xiv-control-border); }
-.gsm-hoshidicts-resize-handle { position: absolute; right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; }
+.gsm-hoshidicts-resize-handle { position: absolute; z-index: 2; right: 0; bottom: 0; width: 16px; height: 16px; cursor: nwse-resize; touch-action: none; }
 
 /* Bee's additions keep JL's compact list and use Hachidori's shared controls. */
 :host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
 :host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
 .gsm-hoshidicts-entry-actions { flex: 0 1 auto; min-width: 0; max-width: calc(100% - 3px); align-items: center; gap: 4px; }
-.bee-source-actions > .gsm-hoshidicts-entry-actions { margin-left: auto; }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { margin-left: 0; }
 .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; margin: 0; }
 .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { flex: none; margin-left: 0; }
 .gsm-hoshidicts-popup .gsm-hoshidicts-text-action-button {
@@ -185,13 +264,12 @@
 .bee-action-menu .gsm-hoshidicts-text-action-label { overflow-wrap: anywhere; }
 .bee-more-actions { flex: none; font-size: 15px; }
 .bee-more-actions > summary { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; cursor: pointer; list-style: none; padding: 0; }
-.jl-nav { position: relative; }
-.bee-action-menu { position: absolute; z-index: 2; top: 100%; right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 100%); padding: 4px; background: var(--xiv-surface); border: 1px solid var(--xiv-trim); display: flex; flex-direction: column; gap: 2px; }
+.bee-action-menu { position: absolute; z-index: 2; top: 100%; right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 100%); padding: 4px; background: var(--xiv-surface); border: 1px solid var(--xiv-frame); display: flex; flex-direction: column; gap: 2px; }
 .gsm-hoshidicts-note-form { display: grid; gap: 7px; margin: 8px 2px; padding: 8px; border: 1px solid var(--xiv-control-border); background: var(--xiv-surface); }
 .gsm-hoshidicts-note-field { display: grid; gap: 3px; font-size: 12px; color: var(--xiv-label); }
 /* Field borders keep 3:1 against the form. */
 .gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
-  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid var(--xiv-trim);
+  box-sizing: border-box; width: 100%; padding: 5px; border: 1px solid var(--xiv-frame);
   background: var(--xiv-field); color: var(--xiv-text); font: inherit;
 }
 .gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
@@ -203,7 +281,9 @@
 .bee-rich-content .gloss-list { margin: 0; padding-left: 1.2em; }
 .bee-rich-content .gloss-list[data-count="1"] { padding-left: 0; list-style: none; }
 .bee-rich-content :is(ul, ol) { margin-block: 0; }
-.bee-rich-content li::marker { color: var(--xiv-muted); }
+.bee-rich-content li::marker { color: var(--xiv-gold); }
+/* Sense numbers are gold serif figures (Cinzel's 1 would read as a Roman I). */
+.bee-rich-content ol > li::marker { font-family: var(--xiv-number-font); font-weight: 700; }
 .bee-rich-content rt { color: var(--xiv-gold); }
 :host([data-hoshidicts-glossary-layout="compact"]) :is(.bee-rich-content, .gloss-item, .gloss-content,
   .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li) { display: inline; }
@@ -221,7 +301,7 @@
 .gsm-hoshidicts-image-hover-preview {
   position: fixed; z-index: 2147483647; display: inline-block; overflow: hidden; line-height: 0;
   zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
-  padding: 6px; background: var(--xiv-surface); border: 1px solid var(--xiv-trim); border-radius: 5px;
+  padding: 6px; background: var(--xiv-surface); border: 1px solid var(--xiv-frame-bright); border-radius: 5px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35); pointer-events: none;
 }
 .gsm-hoshidicts-image-hover-preview img {
@@ -245,8 +325,19 @@
   .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { animation: none; }
 }
 
+/* Forced colours: system colours, no ornaments. */
 @media (forced-colors: active) {
-  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; box-shadow: none; }
+  .gsm-hoshidicts-popup::before, .jl-tabs::after, .jl-header::after,
+  .bee-source-actions::before, .bee-source-actions::after, .jl-frequency .gsm-hoshidicts-tag-frequency::before { display: none; }
+  .bee-source-actions { background: none; }
+  .jl-dictionary { border-image: none; border-width: 0; padding: 0 4px; background: none; }
+  .jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text { background: none; border-color: CanvasText; }
+  .jl-entry > .gsm-hoshidicts-definitions::after, .jl-kanji > .jl-kanji-text::after { display: none; }
+  /* Without the half-height top row the panel needs its own top edge. */
+  .jl-entry > .gsm-hoshidicts-definitions { border-top: 1px solid CanvasText; border-radius: 4px; }
+  .jl-kanji > .bee-rich-content { border-top: 1px solid CanvasText; border-radius: 4px 4px 0 0; }
+  .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back { box-shadow: none; }
   .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
   .gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
     forced-color-adjust: none;
@@ -255,8 +346,8 @@
   .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
   .jl-entry:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
   .jl-mora { border-color: CanvasText; }
-  .jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-image: none; border-top-color: CanvasText; }
 }
+
 
 /* Shared glossary media styling from Hachidori. */
 .gloss-image-container {
