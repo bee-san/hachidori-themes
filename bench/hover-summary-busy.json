@@ -1,0 +1,123 @@
+{
+ "bee": {
+  "warmFirst": "17.15 / 28.50",
+  "warmComplete": "33.40 / 46.40",
+  "render": "1.95 / 5.10",
+  "coldFirst": "24.60 / 50.50",
+  "coldComplete": "33.15 / 54.00",
+  "n": {
+   "warm": 288,
+   "render": 288,
+   "cold": 12
+  },
+  "nodesMedian": 68.0,
+  "coldFirstSamples": [
+   23.8,
+   19.8,
+   29.8,
+   26.7,
+   50.5,
+   49.2,
+   19.9,
+   23.5,
+   22.3,
+   19.2,
+   25.4,
+   26.7
+  ]
+ },
+ "crystal": {
+  "warmFirst": "17.10 / 17.90",
+  "warmComplete": "33.30 / 34.30",
+  "render": "2.10 / 4.80",
+  "coldFirst": "21.95 / 29.20",
+  "coldComplete": "33.30 / 35.70",
+  "n": {
+   "warm": 288,
+   "render": 288,
+   "cold": 12
+  },
+  "nodesMedian": 75.0,
+  "coldFirstSamples": [
+   21.3,
+   19.1,
+   22.6,
+   19.6,
+   19,
+   28.6,
+   26.7,
+   29.2,
+   23.7,
+   23.3,
+   21,
+   19
+  ]
+ },
+ "citadel": {
+  "warmFirst": "17.10 / 27.10",
+  "warmComplete": "33.30 / 43.60",
+  "render": "2.20 / 4.80",
+  "coldFirst": "24.15 / 56.20",
+  "coldComplete": "34.15 / 57.60",
+  "n": {
+   "warm": 288,
+   "render": 288,
+   "cold": 12
+  },
+  "nodesMedian": 72.0,
+  "coldFirstSamples": [
+   23.6,
+   20.4,
+   26.6,
+   19.9,
+   24.3,
+   24,
+   31,
+   41.7,
+   56.2,
+   21.9,
+   24.4,
+   21.1
+  ]
+ },
+ "environment": {
+  "revision": "b6e2328f8d6327b08bb195cdfe6bb077e3afbb28",
+  "node": "v22.23.1",
+  "cpu": "AMD EPYC 9R14",
+  "logicalCpus": 64,
+  "samples": 6,
+  "warmups": "one alternating pair per fresh session, excluded; cold first-open separate",
+  "load": [
+   [
+    74.1,
+    44.96,
+    29.87
+   ],
+   [
+    34.08,
+    27.6,
+    22.23
+   ],
+   [
+    38.03,
+    29.42,
+    23.08
+   ],
+   [
+    47.59,
+    36.81,
+    26.61
+   ],
+   [
+    52.61,
+    36.04,
+    25.92
+   ],
+   [
+    45.35,
+    32.41,
+    24.35
+   ]
+  ]
+ }
+}

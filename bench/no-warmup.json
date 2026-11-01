@@ -1,0 +1,39 @@
+{
+ "citadel": {
+  "coldFirst": "19.65 / 27.90",
+  "coldComplete": "34.80 / 37.80",
+  "coldRenderer": "9.40 / 13.30",
+  "n": 12,
+  "load": [
+   [
+    22.3,
+    29.05,
+    29.89
+   ],
+   [
+    25.75,
+    29.21,
+    29.92
+   ]
+  ]
+ },
+ "citadelWithoutWarmup": {
+  "coldFirst": "68.40 / 70.20",
+  "coldComplete": "70.50 / 72.40",
+  "coldRenderer": "34.90 / 35.70",
+  "n": 12,
+  "load": [
+   [
+    30.53,
+    30.25,
+    30.22
+   ],
+   [
+    23.5,
+    28.57,
+    29.66
+   ]
+  ]
+ },
+ "note": "citadelWithoutWarmup: the same theme.js with its top-frame font measurement and ornament decoding disabled, same machine, right after the quiet three-way run."
+}

@@ -1,0 +1,434 @@
+diff --git a/extension/design-preview.js b/extension/design-preview.js
+index 3a220db2..80686479 100644
+--- a/extension/design-preview.js
++++ b/extension/design-preview.js
+@@ -210,7 +210,7 @@
+     const dictionaryTabGroups = state.groups.map(group => ({ ...group, dictionaries: group.dictionaryIds
+       .map(id => state.dictionaries.find(entry => entry.id === id && entry.enabled)?.title).filter(Boolean) }));
+     const sampleDictionaries = sample.results[0].term.glossaries.map(row => row.dictionary);
+-    if (["bee", "crystal"].includes(HDReaderOptions.popupRenderer(options.popupTheme))
++    if (["bee", "crystal", "citadel"].includes(HDReaderOptions.popupRenderer(options.popupTheme))
+         && !dictionaryTabGroups.some(group => group.dictionaries.some(title => sampleDictionaries.includes(title)))) {
+       dictionaryTabGroups.push(
+         { id: "sample-definitions", name: "Sample definitions", dictionaries: [sampleDictionaries[0], "Sample collocations"] },
+diff --git a/extension/reader-options.js b/extension/reader-options.js
+index 01983ed9..c13bcdae 100644
+--- a/extension/reader-options.js
++++ b/extension/reader-options.js
+@@ -265,7 +265,7 @@
+       : id.replace(/(^|-)([a-z])/gu, (_, separator, letter) => `${separator ? " " : ""}${letter.toUpperCase()}`),
+   })) }));
+   const POPUP_THEME_IDS = new Set(POPUP_THEME_GROUPS.flatMap(group => group.themes.map(theme => theme.id)));
+-  const POPUP_RENDERER_IDS = ["nazeka", "plain", "jl", "bee", "crystal"];
++  const POPUP_RENDERER_IDS = ["nazeka", "plain", "jl", "bee", "crystal", "citadel"];
+   for (const id of POPUP_RENDERER_IDS) POPUP_THEME_IDS.add(id);
+   const popupRenderer = theme => POPUP_RENDERER_IDS.includes(theme) ? theme : "default";
+   const DESIGN_OPTION_KEYS = [
+diff --git a/extension/theme-host.js b/extension/theme-host.js
+index e8fc3e51..1dd4c3c3 100644
+--- a/extension/theme-host.js
++++ b/extension/theme-host.js
+@@ -32,7 +32,7 @@
+         ]);
+         if (module && (module.default?.schema !== 2 || module.default.slug !== name
+             || typeof module.default.createView !== "function")) throw new Error("Unsupported renderer contract");
+-        return { name, css: `${css}\n${icons}`, dictionaryStyles: ["default", "bee", "crystal"].includes(name),
++        return { name, css: `${css}\n${icons}`, dictionaryStyles: ["default", "bee", "crystal", "citadel"].includes(name),
+           createView: module?.default.createView ?? globalThis.HDPopup.createPopupView };
+       })());
+       return cache.get(name);
+diff --git a/extension/vendor/themes/index.json b/extension/vendor/themes/index.json
+index 9bdcb6d7..6738566f 100644
+--- a/extension/vendor/themes/index.json
++++ b/extension/vendor/themes/index.json
+@@ -54,6 +54,15 @@
+       "benchmark": "Render 1.60 ms",
+       "benchmarkUrl": "https://github.com/bee-san/hachidori/blob/main/docs/themes/crystal.md",
+       "designSettings": ["popupOpacityPercent", "glossaryLayoutMode", "kanjiClickDictionary", "showFrequencyDictionaryNames", "compactFrequencyNumbers", "averageFrequency", "showFrequencyTagsWithAverage", "showPitchAccentFurigana", "pitchAccentFuriganaDictionary", "pitchAccentFuriganaStyle", "popupImageSource", "imageHoverPreview", "customButtons"]
++    },
++    {
++      "slug": "citadel",
++      "name": "Citadel",
++      "description": "A slate-grey panel in a plain gold frame with a small blue crystal, beige on a light system. One header per word with red and gold buttons, then a section per dictionary under a gold rule.",
++      "contentMode": "rich",
++      "benchmark": "Render 1.60 ms",
++      "benchmarkUrl": "https://github.com/bee-san/hachidori-themes/tree/main/themes/citadel",
++      "designSettings": ["popupOpacityPercent", "glossaryLayoutMode", "kanjiClickDictionary", "showFrequencyDictionaryNames", "compactFrequencyNumbers", "averageFrequency", "showFrequencyTagsWithAverage", "showPitchAccentFurigana", "pitchAccentFuriganaDictionary", "pitchAccentFuriganaStyle", "popupImageSource", "imageHoverPreview", "customButtons"]
+     }
+   ]
+ }
+diff --git a/extension/vendor/themes/source.json b/extension/vendor/themes/source.json
+index 00210672..88e97a4c 100644
+--- a/extension/vendor/themes/source.json
++++ b/extension/vendor/themes/source.json
+@@ -7,6 +7,7 @@
+     "plain": "themes/plain",
+     "jl": "themes/jl",
+     "bee": "themes/bee",
+-    "crystal": "themes/crystal"
++    "crystal": "themes/crystal",
++    "citadel": "themes/citadel"
+   }
+ }
+diff --git a/test/chrome-e2e/harness.mjs b/test/chrome-e2e/harness.mjs
+index 3f14bee8..a4e00afa 100644
+--- a/test/chrome-e2e/harness.mjs
++++ b/test/chrome-e2e/harness.mjs
+@@ -169,7 +169,7 @@ const PLANNED = [
+   "Design lazily renders local sample terms, kanji and images over a visual novel scene through the production popup",
+   "Design live edits preserve popup cards and Notes while sample appends cannot mutate dictionaries",
+   "Design fits the popup without changing its actual dimensions and keeps narrow Settings scrollable",
+-  "Design exposes AUTO, 42 grouped palettes and five layouts and applies live browser preference changes",
++  "Design exposes AUTO, 42 grouped palettes and six layouts and applies live browser preference changes",
+   "Design previews opacity and dimensions immediately and resets only Design settings",
+   "live appearance changes preserve reader Notes and resources while applying the selected page highlight",
+   "toolbar preferences persist and move the preview without detaching focused Notes or rebuilding cards",
+diff --git a/test/chrome-e2e/settings.mjs b/test/chrome-e2e/settings.mjs
+index dd9f3db6..ef12e1ea 100644
+--- a/test/chrome-e2e/settings.mjs
++++ b/test/chrome-e2e/settings.mjs
+@@ -1435,8 +1435,8 @@ async function checkDesignAppearance(page, frame) {
+         palettes.at(-1).fullStops = await stops(100);
+       }
+     }
+-    check("Design exposes AUTO, 42 grouped palettes and five layouts and applies live browser preference changes",
+-      catalogue.count === 48 && JSON.stringify(catalogue.groups) === "[1,18,23,1,5]"
++    check("Design exposes AUTO, 42 grouped palettes and six layouts and applies live browser preference changes",
++      catalogue.count === 49 && JSON.stringify(catalogue.groups) === "[1,18,23,1,6]"
+         && JSON.stringify(automatic.map(value => value.theme)) === '["light","dark"]'
+         && automatic.every(value => value.retained && value.pageUntouched)
+         && palettes.every(value => value.retained && value.pageUntouched)
+diff --git a/test/chrome-theme-store.mjs b/test/chrome-theme-store.mjs
+index fec07bfc..bc12b693 100644
+--- a/test/chrome-theme-store.mjs
++++ b/test/chrome-theme-store.mjs
+@@ -107,7 +107,7 @@ try {
+     location.hash = "design";
+   }, `http://127.0.0.1:${server.address().port}`);
+   await settings.waitForSelector(".theme-store-card button", { visible: true });
+-  assert.equal(await settings.$$eval(".theme-store-card", cards => cards.length), 6);
++  assert.equal(await settings.$$eval(".theme-store-card", cards => cards.length), 7);
+   const tab = await browser.newPage();
+   tab.on("pageerror", error => { errors.push(error.message); console.log("tab error", error.message); });
+   tab.on("console", message => { if (["error", "warn"].includes(message.type())) console.log(message.type(), message.text()); });
+@@ -467,7 +467,11 @@ try {
+       const background = (node, page) => {
+         const ancestors = [];
+         for (let current = node; current; current = current.parentElement) ancestors.unshift(current);
+-        return ancestors.reduce((color, ancestor) => blend(rgba(getComputedStyle(ancestor).backgroundColor), color), page);
++        return ancestors.reduce((color, ancestor) => {
++          const own = blend(rgba(getComputedStyle(ancestor).backgroundColor), color);
++          // A plate drawn in ::before behind the label, as Citadel's tabs are.
++          return theme.plates && ancestor.matches(theme.plates) ? blend(rgba(getComputedStyle(ancestor, "::before").backgroundColor), own) : own;
++        }, page);
+       };
+       const results = [];
+       const check = (node, property, minimum, against = node) => {
+@@ -484,6 +488,12 @@ try {
+       for (const node of popup.querySelectorAll(theme.borders)) {
+         if (node.getClientRects().length) check(node, "borderTopColor", 3, node.parentElement);
+       }
++      for (const node of theme.plates ? popup.querySelectorAll(theme.plates) : []) {
++        if (!node.getClientRects().length) continue;
++        const color = rgba(getComputedStyle(node, "::before").borderTopColor);
++        const ratios = [[255, 255, 255], [0, 0, 0]].map(page => { const back = background(node.parentElement, page); return ratio(blend(color, back), back); });
++        results.push({ selector: `${node.className}::before`, property: "borderTopColor", minimum: 3, ratio: Math.min(...ratios) });
++      }
+       for (const node of popup.querySelectorAll(theme.icons)) {
+         if (node.getClientRects().length) check(node, "backgroundColor", 3, node.parentElement);
+       }
+@@ -704,6 +714,103 @@ try {
+   await media.send("Emulation.setEmulatedMedia", { features: [] });
+   await settings.bringToFront();
+   await settings.screenshot({ path: resolve(output, "store-crystal.png") });
++  // Citadel: one header per word with one set of buttons that mines and plays
++  // the whole word, then a section per dictionary under a gold rule. Grey on a
++  // dark system colour scheme, beige on a light one.
++  const CITADEL_CONTRAST = { text: [".citadel-spelling", ".citadel-reading", ".citadel-deconj", ".gsm-hoshidicts-tag-frequency",
++    ".citadel-dictionary", ".citadel-tab", ".citadel-tag", ".gsm-hoshidicts-glossary-content", ".gsm-hoshidicts-kanji-back",
++    ".gsm-hoshidicts-text-action-button", ".gsm-hoshidicts-note-field", "input", "textarea", ".gsm-hoshidicts-note-actions button"],
++  borders: ".gsm-hoshidicts-tag-frequency, .citadel-tag, input, textarea", plates: ".citadel-tab, .gsm-hoshidicts-kanji-back",
++  icons: ".citadel-custom-action-icon", selected: '.citadel-tab[aria-pressed="true"]' };
++  await settings.click(".theme-store-card:nth-child(7) button");
++  await settings.waitForFunction(async () => (await chrome.storage.local.get("options")).options.popupTheme === "citadel");
++  // Three actions again, so the third is listed under More actions. A renderer
++  // built by switching themes keeps the actions its popup was created with
++  // once that popup has closed, so this sets them while Citadel is current.
++  await updateDesign({ customButtons: [
++    { id: "citadel-search", type: "link", label: "Search", url: "https://example.test/%w" },
++    { id: "citadel-card", type: "anki", label: "Sentence card", templateId: "default" },
++    { id: "citadel-examples", type: "link", label: "Example sentences", url: "https://example.test/%r" }] });
++  const citadelReady = () => popupRoot(tab).waitFor(popupShadow => {
++    const buttons = [...popupShadow.querySelectorAll(".gsm-hoshidicts-mine-button")];
++    return popupShadow.host.dataset.hoshidictsRenderer === "citadel" && buttons.length > 0
++      && buttons.every(button => !button.hidden && !button.disabled && button.dataset.state === "ready");
++  });
++  const citadelSchemes = async (forced = false) => {
++    for (const scheme of ["dark", "light"]) {
++      await media.send("Emulation.setEmulatedMedia", { features: [
++        { name: "forced-colors", value: forced ? "active" : "none" }, { name: "prefers-color-scheme", value: scheme }] });
++      await checkContrast(CITADEL_CONTRAST);
++    }
++  };
++  await hover();
++  await citadelReady();
++  const citadel = await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    return { tabs: [...popup.querySelectorAll(".citadel-tab")].map(node => node.textContent),
++      results: [...popup.querySelectorAll(".citadel-result")].map(result => ({ heads: result.querySelectorAll(".citadel-head").length,
++        sections: result.querySelectorAll(".citadel-section").length,
++        controls: [...result.querySelectorAll('.gsm-hoshidicts-entry-actions[aria-label="Entry actions"]')].map(group =>
++          [group.parentElement.className, group.querySelectorAll(".gsm-hoshidicts-audio-button").length,
++            group.querySelector(".gsm-hoshidicts-mine-button").dataset.state]) })),
++      defaultStyles: popupShadow.adoptedStyleSheets.some(sheet => [...sheet.cssRules].some(rule => rule.cssText.includes(".gsm-hoshidicts-glossary-card"))) };
++  });
++  assert.deepEqual(citadel.tabs, ["All", "English", "Study"]);
++  assert.ok(citadel.results.length > 1 && citadel.results.every(result => result.heads === 1 && result.sections > 0),
++    `one header per result, then its sections: ${JSON.stringify(citadel)}`);
++  assert.ok(citadel.results.every(result => result.controls.length === 1 && result.controls[0][0] === "citadel-head"
++    && result.controls[0][1] === 1 && result.controls[0][2] === "ready"), `one set of buttons per word, in its header: ${JSON.stringify(citadel)}`);
++  assert.equal(citadel.defaultStyles, false);
++  await tab.keyboard.press("Tab");
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.querySelector(".citadel-tab").focus());
++  await citadelSchemes();
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.activeElement?.blur());
++  await media.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "dark" }] });
++  await screenshot("citadel");
++  await media.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }] });
++  await screenshot("citadel-beige");
++  await updateDesign({ popupWidthPx: 300 });
++  await hover();
++  await citadelReady();
++  const citadelNarrow = await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    const box = popup.getBoundingClientRect();
++    const more = popup.querySelector(".citadel-more-actions");
++    if (!more) return { more: false };
++    more.open = true; more.querySelector("summary").focus();
++    return { more: true, width: box.width, inside: [...popup.querySelectorAll(".citadel-bar > *, .citadel-tab, .citadel-head > *, .citadel-word > *, .citadel-title > *, .citadel-action-menu")]
++      .filter(node => node.getClientRects().length).every(node => {
++        const rect = node.getBoundingClientRect(); return rect.left >= box.left && rect.right <= box.right + 0.5;
++      }) };
++  });
++  assert.ok(citadelNarrow.more && citadelNarrow.width <= 300 && citadelNarrow.inside,
++    `the header, titles and More actions stay inside a 300 px popup: ${JSON.stringify(citadelNarrow)}`);
++  await citadelSchemes();
++  await screenshot("citadel-300-more");
++  await popupRoot(tab).evaluate(popupShadow => { popupShadow.querySelector(".citadel-more-actions").open = false; });
++  await updateDesign({ popupWidthPx: beeDesign.popupWidthPx });
++  await hover();
++  await citadelReady();
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.querySelector(".gsm-hoshidicts-note-button").click());
++  await popupRoot(tab).waitFor(popupShadow => !!popupShadow.querySelector("form:not([hidden])"));
++  assert.ok(await popupRoot(tab).evaluate(popupShadow => popupShadow.querySelector(".citadel-head").nextElementSibling.matches("form")),
++    "the pencil opens Note beneath its word's header");
++  await citadelSchemes();
++  await screenshot("citadel-note");
++  await tab.keyboard.press("Escape");
++  assert.deepEqual(await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    return { popup: popup.hidden, note: popup.querySelector("form").hidden };
++  }), { popup: false, note: true }, "Escape closes Citadel's Note editor before its popup");
++  await citadelSchemes(true);
++  for (const scheme of ["dark", "light"]) {
++    await media.send("Emulation.setEmulatedMedia", { features: [
++      { name: "forced-colors", value: "active" }, { name: "prefers-color-scheme", value: scheme }] });
++    await screenshot(`citadel-forced-${scheme}`);
++  }
++  await media.send("Emulation.setEmulatedMedia", { features: [] });
++  await settings.bringToFront();
++  await settings.screenshot({ path: resolve(output, "store-citadel.png") });
+   await settings.click(".theme-store-card:first-child button");
+   await settings.waitForFunction(async () => (await chrome.storage.local.get("options")).options.popupTheme === "default");
+   assert.equal(await settings.$$eval("#design :is([data-design-setting], [data-design-group], #popup-theme-hint):not([hidden])",
+@@ -717,8 +824,8 @@ try {
+   });
+   assert.deepEqual(errors, []);
+   writeFileSync(resolve(output, "evidence.json"), JSON.stringify({ chrome: await browser.version(), ...evidence, contrast,
+-    checks: ["Store available without experimental opt-in", "Smaller Anki cards and Word highlighting start off in normal Settings", "Smaller Anki cards saves and reloads through its Anki control", "six bundled themes", "Next and Previous themes buttons", "Plain definitions only", "Design shows each theme's declared settings and choosing a theme writes only popupTheme", "JL blocks and actions", "JL pitch switch repaints the open popup and the preview", "Bee All and group tabs, formatted-only definitions, uniform action icons, Note, custom actions and kanji images", "Bee custom actions use matching inline icons with accessible names and readable More labels", "Bee source/actions and three frequencies stay readable at 560 and 300px", "Bee preview sample labels and inset keyboard tab focus", "Bee More Escape restores focus and preserves Note before popup dismissal", "Bee WCAG AA text and control/focus contrast over white and black pages", "Crystal header, framed sections and per-section actions", "Crystal stays inside 300px with More actions", "Crystal Escape closes Note before the popup", "Crystal WCAG AA text and control/focus contrast over white and black pages, including forced colours", "Nazeka hover", "kanji and Back", "Default restore"], errors }, null, 2));
+-  console.log(`PASS: normal Settings, carousel buttons, Nazeka actions, kanji/Back, Plain definitions, JL and Bee actions, Bee rich content, Crystal sections and contrast and Default restore. Evidence: ${output}`);
++    checks: ["Store available without experimental opt-in", "Smaller Anki cards and Word highlighting start off in normal Settings", "Smaller Anki cards saves and reloads through its Anki control", "seven bundled themes", "Next and Previous themes buttons", "Plain definitions only", "Design shows each theme's declared settings and choosing a theme writes only popupTheme", "JL blocks and actions", "JL pitch switch repaints the open popup and the preview", "Bee All and group tabs, formatted-only definitions, uniform action icons, Note, custom actions and kanji images", "Bee custom actions use matching inline icons with accessible names and readable More labels", "Bee source/actions and three frequencies stay readable at 560 and 300px", "Bee preview sample labels and inset keyboard tab focus", "Bee More Escape restores focus and preserves Note before popup dismissal", "Bee WCAG AA text and control/focus contrast over white and black pages", "Crystal header, framed sections and per-section actions", "Crystal stays inside 300px with More actions", "Crystal Escape closes Note before the popup", "Crystal WCAG AA text and control/focus contrast over white and black pages, including forced colours", "Citadel header, one set of buttons per word and sections", "Citadel stays inside 300px with More actions", "Citadel opens Note beneath the header and Escape closes it before the popup", "Citadel WCAG AA text and control/focus contrast in grey and beige over white and black pages, including forced colours", "Nazeka hover", "kanji and Back", "Default restore"], errors }, null, 2));
++  console.log(`PASS: normal Settings, carousel buttons, Nazeka actions, kanji/Back, Plain definitions, JL and Bee actions, Bee rich content, Crystal sections and contrast, Citadel header, sections and contrast and Default restore. Evidence: ${output}`);
+ } catch (error) { console.error(error); throw error; } finally {
+   await browser?.close();
+   server.close();
+diff --git a/test/extension-smoke/settings.mjs b/test/extension-smoke/settings.mjs
+index e2b5a86a..0d3c30a3 100644
+--- a/test/extension-smoke/settings.mjs
++++ b/test/extension-smoke/settings.mjs
+@@ -183,7 +183,7 @@ async function settingsNavigationStage() {
+     if (document.getElementById("design")) {
+       await navigate("design");
+       const preview = document.getElementById("design-preview");
+-      design &&= document.getElementById("opt-popup-theme").options.length === 48;
++      design &&= document.getElementById("opt-popup-theme").options.length === 49;
+       const updates = [];
+       preview.contentWindow.HDDesignPreview = { update(value) { updates.push(structuredClone(value)); } };
+       preview.dispatchEvent(new window.Event("load"));
+@@ -757,7 +757,7 @@ async function settingsFrequencyStage() {
+     }
+     const theme = window.document.getElementById("opt-popup-theme");
+     window.location.hash = "#design";
+-    await until(() => theme.options.length === 48);
++    await until(() => theme.options.length === 49);
+     let settingsTheme = window.document.documentElement.dataset.hoshidictsTheme === "default";
+     const toolbarSelect = window.document.getElementById("opt-popup-toolbar");
+     await editControl(toolbarSelect, "bottom");
+diff --git a/test/theme-renderer.test.mjs b/test/theme-renderer.test.mjs
+index 22574648..37f44bbb 100644
+--- a/test/theme-renderer.test.mjs
++++ b/test/theme-renderer.test.mjs
+@@ -10,6 +10,7 @@ import plain from "../extension/vendor/themes/plain/theme.js";
+ import theme from "../extension/vendor/themes/nazeka/theme.js";
+ import bee from "../extension/vendor/themes/bee/theme.js";
+ import crystal from "../extension/vendor/themes/crystal/theme.js";
++import citadel from "../extension/vendor/themes/citadel/theme.js";
+ import { createView as createJLView } from "../extension/vendor/themes/jl/theme.js";
+ const require = createRequire(new URL("./tooling/package.json", import.meta.url));
+ const { JSDOM } = require("jsdom");
+@@ -25,8 +26,8 @@ const results = [{ matched: "食べる", trace: [], term: { expression: "食べ
+     { tag: "img", path: "test.png" },
+   ] }]) }] } }];
+ 
+-test("JL, Bee, Nazeka and Crystal bind native kanji mining to each dictionary's own entry", t => {
+-  for (const createView of [createJLView, bee.createView, theme.createView, crystal.createView]) {
++test("JL, Bee, Nazeka, Crystal and Citadel bind native kanji mining to each dictionary's own entry", t => {
++  for (const createView of [createJLView, bee.createView, theme.createView, crystal.createView, citadel.createView]) {
+     const dom = environment(), { window } = dom, { document } = window;
+     const popup = document.createElement("div");
+     document.body.append(popup);
+@@ -49,10 +50,10 @@ test("JL, Bee, Nazeka and Crystal bind native kanji mining to each dictionary's
+       assert.equal(item.result.term.glossaries.length, 1);
+       assert.equal(item.result.term.glossaries[0].kanji.dictionary, entries[index].dictionary);
+     }
+-    if (createView === bee.createView || createView === crystal.createView) {
++    if ([bee.createView, crystal.createView, citadel.createView].includes(createView)) {
+       assert.equal(bound.miningActions[0].actions.querySelector(".gsm-hoshidicts-custom-anki-button").dataset.ankiTemplateId, "kanji");
+     }
+-    popup.querySelectorAll(".jl-kanji, .nazeka-kanji-info, .crystal-kanji")[1].click();
++    popup.querySelectorAll(".jl-kanji, .nazeka-kanji-info, .crystal-kanji, .citadel-kanji")[1].click();
+     assert.equal(view.currentEntryIndex(), 1, "keybinds follow the clicked dictionary's mining action");
+   }
+ });
+@@ -819,3 +820,121 @@ test("Crystal opens Note under the controls that own it and lists extra custom a
+     "a missing word's pencil opens Note beneath the notice");
+   assert.equal(popup.querySelector("form").elements.term.value, "ぬぺぽ");
+ });
++
++function citadelFixture(t, overrides = {}) {
++  const dom = environment(), { window } = dom, { document } = window;
++  // jsdom has no Element.scrollTo; keyboard navigation scrolls with it.
++  window.HTMLElement.prototype.scrollTo = function ({ top }) { this.scrollTop = top; };
++  const popup = document.createElement("div"); document.body.append(popup);
++  const bound = {};
++  const view = citadel.createView({ document, window, popup, positionPopup() {},
++    components: { ...window.HDPopup, ...window.HDGlossary },
++    appendTextOnlyGlossary: window.HDGlossary.appendTextOnlyGlossary,
++    onResultsRendered(value) { bound.rendered = value; bound.current = value; },
++    onResultsExpanded(value) { bound.current = value; }, ...overrides });
++  t.after(() => { view.destroy(); window.close(); });
++  return { popup, view, bound };
++}
++// The mock-up's word, its two dictionaries, a corpus count and a rank.
++const citadelResult = crystalResult;
++const citadelContext = crystalContext;
++const citadelSecond = { ...citadelResult, term: { ...citadelResult.term, expression: "食う", reading: "くう",
++  glossaries: [{ dictionary: "国語", glossary: JSON.stringify(["食べる。"]), definitionTags: "" }] } };
++
++test("Citadel gives each result one header with one set of buttons, then a section per dictionary", t => {
++  const { popup, view, bound } = citadelFixture(t);
++  view.renderResults([citadelResult, citadelSecond], { query: "食べた" }, citadelContext);
++  const results = [...popup.querySelectorAll(".citadel-result")];
++  assert.deepEqual(results.map(result => result.querySelectorAll(".citadel-head").length), [1, 1], "the word is not repeated per dictionary");
++  assert.deepEqual(results.map(result => [...result.querySelectorAll(".citadel-section")].map(section => section.dataset.dictionary)),
++    [["JMdict", "国語"], ["国語"]]);
++  assert.deepEqual(bound.rendered.miningActions.map(item => item.result), [citadelResult, citadelSecond],
++    "a word's buttons mine and play all its dictionaries, as Default's do");
++  assert.deepEqual(bound.rendered.audioButtons.map(item => item.result), [citadelResult, citadelSecond]);
++  assert.equal(bound.rendered.lookupStats, null);
++  assert.deepEqual(bound.rendered.miningActions.map(item => item.actions.parentElement), [...popup.querySelectorAll(".citadel-head")],
++    "the buttons end the header");
++  assert.equal(popup.querySelectorAll(".citadel-section .gsm-hoshidicts-entry-actions").length, 0, "sections have no buttons of their own");
++  assert.equal(popup.querySelector(".citadel-deconj").textContent, "食べた ～た");
++  assert.deepEqual([...popup.querySelectorAll(".citadel-reading")[0].querySelectorAll(".citadel-mora")]
++    .map(mora => [mora.textContent, mora.dataset.pitch, mora.dataset.transition]),
++  [["た", "low", "rise"], ["べ", "high", "drop"], ["る", "low", undefined]]);
++  assert.deepEqual([...results[0].querySelectorAll(".gsm-hoshidicts-tag-frequency")].map(tag => tag.textContent), ["120", "18,240"]);
++  const senses = [...results[0].querySelectorAll(".citadel-senses")];
++  assert.deepEqual(senses.map(list => list.dataset.count), ["2", "1"], "only several senses are numbered");
++  assert.deepEqual([...senses[0].children].map(sense => [...sense.querySelectorAll(".citadel-tag")].map(tag => tag.textContent)),
++    [["v1", "vt"], ["v1", "vt", "col"]]);
++  assert.equal(senses[0].querySelector(".citadel-gloss").dataset.hoshidictsDictionary, "JMdict", "scoped dictionary styles apply");
++  assert.deepEqual([...popup.querySelectorAll(".citadel-dictionary")].map(label => label.textContent), ["JMdict", "国語", "国語"]);
++  results[1].click();
++  assert.equal(view.currentEntryIndex(), 1, "keyboard actions follow the clicked word");
++  assert.equal(view.focusEntry({ offset: -1 }), true);
++  assert.equal(view.currentEntryIndex(), 0);
++  assert.equal(view.focusEntry("last"), true);
++  assert.equal(view.currentEntryIndex(), 1);
++});
++
++test("Citadel group tabs filter sections in place and project each word's buttons onto the shown dictionaries", t => {
++  let selected;
++  const { popup, view, bound } = citadelFixture(t);
++  const context = { ...citadelContext, onDictionaryTabSelected(value) { selected = value; } };
++  view.renderResults([citadelResult, citadelSecond], { query: "食べた" }, context);
++  const tabs = [...popup.querySelectorAll(".citadel-tab")];
++  assert.deepEqual(tabs.map(tab => [tab.textContent, tab.getAttribute("aria-pressed")]),
++    [["All", "true"], ["Words", "false"], ["Japanese", "false"]]);
++  const [results, sections] = [[...popup.querySelectorAll(".citadel-result")], [...popup.querySelectorAll(".citadel-section")]];
++  tabs[2].click();
++  assert.deepEqual(selected, { groupId: "japanese" });
++  assert.deepEqual(sections.map(section => section.hidden), [true, false, false]);
++  assert.deepEqual(bound.current.miningActions.map(item => item.result.term.glossaries.map(row => row.dictionary)), [["国語"], ["国語"]],
++    "Anki receives only the shown dictionaries' definitions");
++  assert.equal(bound.current.audioButtons.length, 2);
++  tabs[1].click();
++  assert.deepEqual(results.map(result => result.hidden), [false, true], "a word without a section in the group hides");
++  assert.deepEqual(bound.current.miningActions.map(item => item.result.term.glossaries.length), [2]);
++  assert.equal(popup.querySelectorAll(".citadel-section")[0], sections[0], "switching tabs does not rebuild");
++  view.renderResults([citadelResult, citadelSecond], { query: "食べた" }, { ...context, ...view.captureTermView() });
++  assert.deepEqual([...popup.querySelectorAll(".citadel-section")].map(section => section.hidden), [false, true, true],
++    "Back restores the selected group");
++  // A word only frequency or pitch dictionaries have (#620) shows under All, as in Default.
++  const metadataOnly = { ...citadelResult, term: { ...citadelResult.term, expression: "東京タワー", reading: "とうきょうタワー", glossaries: [] } };
++  view.renderResults([metadataOnly, citadelSecond], { query: "東京タワー" }, citadelContext);
++  assert.deepEqual([...popup.querySelectorAll(".citadel-result")].map(result => result.hidden), [false, false]);
++  assert.equal(bound.current.miningActions.length, 2);
++  assert.deepEqual([...popup.querySelectorAll(".citadel-tab")].map(tab => tab.textContent), ["All", "Japanese"]);
++  popup.querySelectorAll(".citadel-tab")[1].click();
++  assert.deepEqual([...popup.querySelectorAll(".citadel-result")].map(result => result.hidden), [true, false]);
++});
++
++test("Citadel opens Note beneath the header, keeps drafts and lists extra custom actions under More", t => {
++  const saves = [];
++  const { popup, view } = citadelFixture(t, { onAddCustomEntry(entry) { saves.push({ ...entry }); },
++    customButtons: ["one", "two", "three"].map(id => ({ id, type: "link", label: id, url: `https://example.test/${id}` })) });
++  view.renderResults([citadelResult, citadelSecond], { query: "食べた" }, citadelContext);
++  const actions = [...popup.querySelectorAll(".gsm-hoshidicts-entry-actions[aria-label='Entry actions']")];
++  assert.deepEqual(actions.map(group => [...group.querySelectorAll(":scope .citadel-custom-action-icon")].map(icon => icon.dataset.icon)),
++    [["open", "open", "open"], ["open", "open", "open"]]);
++  assert.equal(popup.querySelectorAll(".citadel-more-actions .citadel-action-menu [data-custom-button-id='three']").length, 2);
++  const [first, second] = [...popup.querySelectorAll(".gsm-hoshidicts-note-button")];
++  first.click();
++  const form = popup.querySelector("form");
++  assert.equal(popup.querySelector(".citadel-head").nextElementSibling, form, "the pencil opens Note just beneath its header");
++  form.elements.definition.value = "My meaning";
++  view.updateDictionaryPresentation({ ...citadelContext, dictionaryTabGroups: [] });
++  assert.equal(form.hidden, false);
++  assert.equal(form.elements.definition.value, "My meaning", "presentation updates keep a draft");
++  form.dispatchEvent(new popup.ownerDocument.defaultView.Event("submit", { cancelable: true }));
++  assert.deepEqual(saves, [{ term: "食べる", reading: "たべる", definition: "My meaning" }]);
++  second.click();
++  assert.equal(popup.querySelectorAll(".citadel-head")[1].nextElementSibling.matches("form"), true);
++  assert.equal(view.closeNoteForm(), true);
++  const more = popup.querySelector(".citadel-more-actions");
++  more.open = true;
++  assert.equal(view.closeActionMenu(), true);
++  assert.equal(more.open, false);
++  view.renderNotice("No results", { query: "ぬぺぽ", sentence: "ぬぺぽ。" });
++  popup.querySelector(".citadel-nav .gsm-hoshidicts-note-button").click();
++  assert.equal(popup.querySelector(".gsm-hoshidicts-lookup-notice").nextElementSibling, popup.querySelector("form"),
++    "a missing word's pencil opens Note beneath the notice");
++  assert.equal(popup.querySelector("form").elements.term.value, "ぬぺぽ");
++});
