@@ -1,0 +1,2 @@
+{"label":"grimoire","theme":"grimoire","violationsAtLoad":0,"violationsAfterHover":0,"consoleLines":[],"consoleCount":0,"icons":"url(\"data:image/svg+xml,%3Csvg"}
+{"label":"bee","theme":"bee","violationsAtLoad":0,"violationsAfterHover":0,"consoleLines":[],"consoleCount":0,"icons":"url(\"data:image/svg+xml,%3Csvg"}

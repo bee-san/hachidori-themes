@@ -1,0 +1,7404 @@
+{
+ "chrome": "Chrome/152.0.7977.75",
+ "errors": [],
+ "report": {
+  "mockup": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ],
+  "light": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ],
+  "narrow-light": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.9523751563178795
+   }
+  ],
+  "narrow-dark": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.9523751563178795
+   }
+  ],
+  "narrow-more": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-text-action-label",
+    "text": "Example sentences",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-text-action-label.grimoire-custom-action-icon.hd-icon",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.grimoire-custom-action-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 11.05399775953976
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-external-link-button.gsm-hoshidicts-text-action-button",
+    "text": "Search",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-custom-anki-button.gsm-hoshidicts-text-action-button",
+    "text": "Sentence card",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "summary.",
+    "text": "⋯",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.076329165844196
+   }
+  ],
+  "keyboard-dark": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.076329165844196
+   }
+  ],
+  "keyboard-light": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.076329165844196
+   }
+  ],
+  "long": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "取",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "取る",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "と",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "取った ～た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "9,120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "85",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "godan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to pick up",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to grab",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to catch",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to pass",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to hand",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to give",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to get",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to obtain",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to acquire",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to win",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to receive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to earn",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take (e.g. a prize, a",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to adopt (a method, prop",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take (a measure, a co",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to choose",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to remove",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to get rid of",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take away",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to steal",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to rob",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to eat",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to have (a meal)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take (vitamins, etc.)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to reserve",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to book",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to save (a seat)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to hold",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to make (a copy)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take down (notes)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to record",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to interpret",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to understand",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to make out",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to take (to mean)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "取",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "取る",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "と",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①手に持つ。つかむ。「本を手に―・る」②自分のも",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "9,120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "85",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "godan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ],
+  "furigana": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "の",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "990,000",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "1",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "particle",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "indicates possessive私のの本",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "私のの本ほんです。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "のの",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "の",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "本ほん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ほん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "It's my book.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "nominalizes verbs and ad",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "読よ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "よ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "読よむのが好すきです。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "好す",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "す",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I like reading.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "substitutes for \"ga\" in ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "(at sentence-end, fallin",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "(at sentence-end) indica",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "990,000",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "1",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "particle",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ],
+  "frequency": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-source",
+    "text": "Avg rank",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.635213781426634
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-source",
+    "text": "Avg count",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.635213781426634
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-source",
+    "text": "Sample corpus",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.635213781426634
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18.2k",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-source",
+    "text": "Sample ranks",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.635213781426634
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "output.gsm-hoshidicts-anki-status",
+    "text": "Cannot read properties o",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "Avg rank120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "Avg count18",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "Sample corpus18.2k",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "Sample ranks120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ],
+  "kanji": [
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-back",
+    "text": "Back",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-spelling.grimoire-kanji-character",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "hachidori-fixture",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "food",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "eat",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "meal",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-kanji-label",
+    "text": "On",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.101501167299872
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-kanji-readings",
+    "text": "ショク、ジキ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-kanji-label",
+    "text": "Kun",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.101501167299872
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-kanji-readings",
+    "text": "く.う、た.べる",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-kanji-label",
+    "text": "Statistics",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.101501167299872
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "freq: 382",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "grade: 2",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "strokes: 9",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "border",
+    "selector": "button.gsm-hoshidicts-kanji-back",
+    "text": "Back",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "freq: 382",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "grade: 2",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "strokes: 9",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "button.gsm-hoshidicts-kanji-back",
+    "text": "Back",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 5.9523751563178795
+   }
+  ],
+  "note": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 6.576883762954375
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.440993817536032
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.",
+    "text": "Term",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.345428348875675
+   },
+   {
+    "kind": "text",
+    "selector": "span.",
+    "text": "Reading",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.345428348875675
+   },
+   {
+    "kind": "text",
+    "selector": "span.",
+    "text": "Definition",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.345428348875675
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-note-cancel",
+    "text": "Cancel",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 13.154051975148521
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-note-save",
+    "text": "Save",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.6425664861186275
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.995028576506202
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "input.gsm-hoshidicts-note-term",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 4.896763425426469
+   },
+   {
+    "kind": "border",
+    "selector": "input.gsm-hoshidicts-note-reading",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 4.896763425426469
+   },
+   {
+    "kind": "border",
+    "selector": "textarea.gsm-hoshidicts-note-definition",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 4.896763425426469
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "focus",
+    "selector": "input.gsm-hoshidicts-note-term",
+    "text": "",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 7.470155872179717
+   }
+  ],
+  "forced-dark": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.728122576381333
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 8.728122576381333
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "focus",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 8.728122576381333
+   }
+  ],
+  "forced-light": [
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 11.32025621138092
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "JMdict (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content.structured-content",
+    "text": "to eat朝あさご飯ごはんを食たべる。I ea",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "朝あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "あさ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "ご飯ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "ごはん",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "朝あさご飯ごはんを食たべる。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "I eat breakfast.",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "国語 (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "①食物を口に入れ、かんで飲みこむ。「朝ご飯を―」",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 11.32025621138092
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Words",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "button.grimoire-tab",
+    "text": "Japanese",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "ichidan",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "transitive",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 21
+   },
+   {
+    "kind": "focus",
+    "selector": "button.grimoire-tab",
+    "text": "All",
+    "property": "outlineColor",
+    "minimum": 3,
+    "ratio": 11.32025621138092
+   }
+  ],
+  "structured": [
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-deconj",
+    "text": "食べたかった ～た→たい",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.425048685652949
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "18,240",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "120",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-frequency-value",
+    "text": "142位",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 15.331397515754933
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "Jitendex-like (sample)",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-sc-span",
+    "text": "1-dan",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-sc-span",
+    "text": "transitive",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "li.gloss-sc-li",
+    "text": "to eat",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "もっと果物くだものを食たべるべきです。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "果物くだもの",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "くだもの",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "You should eat more frui",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "li.gloss-sc-li",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "li.gloss-sc-li",
+    "text": "to live off",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "li.gloss-sc-li",
+    "text": "to subsist on",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "脚本家きゃくほんか",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "きゃくほんか",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "脚本家きゃくほんかで食たべていく。",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "ruby.gloss-sc-ruby",
+    "text": "食た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "rt.gloss-sc-rt",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.57713733827571
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "To make a living as a sc",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 7.75241795915281
+   },
+   {
+    "kind": "text",
+    "selector": "div.gloss-sc-div",
+    "text": "JMdict | Tatoeba",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.gsm-hoshidicts-expression.grimoire-spelling",
+    "text": "食べる",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "た",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "べ",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-mora",
+    "text": "る",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "hachidori-fixture",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "vt",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to eat",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "to live on (e.g. a salar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "col",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "(colloquial) to make a l",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "text",
+    "selector": "button.gsm-hoshidicts-kanji-link",
+    "text": "食",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 11.517246326468056
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-reading",
+    "text": "たべもの",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.017060841463746
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-dictionary",
+    "text": "hachidori-fixture",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 8.598014908670356
+   },
+   {
+    "kind": "text",
+    "selector": "span.grimoire-tag",
+    "text": "n",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 5.7651918627743735
+   },
+   {
+    "kind": "text",
+    "selector": "span.gloss-content",
+    "text": "unrelated term-dictionar",
+    "property": "color",
+    "minimum": 4.5,
+    "ratio": 9.845496082800208
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "18,240",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "120",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.gsm-hoshidicts-tag.gsm-hoshidicts-tag-frequency",
+    "text": "142位",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 5.196214849083325
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "vt",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "col",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "border",
+    "selector": "span.grimoire-tag",
+    "text": "n",
+    "property": "borderTopColor",
+    "minimum": 3,
+    "ratio": 3.8864164950183384
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "span.gsm-hoshidicts-note-icon.hd-icon",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "icon",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "color",
+    "minimum": 3,
+    "ratio": 5.964008874565003
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "ring",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "--grimoire-ring",
+    "minimum": 3,
+    "ratio": 6.991940242145476
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-mine-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-audio-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   },
+   {
+    "kind": "button",
+    "selector": "button.gsm-hoshidicts-note-button",
+    "text": "",
+    "property": "backgroundColor",
+    "minimum": 3,
+    "ratio": 4.140318529772967
+   }
+  ]
+ }
+}

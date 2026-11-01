@@ -1,0 +1,342 @@
+diff --git a/benchmark/hover-popup-probe.js b/benchmark/hover-popup-probe.js
+index 2aa94b5a..fee12ffb 100644
+--- a/benchmark/hover-popup-probe.js
++++ b/benchmark/hover-popup-probe.js
+@@ -41,7 +41,7 @@
+     const reply = active.replies.at(-1);
+     const actual = current?.definitions ?? current?.expressions;
+     // JL shows one block, so one headword, per result and dictionary.
+-    const blocks = result => ["jl", "bee"].includes(options.popupTheme)
++    const blocks = result => ["jl", "bee", "grimoire"].includes(options.popupTheme)
+       ? [...new Set(result.term.glossaries.map(glossary => glossary.dictionary))].map(() => result.term.expression)
+       : [result.term.expression];
+     const expected = current?.definitions ? reply?.definitions : reply?.results.flatMap(blocks);
+diff --git a/extension/design-preview.js b/extension/design-preview.js
+index 3a220db2..1f83a4f1 100644
+--- a/extension/design-preview.js
++++ b/extension/design-preview.js
+@@ -210,7 +210,7 @@
+     const dictionaryTabGroups = state.groups.map(group => ({ ...group, dictionaries: group.dictionaryIds
+       .map(id => state.dictionaries.find(entry => entry.id === id && entry.enabled)?.title).filter(Boolean) }));
+     const sampleDictionaries = sample.results[0].term.glossaries.map(row => row.dictionary);
+-    if (["bee", "crystal"].includes(HDReaderOptions.popupRenderer(options.popupTheme))
++    if (["bee", "crystal", "grimoire"].includes(HDReaderOptions.popupRenderer(options.popupTheme))
+         && !dictionaryTabGroups.some(group => group.dictionaries.some(title => sampleDictionaries.includes(title)))) {
+       dictionaryTabGroups.push(
+         { id: "sample-definitions", name: "Sample definitions", dictionaries: [sampleDictionaries[0], "Sample collocations"] },
+diff --git a/extension/reader-options.js b/extension/reader-options.js
+index 01983ed9..a4d51a8a 100644
+--- a/extension/reader-options.js
++++ b/extension/reader-options.js
+@@ -265,7 +265,7 @@
+       : id.replace(/(^|-)([a-z])/gu, (_, separator, letter) => `${separator ? " " : ""}${letter.toUpperCase()}`),
+   })) }));
+   const POPUP_THEME_IDS = new Set(POPUP_THEME_GROUPS.flatMap(group => group.themes.map(theme => theme.id)));
+-  const POPUP_RENDERER_IDS = ["nazeka", "plain", "jl", "bee", "crystal"];
++  const POPUP_RENDERER_IDS = ["nazeka", "plain", "jl", "bee", "crystal", "grimoire"];
+   for (const id of POPUP_RENDERER_IDS) POPUP_THEME_IDS.add(id);
+   const popupRenderer = theme => POPUP_RENDERER_IDS.includes(theme) ? theme : "default";
+   const DESIGN_OPTION_KEYS = [
+diff --git a/extension/theme-host.js b/extension/theme-host.js
+index e8fc3e51..cea1b40a 100644
+--- a/extension/theme-host.js
++++ b/extension/theme-host.js
+@@ -32,7 +32,7 @@
+         ]);
+         if (module && (module.default?.schema !== 2 || module.default.slug !== name
+             || typeof module.default.createView !== "function")) throw new Error("Unsupported renderer contract");
+-        return { name, css: `${css}\n${icons}`, dictionaryStyles: ["default", "bee", "crystal"].includes(name),
++        return { name, css: `${css}\n${icons}`, dictionaryStyles: ["default", "bee", "crystal", "grimoire"].includes(name),
+           createView: module?.default.createView ?? globalThis.HDPopup.createPopupView };
+       })());
+       return cache.get(name);
+diff --git a/extension/vendor/themes/index.json b/extension/vendor/themes/index.json
+index 9bdcb6d7..60e799a4 100644
+--- a/extension/vendor/themes/index.json
++++ b/extension/vendor/themes/index.json
+@@ -54,6 +54,15 @@
+       "benchmark": "Render 1.60 ms",
+       "benchmarkUrl": "https://github.com/bee-san/hachidori/blob/main/docs/themes/crystal.md",
+       "designSettings": ["popupOpacityPercent", "glossaryLayoutMode", "kanjiClickDictionary", "showFrequencyDictionaryNames", "compactFrequencyNumbers", "averageFrequency", "showFrequencyTagsWithAverage", "showPitchAccentFurigana", "pitchAccentFuriganaDictionary", "pitchAccentFuriganaStyle", "popupImageSource", "imageHoverPreview", "customButtons"]
++    },
++    {
++      "slug": "grimoire",
++      "name": "Grimoire",
++      "description": "Dark grey bands over parchment pages in a fine gold frame. Each dictionary has a crystal plaque and its own crimson Anki, audio and Note buttons.",
++      "contentMode": "rich",
++      "benchmark": "Render (not measured)",
++      "benchmarkUrl": "https://github.com/bee-san/hachidori-themes/tree/main/themes/grimoire",
++      "designSettings": ["popupOpacityPercent", "glossaryLayoutMode", "kanjiClickDictionary", "showFrequencyDictionaryNames", "compactFrequencyNumbers", "averageFrequency", "showFrequencyTagsWithAverage", "showPitchAccentFurigana", "pitchAccentFuriganaDictionary", "pitchAccentFuriganaStyle", "popupImageSource", "imageHoverPreview", "customButtons"]
+     }
+   ]
+ }
+diff --git a/extension/vendor/themes/source.json b/extension/vendor/themes/source.json
+index 00210672..10b796fa 100644
+--- a/extension/vendor/themes/source.json
++++ b/extension/vendor/themes/source.json
+@@ -7,6 +7,7 @@
+     "plain": "themes/plain",
+     "jl": "themes/jl",
+     "bee": "themes/bee",
+-    "crystal": "themes/crystal"
++    "crystal": "themes/crystal",
++    "grimoire": "themes/grimoire"
+   }
+ }
+diff --git a/test/chrome-theme-store.mjs b/test/chrome-theme-store.mjs
+index fec07bfc..a11727be 100644
+--- a/test/chrome-theme-store.mjs
++++ b/test/chrome-theme-store.mjs
+@@ -107,7 +107,7 @@ try {
+     location.hash = "design";
+   }, `http://127.0.0.1:${server.address().port}`);
+   await settings.waitForSelector(".theme-store-card button", { visible: true });
+-  assert.equal(await settings.$$eval(".theme-store-card", cards => cards.length), 6);
++  assert.equal(await settings.$$eval(".theme-store-card", cards => cards.length), 7);
+   const tab = await browser.newPage();
+   tab.on("pageerror", error => { errors.push(error.message); console.log("tab error", error.message); });
+   tab.on("console", message => { if (["error", "warn"].includes(message.type())) console.log(message.type(), message.text()); });
+@@ -704,6 +704,87 @@ try {
+   await media.send("Emulation.setEmulatedMedia", { features: [] });
+   await settings.bringToFront();
+   await settings.screenshot({ path: resolve(output, "store-crystal.png") });
++  // Grimoire: an entry per dictionary, a band with the word over a parchment page
++  // whose banner holds that entry's own Anki, audio and pencil.
++  const GRIMOIRE_CONTRAST = { text: [".grimoire-spelling", ".grimoire-reading", ".grimoire-deconj", ".gsm-hoshidicts-tag-frequency",
++    ".grimoire-dictionary", ".grimoire-tab", ".grimoire-tag", ".gsm-hoshidicts-glossary-content", ".gsm-hoshidicts-kanji-back",
++    ".gsm-hoshidicts-text-action-button", ".gsm-hoshidicts-note-field", "input", "textarea", ".gsm-hoshidicts-note-actions button"],
++  borders: ".grimoire-tab, .gsm-hoshidicts-tag-frequency, .gsm-hoshidicts-kanji-back, input, textarea", icons: ".grimoire-custom-action-icon",
++  selected: '.grimoire-tab[aria-pressed="true"]' };
++  const grimoireContrastStart = contrast.length;
++  await settings.evaluate(() => document.querySelector(".theme-store-card:nth-child(7)").scrollIntoView());
++  await settings.click(".theme-store-card:nth-child(7) button");
++  await settings.waitForFunction(async () => (await chrome.storage.local.get("options")).options.popupTheme === "grimoire");
++  await updateDesign({ popupWidthPx: beeDesign.popupWidthPx, customButtons: [
++    { id: "grimoire-search", type: "link", label: "Search", url: "https://example.test/%w" },
++    { id: "grimoire-card", type: "anki", label: "Sentence card", templateId: "default" },
++    { id: "grimoire-examples", type: "link", label: "Example sentences", url: "https://example.test/%r" }] });
++  await tab.evaluate(() => { document.getElementById("word").textContent = "食べたかった"; });
++  await tab.keyboard.press("Escape");
++  const grimoireReady = () => popupRoot(tab).waitFor(popupShadow => {
++    const buttons = [...popupShadow.querySelectorAll(".gsm-hoshidicts-mine-button")];
++    return popupShadow.host.dataset.hoshidictsRenderer === "grimoire" && buttons.length > 0
++      && buttons.every(button => !button.hidden && !button.disabled && button.dataset.state === "ready");
++  });
++  await hover();
++  await grimoireReady();
++  const grimoireView = await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    return { tabs: [...popup.querySelectorAll(".grimoire-tab")].map(node => node.textContent),
++      entries: [...popup.querySelectorAll(".grimoire-entry")].map(entry => ({ band: !!entry.querySelector(":scope > .grimoire-band .grimoire-spelling"),
++        controls: [...entry.querySelectorAll(':scope > .grimoire-page > .grimoire-banner > .gsm-hoshidicts-entry-actions[aria-label="Entry actions"]')]
++          .map(group => [group.querySelectorAll(".gsm-hoshidicts-audio-button").length, group.querySelector(".gsm-hoshidicts-mine-button").dataset.state]) })),
++      defaultStyles: popupShadow.adoptedStyleSheets.some(sheet => [...sheet.cssRules].some(rule => rule.cssText.includes(".gsm-hoshidicts-glossary-card"))) };
++  });
++  assert.deepEqual(grimoireView.tabs, ["All", "English", "Study"]);
++  assert.ok(grimoireView.entries.length > 1 && grimoireView.entries.every(entry => entry.band && entry.controls.length === 1
++    && entry.controls[0][0] === 1 && entry.controls[0][1] === "ready"), `every entry has the word's band and its own audio and Anki button: ${JSON.stringify(grimoireView)}`);
++  assert.equal(grimoireView.defaultStyles, false);
++  await tab.keyboard.press("Tab");
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.querySelector(".grimoire-tab").focus());
++  await checkContrast(GRIMOIRE_CONTRAST);
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.activeElement?.blur());
++  await screenshot("grimoire");
++  await updateDesign({ popupWidthPx: 300 });
++  await hover();
++  await grimoireReady();
++  const grimoireNarrow = await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    const box = popup.getBoundingClientRect();
++    const more = popup.querySelector(".grimoire-more-actions");
++    if (!more) return { more: false };
++    more.open = true; more.querySelector("summary").focus();
++    return { more: true, width: box.width, inside: [...popup.querySelectorAll(".grimoire-band > *, .grimoire-banner > *, .grimoire-banner .gsm-hoshidicts-entry-actions > *, .grimoire-action-menu")]
++      .filter(node => node.getClientRects().length).every(node => {
++        const rect = node.getBoundingClientRect(); return rect.left >= box.left && rect.right <= box.right + 0.5;
++      }) };
++  });
++  assert.ok(grimoireNarrow.more && grimoireNarrow.width <= 300 && grimoireNarrow.inside, `bands, banners and More actions stay inside a 300 px popup: ${JSON.stringify(grimoireNarrow)}`);
++  await checkContrast(GRIMOIRE_CONTRAST);
++  await screenshot("grimoire-300-more");
++  await popupRoot(tab).evaluate(popupShadow => { popupShadow.querySelector(".grimoire-more-actions").open = false; });
++  await updateDesign({ popupWidthPx: beeDesign.popupWidthPx });
++  await hover();
++  await grimoireReady();
++  await popupRoot(tab).evaluate(popupShadow => popupShadow.querySelector(".gsm-hoshidicts-note-button").click());
++  await popupRoot(tab).waitFor(popupShadow => !!popupShadow.querySelector("form:not([hidden])"));
++  await checkContrast(GRIMOIRE_CONTRAST);
++  await screenshot("grimoire-note");
++  await tab.keyboard.press("Escape");
++  assert.deepEqual(await popupRoot(tab).evaluate(popupShadow => {
++    const popup = popupShadow.querySelector(".gsm-hoshidicts-popup");
++    return { popup: popup.hidden, note: popup.querySelector("form").hidden };
++  }), { popup: false, note: true }, "Escape closes Grimoire's Note editor before its popup");
++  for (const scheme of ["dark", "light"]) {
++    await media.send("Emulation.setEmulatedMedia", { features: [
++      { name: "forced-colors", value: "active" }, { name: "prefers-color-scheme", value: scheme }] });
++    await checkContrast(GRIMOIRE_CONTRAST);
++    await screenshot(`grimoire-forced-${scheme}`);
++  }
++  await media.send("Emulation.setEmulatedMedia", { features: [] });
++  await settings.bringToFront();
++  await settings.screenshot({ path: resolve(output, "store-grimoire.png") });
++  writeFileSync(resolve(output, "grimoire-contrast.json"), JSON.stringify(contrast.slice(grimoireContrastStart), null, 1));
+   await settings.click(".theme-store-card:first-child button");
+   await settings.waitForFunction(async () => (await chrome.storage.local.get("options")).options.popupTheme === "default");
+   assert.equal(await settings.$$eval("#design :is([data-design-setting], [data-design-group], #popup-theme-hint):not([hidden])",
+@@ -717,8 +798,8 @@ try {
+   });
+   assert.deepEqual(errors, []);
+   writeFileSync(resolve(output, "evidence.json"), JSON.stringify({ chrome: await browser.version(), ...evidence, contrast,
+-    checks: ["Store available without experimental opt-in", "Smaller Anki cards and Word highlighting start off in normal Settings", "Smaller Anki cards saves and reloads through its Anki control", "six bundled themes", "Next and Previous themes buttons", "Plain definitions only", "Design shows each theme's declared settings and choosing a theme writes only popupTheme", "JL blocks and actions", "JL pitch switch repaints the open popup and the preview", "Bee All and group tabs, formatted-only definitions, uniform action icons, Note, custom actions and kanji images", "Bee custom actions use matching inline icons with accessible names and readable More labels", "Bee source/actions and three frequencies stay readable at 560 and 300px", "Bee preview sample labels and inset keyboard tab focus", "Bee More Escape restores focus and preserves Note before popup dismissal", "Bee WCAG AA text and control/focus contrast over white and black pages", "Crystal header, framed sections and per-section actions", "Crystal stays inside 300px with More actions", "Crystal Escape closes Note before the popup", "Crystal WCAG AA text and control/focus contrast over white and black pages, including forced colours", "Nazeka hover", "kanji and Back", "Default restore"], errors }, null, 2));
+-  console.log(`PASS: normal Settings, carousel buttons, Nazeka actions, kanji/Back, Plain definitions, JL and Bee actions, Bee rich content, Crystal sections and contrast and Default restore. Evidence: ${output}`);
++    checks: ["Store available without experimental opt-in", "Smaller Anki cards and Word highlighting start off in normal Settings", "Smaller Anki cards saves and reloads through its Anki control", "seven bundled themes", "Next and Previous themes buttons", "Plain definitions only", "Design shows each theme's declared settings and choosing a theme writes only popupTheme", "JL blocks and actions", "JL pitch switch repaints the open popup and the preview", "Bee All and group tabs, formatted-only definitions, uniform action icons, Note, custom actions and kanji images", "Bee custom actions use matching inline icons with accessible names and readable More labels", "Bee source/actions and three frequencies stay readable at 560 and 300px", "Bee preview sample labels and inset keyboard tab focus", "Bee More Escape restores focus and preserves Note before popup dismissal", "Bee WCAG AA text and control/focus contrast over white and black pages", "Crystal header, framed sections and per-section actions", "Crystal stays inside 300px with More actions", "Crystal Escape closes Note before the popup", "Crystal WCAG AA text and control/focus contrast over white and black pages, including forced colours", "Grimoire bands, banners and per-entry actions", "Grimoire stays inside 300px with More actions", "Grimoire Escape closes Note before the popup", "Grimoire WCAG AA text and control/focus contrast over white and black pages, including forced colours", "Nazeka hover", "kanji and Back", "Default restore"], errors }, null, 2));
++  console.log(`PASS: normal Settings, carousel buttons, Nazeka actions, kanji/Back, Plain definitions, JL and Bee actions, Bee rich content, Crystal sections and contrast, Grimoire entries and contrast and Default restore. Evidence: ${output}`);
+ } catch (error) { console.error(error); throw error; } finally {
+   await browser?.close();
+   server.close();
+diff --git a/test/theme-renderer.test.mjs b/test/theme-renderer.test.mjs
+index 22574648..379ea049 100644
+--- a/test/theme-renderer.test.mjs
++++ b/test/theme-renderer.test.mjs
+@@ -10,6 +10,7 @@ import plain from "../extension/vendor/themes/plain/theme.js";
+ import theme from "../extension/vendor/themes/nazeka/theme.js";
+ import bee from "../extension/vendor/themes/bee/theme.js";
+ import crystal from "../extension/vendor/themes/crystal/theme.js";
++import grimoire from "../extension/vendor/themes/grimoire/theme.js";
+ import { createView as createJLView } from "../extension/vendor/themes/jl/theme.js";
+ const require = createRequire(new URL("./tooling/package.json", import.meta.url));
+ const { JSDOM } = require("jsdom");
+@@ -25,8 +26,8 @@ const results = [{ matched: "食べる", trace: [], term: { expression: "食べ
+     { tag: "img", path: "test.png" },
+   ] }]) }] } }];
+ 
+-test("JL, Bee, Nazeka and Crystal bind native kanji mining to each dictionary's own entry", t => {
+-  for (const createView of [createJLView, bee.createView, theme.createView, crystal.createView]) {
++test("JL, Bee, Nazeka, Crystal and Grimoire bind native kanji mining to each dictionary's own entry", t => {
++  for (const createView of [createJLView, bee.createView, theme.createView, crystal.createView, grimoire.createView]) {
+     const dom = environment(), { window } = dom, { document } = window;
+     const popup = document.createElement("div");
+     document.body.append(popup);
+@@ -49,10 +50,10 @@ test("JL, Bee, Nazeka and Crystal bind native kanji mining to each dictionary's
+       assert.equal(item.result.term.glossaries.length, 1);
+       assert.equal(item.result.term.glossaries[0].kanji.dictionary, entries[index].dictionary);
+     }
+-    if (createView === bee.createView || createView === crystal.createView) {
++    if ([bee.createView, crystal.createView, grimoire.createView].includes(createView)) {
+       assert.equal(bound.miningActions[0].actions.querySelector(".gsm-hoshidicts-custom-anki-button").dataset.ankiTemplateId, "kanji");
+     }
+-    popup.querySelectorAll(".jl-kanji, .nazeka-kanji-info, .crystal-kanji")[1].click();
++    popup.querySelectorAll(".jl-kanji, .nazeka-kanji-info, .crystal-kanji, .grimoire-kanji")[1].click();
+     assert.equal(view.currentEntryIndex(), 1, "keybinds follow the clicked dictionary's mining action");
+   }
+ });
+@@ -819,3 +820,108 @@ test("Crystal opens Note under the controls that own it and lists extra custom a
+     "a missing word's pencil opens Note beneath the notice");
+   assert.equal(popup.querySelector("form").elements.term.value, "ぬぺぽ");
+ });
++
++function grimoireFixture(t, overrides = {}) {
++  const dom = environment(), { window } = dom, { document } = window;
++  const popup = document.createElement("div"); document.body.append(popup);
++  const bound = {};
++  const view = grimoire.createView({ document, window, popup, positionPopup() {},
++    components: { ...window.HDPopup, ...window.HDGlossary },
++    appendTextOnlyGlossary: window.HDGlossary.appendTextOnlyGlossary,
++    onResultsRendered(value) { bound.rendered = value; bound.current = value; },
++    onResultsExpanded(value) { bound.current = value; }, ...overrides });
++  t.after(() => { view.destroy(); window.close(); });
++  return { popup, view, bound };
++}
++
++test("Grimoire gives each dictionary an entry with the word's band, a banner with its own controls, and its senses", t => {
++  const { popup, view, bound } = grimoireFixture(t);
++  view.renderResults([crystalResult], { query: "食べた" }, crystalContext);
++  const entries = [...popup.querySelectorAll(".gsm-hoshidicts-entry")];
++  assert.deepEqual(entries.map(entry => entry.dataset.dictionary), ["JMdict", "国語"]);
++  assert.deepEqual(entries.map(entry => entry.querySelector(":scope > .grimoire-band .grimoire-spelling").textContent), ["食べる", "食べる"],
++    "each dictionary repeats the word, as in JL and Bee");
++  assert.deepEqual(bound.rendered.miningActions.map(item => item.result.term.glossaries.length), [2, 1],
++    "each entry mines and plays only its own dictionary");
++  assert.deepEqual(bound.rendered.audioButtons.map(item => item.result), bound.rendered.miningActions.map(item => item.result));
++  assert.equal(bound.rendered.lookupStats, null);
++  assert.deepEqual(entries.map(entry => entry.querySelector(":scope > .grimoire-page > .grimoire-banner > .gsm-hoshidicts-entry-actions")),
++    bound.rendered.miningActions.map(item => item.actions), "each entry's controls sit on its banner");
++  assert.deepEqual([...popup.querySelectorAll(".grimoire-deconj")].map(node => node.textContent), ["食べた ～た", "食べた ～た"]);
++  assert.deepEqual([...entries[0].querySelectorAll(".grimoire-reading .grimoire-mora")]
++    .map(mora => [mora.textContent, mora.dataset.pitch, mora.dataset.transition]),
++  [["た", "low", "rise"], ["べ", "high", "drop"], ["る", "low", undefined]]);
++  assert.deepEqual([...entries[1].querySelectorAll(".gsm-hoshidicts-tag-frequency")].map(tag => [tag.textContent, tag.dataset.grimoireIcon]),
++    [["120", "rank"], ["18,240", "book"]], "crossed swords mark ranks and a book corpus counts");
++  const senses = entries.map(entry => entry.querySelector(".grimoire-senses"));
++  assert.deepEqual(senses.map(list => list.dataset.count), ["2", "1"], "only several senses are numbered");
++  assert.deepEqual([...entries[0].querySelectorAll(".grimoire-shared-tags .grimoire-tag")].map(tag => tag.textContent), ["v1", "vt"],
++    "tags every sense carries are shown once");
++  assert.deepEqual([...senses[0].children].map(sense => [...sense.querySelectorAll(".grimoire-tag")].map(tag => tag.textContent)),
++    [[], ["col"]]);
++  assert.equal(senses[0].querySelector(".grimoire-gloss").dataset.hoshidictsDictionary, "JMdict", "scoped dictionary styles apply");
++  entries[1].click();
++  assert.equal(view.currentEntryIndex(), 1, "keyboard actions follow the clicked entry");
++});
++
++test("Grimoire group tabs filter entries in place, and All alone shows no tabs", t => {
++  let selected;
++  const { popup, view, bound } = grimoireFixture(t);
++  const second = { ...crystalResult, term: { ...crystalResult.term, expression: "食う", reading: "くう",
++    glossaries: [{ dictionary: "国語", glossary: JSON.stringify(["食べる。"]), definitionTags: "" }] } };
++  const context = { ...crystalContext, onDictionaryTabSelected(value) { selected = value; } };
++  view.renderResults([crystalResult, second], { query: "食べた" }, context);
++  const tabs = [...popup.querySelectorAll(".grimoire-tab")];
++  assert.deepEqual(tabs.map(tab => [tab.textContent, tab.getAttribute("aria-pressed")]),
++    [["All", "true"], ["Words", "false"], ["Japanese", "false"]]);
++  const entries = [...popup.querySelectorAll(".gsm-hoshidicts-entry")];
++  assert.deepEqual(entries.map(entry => entry.dataset.grimoireRepeat), ["false", "true", "false"],
++    "a word's later entries leave its trail and frequencies to the first");
++  tabs[2].click();
++  assert.deepEqual(selected, { groupId: "japanese" });
++  assert.deepEqual(entries.map(entry => entry.hidden), [true, false, false]);
++  assert.equal(entries[1].dataset.grimoireRepeat, "false", "the first shown entry of a word carries its trail");
++  assert.deepEqual(bound.current.miningActions.map(item => item.result.term.glossaries[0].dictionary), ["国語", "国語"]);
++  assert.equal(view.currentEntryIndex(), 0);
++  assert.equal(popup.querySelectorAll(".gsm-hoshidicts-entry")[1], entries[1], "switching tabs does not rebuild");
++  view.renderResults([crystalResult, second], { query: "食べた" }, { ...context, ...view.captureTermView() });
++  assert.deepEqual([...popup.querySelectorAll(".gsm-hoshidicts-entry")].map(entry => entry.hidden), [true, false, false],
++    "Back restores the selected group");
++  view.renderResults([crystalResult], { query: "食べた" }, { ...crystalContext, dictionaryTabGroups: [] });
++  assert.equal(popup.querySelectorAll(".grimoire-tab").length, 0, "All alone filters nothing");
++  assert.deepEqual([...popup.querySelectorAll(".gsm-hoshidicts-entry")].map(entry => entry.hidden), [false, false]);
++});
++
++test("Grimoire opens Note beneath the banner that owns it and lists extra custom actions under More", t => {
++  const saves = [];
++  const { popup, view } = grimoireFixture(t, { onAddCustomEntry(entry) { saves.push({ ...entry }); },
++    customButtons: ["one", "two", "three"].map(id => ({ id, type: "link", label: id, url: `https://example.test/${id}` })) });
++  view.renderResults([crystalResult], { query: "食べた" }, crystalContext);
++  const entries = [...popup.querySelectorAll(".gsm-hoshidicts-entry")];
++  const actions = [...popup.querySelectorAll(".gsm-hoshidicts-entry-actions[aria-label='Entry actions']")];
++  assert.deepEqual(actions.map(group => [...group.querySelectorAll(":scope .grimoire-custom-action-icon")].map(icon => icon.dataset.icon)),
++    [["open", "open", "open"], ["open", "open", "open"]]);
++  assert.equal(popup.querySelectorAll(".grimoire-more-actions .grimoire-action-menu [data-custom-button-id='three']").length, 2);
++  const [first, second] = [...popup.querySelectorAll(".gsm-hoshidicts-note-button")];
++  first.click();
++  const form = popup.querySelector("form");
++  assert.equal(entries[0].querySelector(".grimoire-banner").nextElementSibling, form, "the pencil opens Note just beneath its banner");
++  form.elements.definition.value = "My meaning";
++  view.updateDictionaryPresentation({ ...crystalContext, dictionaryTabGroups: [] });
++  assert.equal(form.hidden, false);
++  assert.equal(form.elements.definition.value, "My meaning", "presentation updates keep a draft");
++  form.dispatchEvent(new popup.ownerDocument.defaultView.Event("submit", { cancelable: true }));
++  assert.deepEqual(saves, [{ term: "食べる", reading: "たべる", definition: "My meaning" }]);
++  second.click();
++  assert.equal(entries[1].querySelector(".grimoire-banner").nextElementSibling.matches("form"), true);
++  assert.equal(view.closeNoteForm(), true);
++  const more = popup.querySelector(".grimoire-more-actions");
++  more.open = true;
++  assert.equal(view.closeActionMenu(), true);
++  assert.equal(more.open, false);
++  view.renderNotice("No results", { query: "ぬぺぽ", sentence: "ぬぺぽ。" });
++  popup.querySelector(".grimoire-nav .gsm-hoshidicts-note-button").click();
++  assert.equal(popup.querySelector(".gsm-hoshidicts-lookup-notice").nextElementSibling, popup.querySelector("form"),
++    "a missing word's pencil opens Note beneath the notice");
++  assert.equal(popup.querySelector("form").elements.term.value, "ぬぺぽ");
++});

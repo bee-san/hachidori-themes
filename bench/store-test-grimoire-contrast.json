@@ -1,0 +1,1118 @@
+[
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-deconj",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 7.425048685652949
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.331397515754933
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 6.576883762954375
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.6425664861186275
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.196214849083325
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-mine-button",
+  "property": "color",
+  "minimum": 3,
+  "ratio": 7.783056391641946
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "outlineColor",
+  "minimum": 3,
+  "ratio": 5.9523751563178795
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-deconj",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 7.425048685652949
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.331397515754933
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 6.576883762954375
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.6425664861186275
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.196214849083325
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-mine-button",
+  "property": "color",
+  "minimum": 3,
+  "ratio": 7.783056391641946
+ },
+ {
+  "selector": "SUMMARY",
+  "property": "outlineColor",
+  "minimum": 3,
+  "ratio": 5.076329165844196
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.517246326468056
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.017060841463746
+ },
+ {
+  "selector": "grimoire-deconj",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 7.425048685652949
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.331397515754933
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.598014908670356
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 6.576883762954375
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.440993817536032
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.7651918627743735
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 9.845496082800208
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-note-field",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.345428348875675
+ },
+ {
+  "selector": "gsm-hoshidicts-note-field",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.345428348875675
+ },
+ {
+  "selector": "gsm-hoshidicts-note-field",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.345428348875675
+ },
+ {
+  "selector": "gsm-hoshidicts-note-term",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.238369510572028
+ },
+ {
+  "selector": "gsm-hoshidicts-note-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.238369510572028
+ },
+ {
+  "selector": "gsm-hoshidicts-note-definition",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 15.238369510572028
+ },
+ {
+  "selector": "gsm-hoshidicts-note-cancel",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 13.154051975148521
+ },
+ {
+  "selector": "gsm-hoshidicts-note-save",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.6425664861186275
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 3.995028576506202
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 5.196214849083325
+ },
+ {
+  "selector": "gsm-hoshidicts-note-term",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 4.896763425426469
+ },
+ {
+  "selector": "gsm-hoshidicts-note-reading",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 4.896763425426469
+ },
+ {
+  "selector": "gsm-hoshidicts-note-definition",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 4.896763425426469
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 5.964008874565003
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 11.05399775953976
+ },
+ {
+  "selector": "gsm-hoshidicts-mine-button",
+  "property": "color",
+  "minimum": 3,
+  "ratio": 7.783056391641946
+ },
+ {
+  "selector": "gsm-hoshidicts-note-term",
+  "property": "outlineColor",
+  "minimum": 3,
+  "ratio": 7.470155872179717
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-deconj",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 8.728122576381333
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 8.728122576381333
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-mine-button",
+  "property": "color",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-note-button",
+  "property": "outlineColor",
+  "minimum": 3,
+  "ratio": 8.728122576381333
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-expression grimoire-spelling",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-reading",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-deconj",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-dictionary",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 11.32025621138092
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tag",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-glossary-content grimoire-gloss",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-custom-anki-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-external-link-button gsm-hoshidicts-text-action-button",
+  "property": "color",
+  "minimum": 4.5,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 11.32025621138092
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-tab",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-tag gsm-hoshidicts-tag-frequency",
+  "property": "borderTopColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-text-action-label grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "grimoire-custom-action-icon hd-icon",
+  "property": "backgroundColor",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-mine-button",
+  "property": "color",
+  "minimum": 3,
+  "ratio": 21
+ },
+ {
+  "selector": "gsm-hoshidicts-note-button",
+  "property": "outlineColor",
+  "minimum": 3,
+  "ratio": 11.32025621138092
+ }
+]
