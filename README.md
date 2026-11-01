@@ -35,6 +35,21 @@ Enable it under Advanced → Experimental features, then open Design.
   audio, Anki and Note buttons. Original CSS and SVG with a serif and Mincho font
   stack; no fonts are bundled. Design supports Bee's settings plus each
   dictionary's frequencies beside the averages; see `themes/crystal/`.
+- **Grimoire** — theme idea 1 in [#24](https://github.com/bee-san/hachidori-themes/issues/24),
+  with fewer ornaments than the mock-up: dark grey bands over parchment pages
+  in a fine gold frame. Each dictionary gets its own entry, as in JL and Bee's
+  Theme: the word's band (serif headword, gold reading with its pitch, the
+  deinflection trail and book/crossed-swords frequency badges), then a page
+  whose banner holds a crystal plaque and that dictionary's own crimson-and-gold
+  Anki, audio and Note buttons, then senses numbered in diamonds, tag chips (tags
+  every sense shares appear once) and examples behind a rule. The selected group
+  tab is crystal blue. Original CSS and SVG; no fonts are bundled. Design
+  supports the same settings as Crystal; see `themes/grimoire/`.
+
+  **Non-commercial fan work.** Its grey, beige, red-and-gold and crystal colours
+  are inspired by FINAL FANTASY XIV's interface. It is free, unofficial, and not
+  affiliated with or endorsed by Square Enix, and contains no game files.
+  FINAL FANTASY XIV © SQUARE ENIX CO., LTD. All Rights Reserved.
 
 ## Distribution
 

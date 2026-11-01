@@ -1,0 +1,10 @@
+schema: 2
+slug: grimoire
+name: Grimoire
+contentMode: rich
+renderer: theme.js
+stylesheet: theme.css
+screenshot: screenshot.png
+# Theme idea 1 in https://github.com/bee-san/hachidori-themes/issues/24.
+benchmark: https://github.com/bee-san/hachidori-themes/tree/previews/grimoire/bench
+designSettings: [popupOpacityPercent, glossaryLayoutMode, kanjiClickDictionary, showFrequencyDictionaryNames, compactFrequencyNumbers, averageFrequency, showFrequencyTagsWithAverage, showPitchAccentFurigana, pitchAccentFuriganaDictionary, pitchAccentFuriganaStyle, popupImageSource, imageHoverPreview, customButtons]
