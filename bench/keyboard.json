@@ -1,0 +1,66 @@
+{
+ "chrome": "Chrome/152.0.7977.75",
+ "errors": [],
+ "report": {
+  "keyboard": {
+   "start": {
+    "scrollTop": 0,
+    "atTop": [
+     [
+      "citadel-result gsm-hoshidicts-entry",
+      "食べる",
+      0
+     ]
+    ]
+   },
+   "Alt+N": {
+    "scrollTop": 264,
+    "atTop": [
+     [
+      "citadel-section",
+      "国語 (sample)",
+      0
+     ]
+    ]
+   },
+   "Alt+N again": {
+    "scrollTop": 264,
+    "atTop": [
+     [
+      "citadel-section",
+      "国語 (sample)",
+      0
+     ]
+    ]
+   },
+   "Alt+M": {
+    "scrollTop": 264,
+    "atTop": [
+     [
+      "citadel-section",
+      "国語 (sample)",
+      0
+     ]
+    ]
+   },
+   "Alt+ArrowDown": {
+    "scrollTop": 404,
+    "atTop": []
+   },
+   "Alt+Home": {
+    "scrollTop": 0,
+    "atTop": [
+     [
+      "citadel-result gsm-hoshidicts-entry",
+      "食べる",
+      0
+     ]
+    ]
+   },
+   "Alt+End": {
+    "scrollTop": 404,
+    "atTop": []
+   }
+  }
+ }
+}

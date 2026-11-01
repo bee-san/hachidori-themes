@@ -459,6 +459,35 @@ try {
       await shot("compact-2x");
       await writeOptions({ glossaryLayoutMode: "default" });
     },
+    // Keyboard entry navigation in the real popup: Alt+ArrowDown/Home move
+    // between words, a configured key moves to the next dictionary's section.
+    async keyboard() {
+      await library([...MOCKUP, "hachidori-fixture"], GROUPS);
+      const keybinds = await settings.evaluate(() => [...HDReaderOptions.DEFAULT_OPTIONS.keybinds,
+        { action: "nextEntryDifferentDictionary", argument: "", key: "KeyN", modifiers: ["alt"], scopes: ["popup"], enabled: true },
+        { action: "previousEntryDifferentDictionary", argument: "", key: "KeyM", modifiers: ["alt"], scopes: ["popup"], enabled: true }]);
+      await writeOptions({ keybinds, popupHeightPx: 300 });
+      await open("dark", 1);
+      await hover("taberu");
+      const where = () => tab.evaluate(() => {
+        const root = window.__popupRoot, scroll = root.querySelector(".citadel-scroll");
+        const top = scroll.getBoundingClientRect().top;
+        const atTop = [...root.querySelectorAll(".citadel-result, .citadel-section")].filter(node => node.getClientRects().length)
+          .map(node => [node.className, node.dataset.dictionary ?? node.querySelector(".citadel-spelling")?.textContent, Math.round(node.getBoundingClientRect().top - top)])
+          .filter(([, , offset]) => Math.abs(offset) <= 2);
+        return { scrollTop: Math.round(scroll.scrollTop), atTop };
+      });
+      const steps = { start: await where() };
+      for (const [name, key] of [["Alt+N", "KeyN"], ["Alt+N again", "KeyN"], ["Alt+M", "KeyM"], ["Alt+ArrowDown", "ArrowDown"], ["Alt+Home", "Home"], ["Alt+End", "End"]]) {
+        await tab.keyboard.down("Alt"); await tab.keyboard.press(key); await tab.keyboard.up("Alt");
+        await tab.evaluate(() => new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))));
+        steps[name] = await where();
+      }
+      log("keyboard", JSON.stringify(steps));
+      report.keyboard = steps;
+      await writeOptions({ keybinds: await settings.evaluate(() => HDReaderOptions.DEFAULT_OPTIONS.keybinds), popupHeightPx: 420 });
+      await library(MOCKUP, GROUPS);
+    },
     // Not a Citadel scene: custom buttons added after the page opened, then a
     // Store theme switch. The rebuilt renderer gets none until the page reloads
     // (the same for Crystal), because a closed popup's view.clear() drops the
