@@ -314,11 +314,16 @@
 .crystal-more-actions[open] > summary {
   background-color: var(--crystal-button-hover); color: var(--crystal-button-ink-hover);
 }
-/* Duplicate warnings turn the plate gold; viewing existing notes keeps it. The
- * sheen lightens it, away from the dark glyph. */
-.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
-  [data-state="overwrite"]) {
+/* Duplicate warnings turn the plate gold, hovered too; viewing existing notes
+ * keeps it red. The sheen lightens it, away from the dark glyph. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-entry-actions .gsm-hoshidicts-mine-button:is([data-state="duplicate"],
+  [data-state="add-duplicate"], [data-state="overwrite"]) {
   background: var(--crystal-button-alert) linear-gradient(rgb(255 255 255 / 0.3), transparent 70%);
+  color: var(--crystal-button-alert-ink);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-entry-actions .gsm-hoshidicts-mine-button:is([data-state="duplicate"],
+  [data-state="add-duplicate"], [data-state="overwrite"]):hover:not(:disabled) {
+  background: var(--crystal-button-alert) linear-gradient(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.15));
   color: var(--crystal-button-alert-ink);
 }
 .gsm-hoshidicts-text-action-label.crystal-custom-action-icon { font-size: 0; }
