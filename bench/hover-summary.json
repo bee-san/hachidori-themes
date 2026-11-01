@@ -1,9 +1,9 @@
 {
  "bee": {
-  "warmFirst": "16.90 / 17.20",
+  "warmFirst": "16.90 / 17.10",
   "warmComplete": "33.30 / 33.50",
-  "render": "1.40 / 2.90",
-  "coldFirst": "16.80 / 17.10",
+  "render": "1.35 / 2.90",
+  "coldFirst": "16.70 / 17.30",
   "coldComplete": "33.20 / 33.30",
   "n": {
    "warm": 288,
@@ -12,26 +12,26 @@
   },
   "nodesMedian": 68.0,
   "coldFirstSamples": [
-   16.7,
-   16.8,
-   16.8,
-   17.1,
+   16.5,
+   17.3,
    16.8,
    16.7,
    16.8,
+   16.7,
+   16.6,
+   16.7,
+   16.7,
    17,
    16.7,
-   16.8,
-   16.9,
    16.8
   ]
  },
  "crystal": {
-  "warmFirst": "16.90 / 17.30",
+  "warmFirst": "16.90 / 17.20",
   "warmComplete": "33.30 / 33.50",
   "render": "1.60 / 3.80",
-  "coldFirst": "17.10 / 50.50",
-  "coldComplete": "34.00 / 67.80",
+  "coldFirst": "17.10 / 17.80",
+  "coldComplete": "34.30 / 35.30",
   "n": {
    "warm": 288,
    "render": 288,
@@ -39,22 +39,22 @@
   },
   "nodesMedian": 75.0,
   "coldFirstSamples": [
+   17,
    17.1,
+   17,
+   17.4,
    17.1,
+   17,
    17.2,
-   50.5,
+   17.2,
+   17.8,
    17.1,
-   17,
    17.1,
-   17,
-   17,
-   17.7,
-   17.6,
    17.1
   ]
  },
  "environment": {
-  "revision": "f419b926ea268d71ef28520b96cfb902a161e0cd",
+  "revision": "b32b1bf5cd401b94c3e7c64b5e98c1ff73d48621",
   "node": "v22.23.1",
   "cpu": "AMD EPYC 9R14",
   "logicalCpus": 64,
@@ -62,24 +62,24 @@
   "warmups": "one alternating pair per fresh session, excluded; cold first-open separate",
   "load": [
    [
-    23.14,
-    22.54,
-    21.82
+    14.4,
+    18.02,
+    19.39
    ],
    [
-    22.21,
-    22.38,
-    21.78
+    13.66,
+    17.53,
+    19.19
    ],
    [
-    21.6,
-    22.09,
-    21.71
+    11.63,
+    16.39,
+    18.71
    ],
    [
-    19.15,
-    21.64,
-    21.55
+    13.71,
+    17.22,
+    19.04
    ]
   ]
  }

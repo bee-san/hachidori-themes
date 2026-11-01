@@ -1,0 +1,86 @@
+{
+ "bee": {
+  "warmFirst": "16.90 / 17.20",
+  "warmComplete": "33.30 / 33.50",
+  "render": "1.40 / 2.90",
+  "coldFirst": "16.80 / 17.10",
+  "coldComplete": "33.20 / 33.30",
+  "n": {
+   "warm": 288,
+   "render": 288,
+   "cold": 12
+  },
+  "nodesMedian": 68.0,
+  "coldFirstSamples": [
+   16.7,
+   16.8,
+   16.8,
+   17.1,
+   16.8,
+   16.7,
+   16.8,
+   17,
+   16.7,
+   16.8,
+   16.9,
+   16.8
+  ]
+ },
+ "crystal": {
+  "warmFirst": "16.90 / 17.30",
+  "warmComplete": "33.30 / 33.50",
+  "render": "1.60 / 3.80",
+  "coldFirst": "17.10 / 50.50",
+  "coldComplete": "34.00 / 67.80",
+  "n": {
+   "warm": 288,
+   "render": 288,
+   "cold": 12
+  },
+  "nodesMedian": 75.0,
+  "coldFirstSamples": [
+   17.1,
+   17.1,
+   17.2,
+   50.5,
+   17.1,
+   17,
+   17.1,
+   17,
+   17,
+   17.7,
+   17.6,
+   17.1
+  ]
+ },
+ "environment": {
+  "revision": "f419b926ea268d71ef28520b96cfb902a161e0cd",
+  "node": "v22.23.1",
+  "cpu": "AMD EPYC 9R14",
+  "logicalCpus": 64,
+  "samples": 6,
+  "warmups": "one alternating pair per fresh session, excluded; cold first-open separate",
+  "load": [
+   [
+    23.14,
+    22.54,
+    21.82
+   ],
+   [
+    22.21,
+    22.38,
+    21.78
+   ],
+   [
+    21.6,
+    22.09,
+    21.71
+   ],
+   [
+    19.15,
+    21.64,
+    21.55
+   ]
+  ]
+ }
+}
