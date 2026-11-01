@@ -1,0 +1,10 @@
+schema: 2
+slug: crystal
+name: Crystal
+contentMode: rich
+renderer: theme.js
+stylesheet: theme.css
+screenshot: screenshot.png
+# Theme idea 5 in https://github.com/bee-san/hachidori-themes/issues/24.
+benchmark: https://github.com/bee-san/hachidori/blob/main/docs/themes/crystal.md#performance
+designSettings: [popupOpacityPercent, glossaryLayoutMode, kanjiClickDictionary, showFrequencyDictionaryNames, compactFrequencyNumbers, averageFrequency, showFrequencyTagsWithAverage, showPitchAccentFurigana, pitchAccentFuriganaDictionary, pitchAccentFuriganaStyle, popupImageSource, imageHoverPreview, customButtons]

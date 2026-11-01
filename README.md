@@ -26,6 +26,15 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **Crystal** — theme idea 5 in [#24](https://github.com/bee-san/hachidori-themes/issues/24):
+  a navy panel in a fine gold frame with corner scrolls and a blue crystal crest,
+  and gold-outlined group tabs in small caps. Each word gets one header (serif
+  headword, gold reading with its pitch, the deinflection trail and book/star
+  frequency badges), then a framed section per dictionary with a crystal plaque,
+  numbered senses in gold diamonds, tag chips, examples behind a rule and its own
+  audio, Anki and Note buttons. Original CSS and SVG with a serif and Mincho font
+  stack; no fonts are bundled. Design supports Bee's settings plus each
+  dictionary's frequencies beside the averages; see `themes/crystal/`.
 
 ## Distribution
 
