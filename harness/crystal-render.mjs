@@ -425,6 +425,31 @@ try {
       await settings.screenshot({ path: resolve(out, "settings-design.png") });
       log("preview tabs", JSON.stringify(await frame.evaluate(() => [...document.getElementById("preview-host").shadowRoot.querySelectorAll(".crystal-tab")].map(node => node.textContent))));
     },
+    // A duplicate warning keeps its gold plate and dark glyph while hovered.
+    async duplicate() {
+      await open("dark", 2);
+      await hover("taberu");
+      const point = await tab.evaluate(() => {
+        const button = window.__crystalRoot.querySelector(".gsm-hoshidicts-mine-button");
+        button.dataset.state = "duplicate";
+        const box = button.getBoundingClientRect(); return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+      });
+      await tab.mouse.move(point.x, point.y);
+      await tab.evaluate(() => new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))));
+      const style = await tab.evaluate(() => {
+        const button = window.__crystalRoot.querySelector(".gsm-hoshidicts-mine-button");
+        const icon = button.querySelector(".hd-icon");
+        return { hovered: button.matches(":hover"), plate: getComputedStyle(button).backgroundColor,
+          glyph: getComputedStyle(icon ?? button).backgroundColor, color: getComputedStyle(button).color };
+      });
+      log("duplicate hover", JSON.stringify(style));
+      const head = await tab.evaluate(() => {
+        const rect = window.__crystalRoot.querySelector(".crystal-head").getBoundingClientRect();
+        return { x: rect.x, y: rect.y, width: rect.width, height: rect.height };
+      });
+      await tab.screenshot({ path: resolve(out, "duplicate-hover-2x.png"), clip: head });
+      report.duplicate = await contrast("duplicate-hover");
+    },
     async colours() {
       await settings.bringToFront();
       await settings.setViewport({ width: 1400, height: 1000, deviceScaleFactor: 1 });

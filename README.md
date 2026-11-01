@@ -16,6 +16,8 @@ red and gold buttons, a retro Final Fantasy blue window, and a toggle. Nothing h
   rewrites each `url()` that follows a `/* svg:NAME */` marker.
 - `harness/csp-probe.mjs`, `harness/load-cost.mjs`, `bench/`: the strict-CSP check, the page-load trace and the hover
   benchmark before and after, as quoted in the PR.
+- `store-test/`: screenshots from Hachidori's `test/chrome-theme-store.mjs` on the bundling branch (fixture dictionary):
+  each colour, 300 px with More actions, the Note editor and forced colours, plus the `chrome-theme-contrast` filmstrip.
 - `design-spec.md`: the notes the colours were built from.
 
 Paths in the scripts point at the author's machine; pass your own Hachidori checkout.
