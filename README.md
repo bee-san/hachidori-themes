@@ -27,14 +27,19 @@ Enable it under Advanced → Experimental features, then open Design.
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
 - **Crystal** — theme idea 5 in [#24](https://github.com/bee-san/hachidori-themes/issues/24):
-  a navy panel in a fine gold frame with corner scrolls and a blue crystal crest,
-  and gold-outlined group tabs in small caps. Each word gets one header (serif
-  headword, gold reading with its pitch, the deinflection trail and book/star
-  frequency badges), then a framed section per dictionary with a crystal plaque,
-  numbered senses in gold diamonds, tag chips, examples behind a rule and its own
-  audio, Anki and Note buttons. Original CSS and SVG with a serif and Mincho font
-  stack; no fonts are bundled. Design supports Bee's settings plus each
-  dictionary's frequencies beside the averages; see `themes/crystal/`.
+  a fine gold frame with corner scrolls and a blue crystal crest, and group tabs
+  in small caps. Its colours follow FFXIV's windows: Grey, a warm charcoal after
+  the Dark theme, or Beige, parchment after the Light theme, both with red and
+  gold buttons. Retro blue is the classic Final Fantasy menu window: a blue
+  gradient in a thin white border with white text. Design → Colours chooses one;
+  Automatic is Beige in the system's light mode and Grey in its dark mode. Each
+  word gets one header (serif headword, the reading with its pitch, the
+  deinflection trail and book/star frequency badges), then a framed section per
+  dictionary with a crystal plaque, numbered senses in diamonds, tag chips,
+  examples behind a rule and its own audio, Anki and Note buttons. Original CSS
+  and SVG with a serif and Mincho font stack; no fonts are bundled. Design
+  supports Bee's settings plus each dictionary's frequencies beside the
+  averages; see `themes/crystal/`.
 
 ## Distribution
 
@@ -45,6 +50,10 @@ Each `theme.yaml` lists in `designSettings` the Design settings its renderer
 implements (`all` or option keys), matching that catalogue; Hachidori's
 Settings → Design hides the others for that theme. See the
 [Design settings contract](https://github.com/bee-san/hachidori/blob/main/docs/themes/README.md#design-settings).
+A theme with colour schemes lists them in `variants` (an `id` and a `name`
+each). Design → Colours offers them after Automatic and puts the chosen id on
+the popup host as `data-hoshidicts-theme-variant`, which Automatic leaves off;
+see [colour variants](https://github.com/bee-san/hachidori/blob/main/docs/themes/README.md#colour-variants).
 
 The [version 2 view contract](https://github.com/bee-san/hachidori/blob/89e07c6f5b66599dda0b7bcd303a0b287b01f03d/docs/themes/README.md)
 explains renderer ownership, core callbacks, text/rich content, CSS, switching and

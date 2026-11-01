@@ -8,3 +8,13 @@ screenshot: screenshot.png
 # Theme idea 5 in https://github.com/bee-san/hachidori-themes/issues/24.
 benchmark: https://github.com/bee-san/hachidori/blob/main/docs/themes/crystal.md#performance
 designSettings: [popupOpacityPercent, glossaryLayoutMode, kanjiClickDictionary, showFrequencyDictionaryNames, compactFrequencyNumbers, averageFrequency, showFrequencyTagsWithAverage, showPitchAccentFurigana, pitchAccentFuriganaDictionary, pitchAccentFuriganaStyle, popupImageSource, imageHoverPreview, customButtons]
+# Design → Colours, after Automatic (Beige in the system's light mode, Grey in
+# its dark mode). Hachidori stores the id as popupThemeVariant and sets it on the
+# popup host as data-hoshidicts-theme-variant.
+variants:
+  - id: grey
+    name: Grey
+  - id: beige
+    name: Beige
+  - id: blue
+    name: Retro blue
