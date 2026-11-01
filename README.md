@@ -26,6 +26,20 @@ Enable it under Advanced → Experimental features, then open Design.
   and Back sits at the popup's upper left. Design supports compact glossaries,
   frequency dictionary names, abbreviated frequency numbers, frequency averages
   and contour/overline pitch markings; see `themes/bee/`.
+- **FFXIV Dark** — a FINAL FANTASY XIV window on Bee's renderer, after the
+  mockups in [#24](https://github.com/bee-san/hachidori-themes/issues/24): the
+  game's Dark window colours in a gilt double frame with filigree corners and a
+  crystal, tab plates, and a framed panel for each dictionary under a bronze name
+  plate with a blue gem. Labels use Cinzel when it is installed. Inspired by
+  [KonyAHS/HachidoriFfxiv](https://github.com/KonyAHS/HachidoriFfxiv), which shows
+  Hachidori popups inside the game. It has Bee's features and Design settings; see
+  `themes/ffxiv-dark/`.
+
+  **Non-commercial fan work.** FFXIV Dark is an unofficial, non-commercial fan
+  theme: it is free, nobody earns anything from it, and it is not affiliated with
+  or endorsed by Square Enix. It contains no game files; its frame, crystal and
+  gems are original SVG and CSS. FINAL FANTASY XIV © SQUARE ENIX CO., LTD. All
+  Rights Reserved.
 
 ## Distribution
 
