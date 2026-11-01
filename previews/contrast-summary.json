@@ -1,0 +1,462 @@
+{
+ "chrome": "Chrome/152.0.7977.75",
+ "errors": [],
+ "variants": {
+  "grey": {
+   "checks": 776,
+   "failures": 0,
+   "lowest": {
+    "text": {
+     "ratio": 5.08,
+     "selector": "span.crystal-deconj",
+     "text": "食べたかった ～た→たい",
+     "scene": "mockup"
+    },
+    "border": {
+     "ratio": 3.45,
+     "selector": "span.crystal-tag",
+     "text": "ichidan",
+     "scene": "mockup"
+    },
+    "icon": {
+     "ratio": 6.35,
+     "selector": "summary.",
+     "text": "⋯",
+     "scene": "narrow-more"
+    },
+    "focus": {
+     "ratio": 6.11,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "narrow-light"
+    },
+    "forced text": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced border": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced icon": {
+     "ratio": 21,
+     "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+     "text": "",
+     "scene": "forced-dark"
+    },
+    "forced focus": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    }
+   },
+   "scenes": {
+    "mockup": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "light": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "narrow-light": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88,
+     "focus": 6.11
+    },
+    "narrow-dark": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88,
+     "focus": 6.11
+    },
+    "narrow-more": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.35,
+     "focus": 6.11
+    },
+    "long": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "furigana": {
+     "text": 6.24,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "frequency": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "kanji": {
+     "text": 6.24,
+     "border": 3.45,
+     "icon": 6.88,
+     "focus": 6.11
+    },
+    "note": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.35,
+     "focus": 10.97
+    },
+    "forced-dark": {
+     "text": 8.73,
+     "border": 8.73,
+     "icon": 21,
+     "focus": 8.73
+    },
+    "forced-light": {
+     "text": 11.32,
+     "border": 11.32,
+     "icon": 21,
+     "focus": 11.32
+    },
+    "structured": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    }
+   }
+  },
+  "beige": {
+   "checks": 776,
+   "failures": 0,
+   "lowest": {
+    "text": {
+     "ratio": 5.07,
+     "selector": "span.crystal-mora",
+     "text": "た",
+     "scene": "mockup"
+    },
+    "border": {
+     "ratio": 3.66,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "mockup"
+    },
+    "icon": {
+     "ratio": 6.35,
+     "selector": "summary.",
+     "text": "⋯",
+     "scene": "narrow-more"
+    },
+    "focus": {
+     "ratio": 4.78,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "narrow-light"
+    },
+    "forced text": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced border": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced icon": {
+     "ratio": 21,
+     "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+     "text": "",
+     "scene": "forced-dark"
+    },
+    "forced focus": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    }
+   },
+   "scenes": {
+    "mockup": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "light": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "narrow-light": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88,
+     "focus": 4.78
+    },
+    "narrow-dark": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88,
+     "focus": 4.78
+    },
+    "narrow-more": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.35,
+     "focus": 4.78
+    },
+    "long": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "furigana": {
+     "text": 6.24,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "frequency": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "kanji": {
+     "text": 6.24,
+     "border": 3.66,
+     "icon": 6.88,
+     "focus": 4.78
+    },
+    "note": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.35,
+     "focus": 7.64
+    },
+    "forced-dark": {
+     "text": 8.73,
+     "border": 8.73,
+     "icon": 21,
+     "focus": 8.73
+    },
+    "forced-light": {
+     "text": 11.32,
+     "border": 11.32,
+     "icon": 21,
+     "focus": 11.32
+    },
+    "structured": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    }
+   }
+  },
+  "blue": {
+   "checks": 776,
+   "failures": 0,
+   "lowest": {
+    "text": {
+     "ratio": 4.99,
+     "selector": "span.crystal-deconj",
+     "text": "食べたかった ～た→たい",
+     "scene": "mockup"
+    },
+    "border": {
+     "ratio": 3.59,
+     "selector": "span.crystal-tag",
+     "text": "ichidan",
+     "scene": "mockup"
+    },
+    "icon": {
+     "ratio": 5.19,
+     "selector": "summary.",
+     "text": "⋯",
+     "scene": "narrow-more"
+    },
+    "focus": {
+     "ratio": 4.91,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "narrow-light"
+    },
+    "forced text": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced border": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    },
+    "forced icon": {
+     "ratio": 21,
+     "selector": "span.gsm-hoshidicts-mine-icon.hd-icon",
+     "text": "",
+     "scene": "forced-dark"
+    },
+    "forced focus": {
+     "ratio": 8.73,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "forced-dark"
+    }
+   },
+   "scenes": {
+    "mockup": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57
+    },
+    "light": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57
+    },
+    "narrow-light": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57,
+     "focus": 4.91
+    },
+    "narrow-dark": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57,
+     "focus": 4.91
+    },
+    "narrow-more": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 5.19,
+     "focus": 4.91
+    },
+    "long": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57
+    },
+    "furigana": {
+     "text": 6.34,
+     "border": 3.59,
+     "icon": 6.57
+    },
+    "frequency": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57
+    },
+    "kanji": {
+     "text": 6.34,
+     "border": 3.59,
+     "icon": 6.57,
+     "focus": 4.91
+    },
+    "note": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 5.19,
+     "focus": 10.18
+    },
+    "forced-dark": {
+     "text": 8.73,
+     "border": 8.73,
+     "icon": 21,
+     "focus": 8.73
+    },
+    "forced-light": {
+     "text": 11.32,
+     "border": 11.32,
+     "icon": 21,
+     "focus": 11.32
+    },
+    "structured": {
+     "text": 4.99,
+     "border": 3.59,
+     "icon": 6.57
+    }
+   }
+  },
+  "auto-light": {
+   "checks": 102,
+   "failures": 0,
+   "lowest": {
+    "text": {
+     "ratio": 5.07,
+     "selector": "span.crystal-mora",
+     "text": "た",
+     "scene": "mockup"
+    },
+    "border": {
+     "ratio": 3.66,
+     "selector": "button.crystal-tab",
+     "text": "All",
+     "scene": "mockup"
+    },
+    "icon": {
+     "ratio": 6.88,
+     "selector": "button.gsm-hoshidicts-audio-button",
+     "text": "",
+     "scene": "mockup"
+    }
+   },
+   "scenes": {
+    "mockup": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    },
+    "light": {
+     "text": 5.07,
+     "border": 3.66,
+     "icon": 6.88
+    }
+   }
+  },
+  "auto-dark": {
+   "checks": 102,
+   "failures": 0,
+   "lowest": {
+    "text": {
+     "ratio": 5.08,
+     "selector": "span.crystal-deconj",
+     "text": "食べたかった ～た→たい",
+     "scene": "mockup"
+    },
+    "border": {
+     "ratio": 3.45,
+     "selector": "span.crystal-tag",
+     "text": "ichidan",
+     "scene": "mockup"
+    },
+    "icon": {
+     "ratio": 6.88,
+     "selector": "button.gsm-hoshidicts-audio-button",
+     "text": "",
+     "scene": "mockup"
+    }
+   },
+   "scenes": {
+    "mockup": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    },
+    "light": {
+     "text": 5.08,
+     "border": 3.45,
+     "icon": 6.88
+    }
+   }
+  }
+ }
+}

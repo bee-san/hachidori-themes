@@ -1,0 +1,108 @@
+{
+ "before": {
+  "warmFirst": "17.00 / 17.40",
+  "warmComplete": "33.30 / 33.50",
+  "render": "1.80 / 4.00",
+  "coldFirst": "18.45 / 21.90",
+  "coldComplete": "34.10 / 37.50",
+  "n": {
+   "warm": 576,
+   "render": 576,
+   "cold": 24
+  },
+  "coldFirstSamples": [
+   18.1,
+   17.7,
+   18.3,
+   17.5,
+   18.8,
+   20.4,
+   19.5,
+   18.1,
+   19.4,
+   19.6,
+   17.5,
+   17.8,
+   24.5,
+   18.8,
+   19.5,
+   17.5,
+   18.1,
+   21.9,
+   17.9,
+   18.1,
+   18.6,
+   20.2,
+   20.7,
+   17.1
+  ]
+ },
+ "after": {
+  "warmFirst": "17.00 / 17.40",
+  "warmComplete": "33.30 / 33.50",
+  "render": "1.70 / 4.10",
+  "coldFirst": "19.10 / 21.00",
+  "coldComplete": "33.35 / 37.20",
+  "n": {
+   "warm": 576,
+   "render": 576,
+   "cold": 24
+  },
+  "coldFirstSamples": [
+   17.9,
+   17.9,
+   21.7,
+   20.2,
+   20.4,
+   20.7,
+   19.1,
+   20.7,
+   19.1,
+   19,
+   17.8,
+   19.1,
+   19.1,
+   19.3,
+   18.7,
+   18.4,
+   17.9,
+   18,
+   19,
+   18.2,
+   21,
+   20.7,
+   20.5,
+   18.8
+  ]
+ },
+ "environment": {
+  "node": "v22.23.1",
+  "cpu": "AMD EPYC 9R14",
+  "logicalCpus": 64,
+  "samples": 6,
+  "warmups": "one alternating pair per fresh session, excluded; cold first-open separate",
+  "extensionSha256": {
+   "before": [
+    "0d46ba4fc8f254b6141823c56b9873af6830cf3b0384b3e1fe2fd62c70ebf78a"
+   ],
+   "after": [
+    "b956c0f096e82119c4bec0024529e4b49872faae48316ae272edce97d2d185de",
+    "de1531e81e9f6e24c192b3695b4650992b1ef0a5133a8e02d4a26967f52bb887"
+   ]
+  },
+  "load1": {
+   "before": [
+    15.05,
+    15.82,
+    23.6,
+    17.66
+   ],
+   "after": [
+    13.25,
+    12.9,
+    19.76,
+    20.92
+   ]
+  }
+ }
+}
