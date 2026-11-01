@@ -174,9 +174,11 @@
 .gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
 .gsm-hoshidicts-popup .gsm-hoshidicts-note-icon,
 .gsm-hoshidicts-popup .crystal-custom-action-icon { width: 19px; height: 19px; }
-/* Thin gold dividers between the icons, as in the mock-up. */
-.gsm-hoshidicts-entry-actions :is(.gsm-hoshidicts-audio-control:not(:first-child), .gsm-hoshidicts-note-button,
-  .gsm-hoshidicts-text-action-button, .crystal-more-actions) {
+/* Thin gold dividers between the icons, as in the mock-up. The lookup actions
+ * (pencil, custom actions, More) are a nested group laid out as contents. */
+.gsm-hoshidicts-entry-actions > :is(.gsm-hoshidicts-audio-control, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-text-action-button, .crystal-more-actions):not(:first-child),
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions:not(:first-child) > :first-child {
   margin-left: 2px; padding-left: 2px; border-left: 1px solid rgb(210 174 99 / 0.35);
   border-radius: 0;
 }
