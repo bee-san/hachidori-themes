@@ -1,0 +1,10 @@
+schema: 2
+slug: citadel
+name: Citadel
+contentMode: rich
+renderer: theme.js
+stylesheet: theme.css
+screenshot: screenshot.png
+# Theme idea 2 in https://github.com/bee-san/hachidori-themes/issues/24.
+benchmark: https://github.com/bee-san/hachidori-themes/tree/previews/citadel/bench
+designSettings: [popupOpacityPercent, glossaryLayoutMode, kanjiClickDictionary, showFrequencyDictionaryNames, compactFrequencyNumbers, averageFrequency, showFrequencyTagsWithAverage, showPitchAccentFurigana, pitchAccentFuriganaDictionary, pitchAccentFuriganaStyle, popupImageSource, imageHoverPreview, customButtons]
