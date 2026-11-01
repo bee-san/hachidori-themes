@@ -35,6 +35,16 @@ Enable it under Advanced → Experimental features, then open Design.
   audio, Anki and Note buttons. Original CSS and SVG with a serif and Mincho font
   stack; no fonts are bundled. Design supports Bee's settings plus each
   dictionary's frequencies beside the averages; see `themes/crystal/`.
+- **Citadel** — theme idea 2 in [#24](https://github.com/bee-san/hachidori-themes/issues/24):
+  a slate-grey panel in a plain gold frame with a small blue crystal at the top,
+  parchment beige when the system uses a light colour scheme. Each word gets one
+  header (serif headword, gold reading with its pitch, the deinflection trail and
+  frequency pills) ending in one set of red-and-gold audio, Anki and Note
+  buttons for the whole word, as in Default. Under it, a gold rule with a small
+  diamond opens each dictionary: a book and the name in small caps, gold sense
+  numbers, tag chips and examples behind a rule. Original CSS and SVG with a
+  serif and Mincho font stack; no fonts are bundled. Design supports Crystal's
+  settings; see `themes/citadel/`.
 
 ## Distribution
 

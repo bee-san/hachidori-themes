@@ -1,0 +1,492 @@
+/* Citadel: theme idea 2 of bee-san/hachidori-themes#24. A slate-grey panel in a
+ * plain gold frame with a small blue crystal at the top, red and gold buttons
+ * and gold rules between dictionaries; parchment beige when the system uses a
+ * light colour scheme. The ornaments are original CSS and inline SVG; no fonts
+ * are bundled. Default's reader.css is never loaded beneath it.
+ * SPDX-License-Identifier: GPL-3.0-or-later */
+:host {
+  color-scheme: dark;
+  --citadel-panel: #29292f;
+  --citadel-sheen: rgb(255 255 255 / 0.05);
+  --citadel-ink: #f0ebe1;
+  --citadel-ink-strong: #fbf8f1;
+  --citadel-muted: #cdc7bc;
+  --citadel-accent: #ecca80;
+  --citadel-gold: #c9a45c;
+  --citadel-gold-light: #f0d898;
+  --citadel-gold-deep: #7d6436;
+  --citadel-edge: #0c0c0f;
+  --citadel-field: #1c1c21;
+  --citadel-input: #131317;
+  --citadel-chip: #3b3b43;
+  --citadel-chip-border: #a6a3ab;
+  --citadel-chip-ink: #f3eee5;
+  --citadel-tab: #36363d;
+  --citadel-tab-low: #222227;
+  --citadel-tab-ink: #efdcae;
+  --citadel-tab-border: #c9a45c;
+  --citadel-select: #22578a;
+  --citadel-select-low: #102b4a;
+  --citadel-select-edge: #8fd3ff;
+  --citadel-select-ink: #ffffff;
+  --citadel-red: #93302a;
+  --citadel-red-low: #6a1c18;
+  --citadel-red-hover: #ab3b33;
+  --citadel-red-border: #d4ae62;
+  --citadel-icon: #fbecc8;
+  --citadel-warning: #ffd479;
+  --citadel-example-rule: #7d786f;
+  --citadel-link: #a9d9ff;
+  --citadel-focus: #8fd3ff;
+  --citadel-error: #ffb4a3;
+  --citadel-shadow: rgb(0 0 0 / 0.5);
+  --citadel-serif: "Noto Serif", "Source Serif 4", "Source Serif Pro", Georgia, Cambria, "Times New Roman",
+    "Noto Serif CJK JP", "Noto Serif JP", "Source Han Serif JP", "Yu Mincho", YuMincho, "Hiragino Mincho ProN",
+    "BIZ UDPMincho", "MS PMincho", serif;
+  --citadel-mincho: "Noto Serif CJK JP", "Noto Serif JP", "Source Han Serif JP", "Yu Mincho", YuMincho,
+    "Hiragino Mincho ProN", "BIZ UDPMincho", "MS PMincho", var(--citadel-serif);
+  /* Shared glossary media variables. */
+  --text-color: var(--citadel-ink); --text-color-light1: var(--citadel-accent); --text-color-light3: var(--citadel-muted);
+  --accent-color: var(--citadel-link); --accent-color-dark: var(--citadel-ink-strong); --link-color: var(--citadel-link);
+  --font-size-no-units: 16; --line-height: 1.5; --gloss-image-background-color: #f0ebe1;
+}
+/* FFXIV's light windows: parchment with brown ink and bronze trim. */
+@media (prefers-color-scheme: light) {
+  :host {
+    color-scheme: light;
+    --citadel-panel: #ebe1ca;
+    --citadel-sheen: rgb(255 255 255 / 0.35);
+    --citadel-ink: #2a2117;
+    --citadel-ink-strong: #1b140b;
+    --citadel-muted: #4f4332;
+    --citadel-accent: #6b3f0c;
+    --citadel-gold: #7d5c24;
+    --citadel-gold-light: #e2c27c;
+    --citadel-gold-deep: #a88a52;
+    --citadel-edge: #5a4520;
+    --citadel-field: #f6f0e2;
+    --citadel-input: #fffaf0;
+    --citadel-chip: #dfd2b4;
+    --citadel-chip-border: #6f5b3c;
+    --citadel-chip-ink: #2a2117;
+    --citadel-tab: #f6efdf;
+    --citadel-tab-low: #e2d5b8;
+    --citadel-tab-ink: #4a3510;
+    --citadel-tab-border: #7a5a22;
+    --citadel-red-border: #e2c27c;
+    --citadel-select-edge: #133c66;
+    --citadel-example-rule: #9a8763;
+    --citadel-link: #164679;
+    --citadel-focus: #1d5fa3;
+    --citadel-error: #8f1d12;
+    --citadel-shadow: rgb(60 40 10 / 0.35);
+    --gloss-image-background-color: #fffaf0;
+  }
+}
+:host([data-hoshidicts-note-button="hidden"]) .gsm-hoshidicts-note-button { display: none; }
+:host([data-hoshidicts-audio-button="hidden"]) .gsm-hoshidicts-audio-control { display: none; }
+
+/* The panel takes Design's opacity; the frame and crystal stay opaque. */
+.gsm-hoshidicts-popup {
+  position: fixed; z-index: 2147483647; pointer-events: auto;
+  box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
+  padding: 14px 10px 9px;
+  color: var(--citadel-ink);
+  background-color: color-mix(in srgb, var(--citadel-panel) var(--gsm-hoshidicts-popup-opacity, 85%), transparent);
+  background-image: radial-gradient(110% 60% at 50% 0%, var(--citadel-sheen), transparent 72%);
+  border: 1px solid var(--citadel-edge); border-radius: 10px;
+  box-shadow: 0 10px 28px var(--citadel-shadow);
+  /* Page text behind the translucent panel blurs into haze. */
+  backdrop-filter: blur(6px);
+  font: 15px/1.5 var(--citadel-serif); text-align: left; white-space: normal;
+  text-spacing-trim: space-all;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+}
+.gsm-hoshidicts-popup [hidden], .gsm-hoshidicts-popup[hidden] { display: none !important; }
+/* Frame: one gold line lit along its top edge, a dark channel and a hairline. */
+.gsm-hoshidicts-popup::before {
+  content: ""; position: absolute; inset: 3px; z-index: 0; pointer-events: none;
+  border: 2px solid var(--citadel-gold); border-top-color: var(--citadel-gold-light); border-radius: 8px;
+  box-shadow: inset 0 0 0 1px var(--citadel-edge), inset 0 0 0 2px var(--citadel-gold-deep);
+}
+/* A small blue crystal on a gold mount at the top centre. */
+.gsm-hoshidicts-popup::after {
+  content: ""; position: absolute; z-index: 0; top: 0; left: 50%; width: 100px; height: 34px;
+  transform: translateX(-50%); pointer-events: none;
+  background: /* svg:crest */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 34'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23f8e6ad'/%3E%3Cstop offset='.55' stop-color='%23d3ac5c'/%3E%3Cstop offset='1' stop-color='%238f6a2c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23g)' stroke='%233d2c10' stroke-width='.5' stroke-linejoin='round'%3E%3Cpath d='M50 2.3C40 2.5 26 2.9 11 3.5C8 3.6 5.6 3.1 3.6 1.6C4.2 4.2 6.8 5.7 11 5.7C26 5.7 40 6.1 50 7.2Z'/%3E%3Cpath d='M50 2.3C60 2.5 74 2.9 89 3.5C92 3.6 94.4 3.1 96.4 1.6C95.8 4.2 93.2 5.7 89 5.7C74 5.7 60 6.1 50 7.2Z'/%3E%3Cpath d='M40.6 5.4C40.6 12.6 44.6 18.2 50 21C55.4 18.2 59.4 12.6 59.4 5.4L56.8 5.4C56.8 11.2 54 15.4 50 17.6C46 15.4 43.2 11.2 43.2 5.4Z'/%3E%3C/g%3E%3Cpath d='M50 1L57 11.2L50 31.5L43 11.2Z' fill='%232f7fc4' stroke='%230a2a4a' stroke-width='.8' stroke-linejoin='round'/%3E%3Cpath d='M50 1L43 11.2L50 13Z' fill='%23dff5ff'/%3E%3Cpath d='M50 1L57 11.2L50 13Z' fill='%238bcff7'/%3E%3Cpath d='M43 11.2L50 13L50 31.5Z' fill='%234b9de2'/%3E%3Cpath d='M57 11.2L50 13L50 31.5Z' fill='%231d5c9c'/%3E%3Cpath d='M46.6 6.2L48.2 4L46.8 9.6Z' fill='%23ffffff' opacity='.9'/%3E%3C/svg%3E") center top / 100px 34px no-repeat;
+}
+.gsm-hoshidicts-popup > * { position: relative; z-index: 1; }
+/* Clickable controls show a pointer. */
+.gsm-hoshidicts-popup button { color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup button:disabled { cursor: default; }
+.gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible { outline: 2px solid var(--citadel-focus); outline-offset: 2px; }
+
+/* Bar: group tabs at the left, Back first and Close at the right. */
+.citadel-bar { flex: none; display: flex; align-items: center; gap: 4px; padding: 0 4px 6px; }
+.citadel-bar:not(:has(> .citadel-tabs > *)):not(:has(> .citadel-nav > *)) { display: none; }
+.citadel-nav { display: contents; }
+.citadel-bar > .citadel-tabs { order: 1; }
+.citadel-nav > :not(.gsm-hoshidicts-kanji-back) { order: 2; margin-left: auto; }
+.citadel-nav > .gsm-hoshidicts-popup-close { order: 3; }
+.citadel-nav:has(> .gsm-hoshidicts-entry-actions) > .gsm-hoshidicts-popup-close { margin-left: 5px; }
+.citadel-tabs { display: flex; flex-wrap: wrap; gap: 5px 9px; min-width: 0; padding-left: 4px; }
+.citadel-tabs:empty { display: none; }
+/* Tabs are gold-edged slanted plates, drawn behind the label so the text stays upright. */
+.gsm-hoshidicts-popup .citadel-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  position: relative; isolation: isolate; min-width: 0; max-width: 100%; margin: 0; padding: 2px 13px 3px;
+  background: none; border: 0; color: var(--citadel-tab-ink);
+  font-size: 13px; font-weight: 600; line-height: 18px; font-variant-caps: small-caps; letter-spacing: 0.08em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.gsm-hoshidicts-popup :is(.citadel-tab, .gsm-hoshidicts-kanji-back)::before {
+  content: ""; position: absolute; inset: 0 3px; z-index: -1;
+  border: 1px solid var(--citadel-tab-border); border-radius: 3px;
+  /* The colour is the gradient's lighter stop, so contrast checks see the worst case. */
+  background: var(--citadel-tab) linear-gradient(var(--citadel-tab), var(--citadel-tab-low));
+  transform: skewX(-16deg);
+}
+.gsm-hoshidicts-popup .citadel-tab:hover:not([aria-pressed="true"])::before,
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back:hover::before { border-color: var(--citadel-accent); }
+/* The selected group is crystal blue and underlined, so it does not rely on colour. */
+.gsm-hoshidicts-popup .citadel-tab[aria-pressed="true"] {
+  color: var(--citadel-select-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px;
+}
+.gsm-hoshidicts-popup .citadel-tab[aria-pressed="true"]::before {
+  border-color: var(--citadel-select-edge);
+  background: var(--citadel-select) linear-gradient(var(--citadel-select), var(--citadel-select-low));
+  box-shadow: 0 0 6px rgb(112 196 255 / 0.55), inset 0 1px 0 rgb(214 240 255 / 0.45);
+}
+
+.citadel-scroll {
+  flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 0 4px 2px; container: citadel / inline-size;
+  scrollbar-width: thin; scrollbar-color: var(--citadel-gold-deep) transparent;
+}
+/* Results are separated by a double hairline. */
+.citadel-result:not([hidden]) ~ .citadel-result:not([hidden]) {
+  margin-top: 12px; padding-top: 12px;
+  background: linear-gradient(var(--citadel-gold), var(--citadel-gold)) center top / 100% 1px no-repeat,
+    linear-gradient(var(--citadel-gold-deep), var(--citadel-gold-deep)) center 3px / 100% 1px no-repeat;
+}
+/* Spelling, reading, deinflection and frequencies wrap at the left; the word's
+ * buttons keep the top right. */
+.citadel-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; column-gap: 8px; padding: 0 2px 2px 4px; }
+.citadel-word { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 9px; min-width: 0; }
+.citadel-head > .gsm-hoshidicts-entry-actions { margin-top: 3px; }
+/* Narrow popups give the word the full width; the buttons follow it. */
+@container citadel (max-width: 400px) {
+  .citadel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 9px; }
+  .citadel-word { display: contents; }
+  .citadel-head > .gsm-hoshidicts-entry-actions { align-self: center; margin: 0 0 0 auto; }
+}
+.citadel-spelling { color: var(--citadel-ink-strong); font: 600 25px/1.3 var(--citadel-mincho); letter-spacing: 0.01em; }
+.citadel-reading { color: var(--citadel-accent); font: 500 19px/1.4 var(--citadel-mincho); }
+.citadel-deconj { color: var(--citadel-muted); font: 13.5px/1.4 var(--citadel-mincho); word-break: keep-all; overflow-wrap: anywhere; }
+.citadel-kanji-character { font-size: 42px; }
+/* Pitch: a line over high morae and under low ones, joined at each change. */
+.citadel-mora { border: 0 solid currentColor; padding: 0 0.5px; }
+.citadel-mora[data-pitch="high"] { border-top-width: 1.5px; }
+.citadel-mora[data-pitch="low"] { border-bottom-width: 1.5px; }
+.citadel-mora[data-transition] { margin-right: -1.5px; border-right-width: 1.5px; }
+[data-pitch-style="overline"] .citadel-mora[data-pitch="low"] { border-bottom-width: 0; }
+[data-pitch-style="overline"] .citadel-mora[data-transition="rise"] { border-right-width: 0; margin-right: 0; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link { padding: 0; background: none; border: 0; border-radius: 3px; color: inherit; font: inherit; cursor: pointer; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-link:hover { color: var(--citadel-accent); }
+/* Frequencies: plain numbers in gold-edged pills. */
+.citadel-frequency { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; align-self: center; min-width: 0; max-width: 100%; }
+.citadel-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 100%; box-sizing: border-box;
+  padding: 0 8px; border: 1px solid var(--citadel-gold); border-radius: 6px;
+  background: var(--citadel-field); color: var(--citadel-ink); font-size: 13px; line-height: 20px;
+  font-variant-numeric: lining-nums tabular-nums; overflow-wrap: anywhere;
+}
+.gsm-hoshidicts-frequency-source { color: var(--citadel-accent); font-variant-caps: small-caps; letter-spacing: 0.03em; }
+
+/* The word's buttons: red plates edged in gold. */
+.gsm-hoshidicts-entry-actions { display: inline-flex; flex: 0 1 auto; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 5px; min-width: 0; }
+.gsm-hoshidicts-entry-actions:empty { display: none; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-entry-actions { display: contents; }
+.gsm-hoshidicts-entry-actions > .gsm-hoshidicts-audio-control { position: relative; display: inline-flex; flex: none; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button, .gsm-hoshidicts-popup .gsm-hoshidicts-mine-button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-button, .gsm-hoshidicts-popup .gsm-hoshidicts-popup-close,
+.gsm-hoshidicts-popup .gsm-hoshidicts-entry-actions .gsm-hoshidicts-text-action-button,
+.citadel-more-actions > summary {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; width: 26px; height: 26px; flex: none;
+  margin: 0; padding: 0; border: 1px solid var(--citadel-red-border); border-radius: 5px;
+  /* The lighter stop is the colour, the worst case for the light icons. */
+  background: var(--citadel-red) linear-gradient(var(--citadel-red), var(--citadel-red-low));
+  box-shadow: inset 0 1px 0 rgb(255 220 190 / 0.25), 0 1px 2px rgb(0 0 0 / 0.35);
+  color: var(--citadel-icon); cursor: pointer;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-button::before,
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-icon,
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close::before,
+.gsm-hoshidicts-popup .citadel-custom-action-icon { width: 18px; height: 18px; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-text-action-button, .citadel-more-actions > summary, .gsm-hoshidicts-popup-close):is(:hover, [aria-expanded="true"]):not(:disabled) {
+  background: var(--citadel-red-hover) linear-gradient(var(--citadel-red-hover), var(--citadel-red));
+}
+/* Duplicate warnings stand out; viewing existing notes keeps the icon colour. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:is([data-state="duplicate"], [data-state="add-duplicate"],
+  [data-state="overwrite"]) { color: var(--citadel-warning); }
+.gsm-hoshidicts-popup .gsm-hoshidicts-mine-button:disabled { opacity: 0.6; }
+.gsm-hoshidicts-text-action-label.citadel-custom-action-icon { font-size: 0; }
+.citadel-custom-action-icon { order: -1; }
+.citadel-more-actions { position: relative; flex: none; font-size: 17px; line-height: 1; }
+.citadel-more-actions > summary { list-style: none; }
+.citadel-more-actions > summary::-webkit-details-marker { display: none; }
+.citadel-action-menu {
+  position: absolute; z-index: 3; top: calc(100% + 4px); right: 0; box-sizing: border-box; width: max-content; max-width: min(280px, 80vw);
+  display: flex; flex-direction: column; gap: 2px; padding: 4px;
+  background: var(--citadel-field); border: 1px solid var(--citadel-gold); border-radius: 5px; box-shadow: 0 6px 18px var(--citadel-shadow);
+}
+.gsm-hoshidicts-popup .citadel-action-menu .gsm-hoshidicts-text-action-button {
+  display: flex; align-items: center; gap: 6px; width: 100%; height: auto; min-height: 28px; justify-content: flex-start;
+  margin: 0; padding: 3px 8px; border: 0; border-radius: 3px; background: none; box-shadow: none; color: var(--citadel-ink);
+  font-size: 14px; text-align: left;
+}
+.gsm-hoshidicts-popup .citadel-action-menu .gsm-hoshidicts-text-action-button:hover { background: var(--citadel-chip); }
+.citadel-action-menu .gsm-hoshidicts-text-action-label { overflow-wrap: anywhere; }
+.citadel-action-menu .citadel-custom-action-icon { color: var(--citadel-accent); }
+
+/* Dictionaries: a gold rule with a small diamond, then a book and the name. */
+.citadel-section { position: relative; margin-top: 5px; padding: 15px 2px 2px 4px; }
+.citadel-section::before {
+  content: ""; position: absolute; top: 5px; left: 0; right: 0; height: 10px;
+  background: linear-gradient(90deg, transparent, var(--citadel-gold) 18%, var(--citadel-gold) 82%, transparent) center / 100% 1px no-repeat;
+}
+.citadel-section::after {
+  content: ""; position: absolute; top: 5px; left: calc(50% - 22px); width: 44px; height: 10px; background: var(--citadel-gold);
+  mask: /* svg:rule */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 10'%3E%3Cpath d='M22 .6L26.4 5L22 9.4L17.6 5Z'/%3E%3Cpath d='M13.4 3L15.4 5L13.4 7L11.4 5Z'/%3E%3Cpath d='M30.6 3L32.6 5L30.6 7L28.6 5Z'/%3E%3C/svg%3E") center / 44px 10px no-repeat;
+}
+.citadel-title { display: flex; align-items: center; gap: 7px; min-width: 0; margin: 2px 0 1px; }
+.citadel-book {
+  flex: none; width: 18px; height: 14px; background: var(--citadel-accent);
+  mask: /* svg:book */ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 14' fill='none' stroke='%23000' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M9 2.6C7.2 1.3 4.7.9 1.3 1.3V11.8C4.7 11.4 7.2 11.8 9 13.1C10.8 11.8 13.3 11.4 16.7 11.8V1.3C13.3.9 10.8 1.3 9 2.6Z' stroke-width='1.4'/%3E%3Cpath d='M9 2.6V13.1' stroke-width='1.2'/%3E%3Cpath d='M3.4 4.3C4.8 4.2 6 4.4 7 4.9M3.4 6.7C4.8 6.6 6 6.8 7 7.3M11 4.9C12 4.4 13.2 4.2 14.6 4.3M11 7.3C12 6.8 13.2 6.6 14.6 6.7' stroke-width='.9'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.citadel-dictionary {
+  flex: 0 1 auto; min-width: 0; color: var(--citadel-accent); font-size: 14px; font-weight: 600; line-height: 20px;
+  font-variant-caps: small-caps; letter-spacing: 0.07em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.citadel-title > .gsm-hoshidicts-entry-actions { margin-left: auto; }
+
+/* Senses: gold numbers when there are several, tag chips, then the glossary. */
+.gsm-hoshidicts-definitions { margin: 0; overflow-wrap: anywhere; }
+.citadel-senses { margin: 0; padding: 0; list-style: none; counter-reset: citadel-sense; }
+.citadel-sense {
+  counter-increment: citadel-sense; display: grid; grid-template-columns: 22px minmax(0, 1fr); column-gap: 4px;
+  align-items: start; margin-top: 4px;
+}
+.citadel-sense::before {
+  content: counter(citadel-sense) "."; grid-row: 1 / span 2; color: var(--citadel-accent);
+  font-size: 16px; font-weight: 600; line-height: 23px; text-align: right; padding-right: 2px;
+}
+.citadel-sense > * { grid-column: 2; }
+.citadel-senses[data-digits="2"] > .citadel-sense { grid-template-columns: 30px minmax(0, 1fr); }
+.citadel-senses[data-digits="3"] > .citadel-sense { grid-template-columns: 39px minmax(0, 1fr); }
+.citadel-senses[data-count="1"] > .citadel-sense { display: block; margin: 3px 0 0 26px; }
+.citadel-senses[data-count="1"] > .citadel-sense::before { content: none; }
+.citadel-tags { display: flex; flex-wrap: wrap; gap: 3px 5px; margin: 2px 0 1px; }
+.citadel-tag {
+  display: inline-block; max-width: 100%; box-sizing: border-box; padding: 0 9px;
+  background: var(--citadel-chip); border: 1px solid var(--citadel-chip-border); border-radius: 999px;
+  color: var(--citadel-chip-ink); font-size: 12.5px; line-height: 18px; overflow-wrap: anywhere;
+}
+.citadel-gloss { min-width: 0; font-size: 15.5px; line-height: 1.5; white-space: normal; }
+.citadel-gloss :is(ul, ol) { margin-block: 0; }
+.citadel-gloss > .gloss-list { margin: 0; padding: 0; list-style: none; }
+/* Plain glosses run on one line, joined with semicolons; structured ones keep their blocks. */
+.citadel-gloss > .gloss-list > .gloss-item { display: inline; }
+.citadel-gloss > .gloss-list > .gloss-item:first-child > .gloss-separator { display: none; }
+.citadel-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator::before { content: ";"; }
+.citadel-gloss > .gloss-list > .gloss-item:has(> .structured-content) { display: block; }
+.citadel-gloss > .gloss-list > .gloss-item:has(> .structured-content) > .gloss-separator,
+.citadel-gloss > .gloss-list > .gloss-item:has(> .structured-content) + .gloss-item > .gloss-separator { display: none; }
+.citadel-gloss .structured-content { display: block; }
+/* Defaults for dictionary content, at zero specificity so a dictionary's own
+ * stylesheet always wins. */
+:where(.citadel-gloss) :where(rt) { color: var(--citadel-accent); font-size: 0.55em; letter-spacing: 0.06em; }
+:where(.citadel-gloss) :where(li)::marker { color: var(--citadel-accent); }
+:where(.citadel-gloss) :where(:lang(ja)) { font-family: var(--citadel-mincho); }
+/* Example sentences sit behind a muted rule, the translation in italics. */
+:where(.citadel-gloss) :where([data-sc-content="example-sentence"], [data-sc-content="example-sentences"], blockquote) {
+  margin: 3px 0 2px 12px; padding: 0 0 0 11px; border-left: 3px solid var(--citadel-example-rule);
+}
+:where(.citadel-gloss) :where([data-sc-content="example-sentence-a"]) { font-family: var(--citadel-mincho); font-size: 1.04em; }
+:where(.citadel-gloss) :where([data-sc-content="example-sentence-b"]) { color: var(--citadel-muted); font-style: italic; }
+/* Jitendex-style tags in a definition look like the sense's own chips. */
+:where(.citadel-gloss) :where([data-sc-class~="tag"]) {
+  display: inline-block; margin: 0 5px 3px 0; padding: 0 9px; background: var(--citadel-chip); border: 1px solid var(--citadel-chip-border);
+  border-radius: 999px; color: var(--citadel-chip-ink); font-size: 12.5px; line-height: 18px;
+}
+:where(.citadel-gloss) :where(a) { color: var(--citadel-link); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+:where(.citadel-gloss) :where(th, td) { padding: 1px 6px; border: 1px solid var(--citadel-gold-deep); }
+:where(.citadel-gloss) :where(table) { border-collapse: collapse; }
+:where(.citadel-gloss) :where(summary) { color: var(--citadel-accent); cursor: pointer; }
+.citadel-gloss .gloss-sc-table-container { max-width: 100%; overflow-x: auto; }
+.citadel-gloss .gloss-link-external-icon { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: middle; }
+/* Compact glossaries: senses share lines, glosses joined by bars. */
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-senses > .citadel-sense { display: inline; margin: 0 8px 0 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-sense::before { display: inline; padding-right: 4px; font-size: 14px; }
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-senses[data-count="1"] > .citadel-sense { margin-left: 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) :is(.citadel-tags, .citadel-gloss, .citadel-gloss > .gloss-list,
+  .citadel-gloss > .gloss-list > .gloss-item, .citadel-gloss .structured-content) { display: inline; }
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-tags { margin-right: 2px; }
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-tag { margin: 0 4px 2px 0; }
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator {
+  display: inline; font-size: 0;
+}
+:host([data-hoshidicts-glossary-layout="compact"]) .citadel-gloss > .gloss-list > .gloss-item + .gloss-item > .gloss-separator::before {
+  content: " | " / ""; white-space: pre-wrap; color: var(--citadel-accent); font-size: 15.5px;
+}
+/* Definition blur. Blurred definitions that a click reveals are a button (#598);
+ * the blur would blur its focus ring too, so the section shows it. */
+.citadel-scroll[data-definition-blur="pending"] .gsm-hoshidicts-definitions,
+.citadel-scroll[data-definition-blur="blurred"] .gsm-hoshidicts-definitions { filter: blur(5px); }
+.citadel-section:has(> [data-definition-reveal]:focus-visible) { outline: 2px solid var(--citadel-focus); outline-offset: 1px; border-radius: 4px; }
+.citadel-section > [data-definition-reveal]:focus-visible { outline: none; }
+.gsm-hoshidicts-popup [data-definition-reveal] { cursor: pointer; }
+
+/* Kanji: meanings, then On and Kun readings and statistics. */
+.citadel-kanji > .citadel-gloss { margin: 2px 0 0 26px; }
+.citadel-kanji-details { display: grid; gap: 4px; margin: 6px 0 0 26px; }
+.citadel-kanji-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.citadel-kanji-label { min-width: 3.2em; color: var(--citadel-accent); font-weight: 600; font-variant-caps: small-caps; letter-spacing: 0.06em; }
+.citadel-kanji-readings { font-family: var(--citadel-mincho); font-size: 17px; }
+
+.gsm-hoshidicts-anki-feedback { margin: 0 4px; font-size: 13px; }
+.gsm-hoshidicts-lookup-notice, .gsm-hoshidicts-lookup-failure { margin: 8px 6px; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-lookup-failure button,
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions button {
+  margin-left: 6px; padding: 2px 12px; border: 1px solid var(--citadel-tab-border); border-radius: 4px;
+  background: var(--citadel-tab) linear-gradient(var(--citadel-tab), var(--citadel-tab-low)); color: var(--citadel-tab-ink); font-size: 14px;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-note-actions .gsm-hoshidicts-note-save {
+  border-color: var(--citadel-red-border); background: var(--citadel-red) linear-gradient(var(--citadel-red), var(--citadel-red-low));
+  color: var(--citadel-icon);
+}
+.gsm-hoshidicts-audio-menu {
+  position: absolute; right: 0; top: 31px; z-index: 3; min-width: 180px; max-height: 60vh; overflow: auto; padding: 6px;
+  background: var(--citadel-field); border: 1px solid var(--citadel-gold); border-radius: 5px; font-size: 13px;
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-audio-menu button {
+  display: block; width: 100%; padding: 2px 6px; text-align: left; background: var(--citadel-input); border: 1px solid var(--citadel-gold-deep);
+  border-radius: 3px; color: var(--citadel-ink);
+}
+/* Personal dictionary editor. */
+.gsm-hoshidicts-note-form {
+  display: grid; gap: 7px; margin: 6px 2px; padding: 9px 10px;
+  background: var(--citadel-field); border: 1px solid var(--citadel-gold); border-radius: 6px;
+}
+.gsm-hoshidicts-note-field { display: grid; gap: 3px; color: var(--citadel-accent); font-size: 13px; font-weight: 600; font-variant-caps: small-caps; letter-spacing: 0.05em; }
+.gsm-hoshidicts-note-form input, .gsm-hoshidicts-note-form textarea {
+  box-sizing: border-box; width: 100%; padding: 5px 7px; border: 1px solid var(--citadel-gold); border-radius: 4px;
+  background: var(--citadel-input); color: var(--citadel-ink); font: 15px/1.4 var(--citadel-serif);
+  font-variant-caps: normal; letter-spacing: normal;
+}
+.gsm-hoshidicts-note-form textarea { min-height: 64px; resize: vertical; }
+.gsm-hoshidicts-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
+.gsm-hoshidicts-note-error { color: var(--citadel-error); font-size: 13px; }
+.gsm-hoshidicts-resize-handle {
+  position: absolute; right: 0; bottom: 0; z-index: 2; width: 18px; height: 18px; cursor: nwse-resize; touch-action: none;
+}
+
+/* Enlarged copy of a hovered or focused glossary image, as in Default. It is a
+ * sibling of the popup, so it escapes the scroll clipping. */
+.gsm-hoshidicts-image-hover-preview {
+  position: fixed; z-index: 2147483647; display: inline-block; overflow: hidden; line-height: 0;
+  zoom: calc(var(--gsm-hoshidicts-page-zoom, 1) * var(--gsm-hoshidicts-popup-scale, 100%));
+  padding: 6px; background: var(--citadel-panel); border: 1px solid var(--citadel-gold); border-radius: 8px;
+  box-shadow: 0 12px 32px var(--citadel-shadow); pointer-events: none;
+}
+.gsm-hoshidicts-image-hover-preview img {
+  display: block; object-fit: contain;
+  width: min(92vw, calc(var(--gsm-hoshidicts-popup-width, 560px) + 360px));
+  height: min(92vh, calc(var(--gsm-hoshidicts-popup-height, 420px) + 360px));
+  max-width: calc(100vw - 16px); max-height: calc(100vh - 16px);
+}
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"]) img,
+.gsm-hoshidicts-image-hover-preview:is([data-image-rendering="pixelated"], [data-image-rendering="crisp-edges"])::after { image-rendering: pixelated; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"] img { visibility: hidden; }
+.gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after {
+  content: ""; position: absolute; inset: 6px; background: var(--citadel-ink);
+  mask: var(--image) center / contain no-repeat; forced-color-adjust: none;
+}
+
+/* Windows contrast themes: system colours, no ornaments. */
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup, .gsm-hoshidicts-image-hover-preview { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup::before { border-color: CanvasText; box-shadow: none; }
+  .gsm-hoshidicts-popup::after, .citadel-section::after { display: none; }
+  .citadel-section::before { height: 0; background: none; border-top: 1px solid CanvasText; }
+  .citadel-result:not([hidden]) ~ .citadel-result:not([hidden]) { background: none; border-top: 3px double CanvasText; }
+  .citadel-book { forced-color-adjust: none; background: CanvasText; }
+  .gsm-hoshidicts-popup :is(.citadel-tab, .gsm-hoshidicts-kanji-back)::before { background: Canvas; border-color: CanvasText; box-shadow: none; }
+  .gsm-hoshidicts-popup .citadel-tab[aria-pressed="true"] { forced-color-adjust: none; color: HighlightText; }
+  .gsm-hoshidicts-popup .citadel-tab[aria-pressed="true"]::before { forced-color-adjust: none; background: Highlight; border-color: Highlight; }
+  .gsm-hoshidicts-popup :is(.citadel-tag, .gsm-hoshidicts-tag-frequency) { background: Canvas; color: CanvasText; border-color: CanvasText; }
+  .gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+    .gsm-hoshidicts-text-action-button, .citadel-more-actions > summary, .gsm-hoshidicts-popup-close) {
+    background: ButtonFace; color: ButtonText; border-color: ButtonText; box-shadow: none;
+  }
+  .gsm-hoshidicts-image-hover-preview[data-appearance="monochrome"]::after { background: CanvasText; }
+  .gsm-hoshidicts-popup :is(button, input, textarea, a, summary):focus-visible,
+  .citadel-section:has(> [data-definition-reveal]:focus-visible) { outline-color: Highlight; }
+  .citadel-mora { border-color: CanvasText; }
+}
+
+/* Shared glossary media styling from Hachidori. */
+.gloss-image-container {
+  display: inline-block; white-space: nowrap; max-width: 100%; max-height: 100vh; position: relative;
+  vertical-align: top; line-height: 0;
+  /* Yomitan's calc(1em / var(--font-size-no-units)): one CSS pixel at its text
+     size, the unit converted dictionaries write their gaiji rules against. */
+  font-size: calc(1em / 16); overflow: hidden;
+}
+.gloss-image-link[data-background="true"] > .gloss-image-container { background-color: var(--gloss-image-background-color); }
+.gloss-image-link { cursor: inherit; color: var(--accent-color); display: inline-block; position: relative; line-height: 1; max-width: 100%; }
+.gloss-image-link:hover { color: var(--accent-color-dark); cursor: pointer; }
+.gloss-image-source { display: inline-block; margin-inline: 0.4em; color: var(--text-color-light1); font-size: 0.8em; line-height: 1.4; }
+.gloss-image-container-overlay {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  font-size: calc(1em * var(--font-size-no-units)); line-height: var(--line-height);
+  display: table; table-layout: fixed; white-space: normal; color: var(--text-color-light3);
+}
+.gloss-image-background {
+  --image: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  background-color: var(--text-color); mask: var(--image) center / contain no-repeat; forced-color-adjust: none; display: none;
+}
+@media (forced-colors: active) { .gloss-image-background { background: CanvasText; } }
+.gloss-image { display: inline-block; vertical-align: top; object-fit: contain; border: none; outline: none; }
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image,
+.gloss-image-link[data-image-rendering="pixelated"] .gloss-image-background,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image,
+.gloss-image-link[data-image-rendering="crisp-edges"] .gloss-image-background { image-rendering: pixelated; }
+.gloss-image-link[data-has-aspect-ratio="true"] .gloss-image-sizer { display: inline-block; width: 0; vertical-align: top; font-size: 0; }
+.gloss-image-link-text { display: none; line-height: var(--line-height); }
+.gloss-image-link-text::before { content: "["; }
+.gloss-image-link-text::after { content: "]"; }
+.gloss-image-description { display: block; white-space: pre-line; }
+/* Hachidori (#322): a monochrome image is drawn in the text colour through the
+   image's alpha once the media reply has set its --image. */
+.gloss-image-link[data-appearance="monochrome"] .gloss-image { visibility: hidden; }
+.gloss-image-link[data-appearance="monochrome"][data-image-load-state="loaded"] .gloss-image-background { display: block; }
+.gloss-image-link[data-size-units="em"] .gloss-image-container { font-size: 1em; }
+.gloss-image-link[data-vertical-align="baseline"] { vertical-align: baseline; }
+.gloss-image-link[data-vertical-align="sub"] { vertical-align: sub; }
+.gloss-image-link[data-vertical-align="super"] { vertical-align: super; }
+.gloss-image-link[data-vertical-align="text-top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="text-bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-vertical-align="middle"] { vertical-align: middle; }
+.gloss-image-link[data-vertical-align="top"] { vertical-align: top; }
+.gloss-image-link[data-vertical-align="bottom"] { vertical-align: bottom; }
+.gloss-image-link[data-collapsed="true"] { vertical-align: baseline; }
+.gloss-image-link[data-collapsed="true"] .gloss-image-container { display: none; position: absolute; left: 0; top: 100%; z-index: 1; }
+.gloss-image-link[data-collapsed="true"]:hover .gloss-image-container,
+.gloss-image-link[data-collapsed="true"]:focus .gloss-image-container { display: block; }
+.gloss-image-link[data-collapsed="true"] .gloss-image-link-text,
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-link-text { display: inline; }
+.gloss-image-link[data-collapsed="true"] ~ .gloss-image-description { display: inline; }
+/* Hachidori: a failed image shows its label, not an empty box. */
+.gloss-image-link[data-image-load-state="load-error"] .gloss-image-container { display: none; }
