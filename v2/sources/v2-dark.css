@@ -1,0 +1,15 @@
+/* Crystal's structure in the game's own Dark window colours: warm charcoal
+ * with a faint violet cast (as in mockup 3) instead of navy. */
+:host {
+  --xiv-window: #141318;
+  --xiv-panel: rgba(38, 35, 44, 0.78);
+  --xiv-surface: #24212a;
+  --xiv-field: #0e0d11;
+  --xiv-tab: linear-gradient(180deg, #2b2831, #19171d);
+}
+.gsm-hoshidicts-popup {
+  background-image: radial-gradient(120% 55% at 50% 0%, rgba(150, 140, 170, 0.1), rgba(150, 140, 170, 0) 70%),
+    radial-gradient(55% 45% at 92% 30%, rgba(112, 90, 180, 0.1), rgba(112, 90, 180, 0));
+}
+.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: linear-gradient(180deg, #37333e, #211f26); }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close { background: radial-gradient(circle at 50% 35%, #37333e, #121115); }

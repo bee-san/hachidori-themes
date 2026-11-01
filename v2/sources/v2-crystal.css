@@ -1,0 +1,146 @@
+/* Direction A, Crystal (issue #24 mockups 4 and 5): a navy window in a gilt
+ * double frame with corner filigree and a crystal on a gold bar at the top
+ * right; gold-edged tab plates; each dictionary is a framed panel whose name
+ * sits on a bronze plate with a blue gem, the panel's top rule running from
+ * the plate to the actions. */
+:host {
+  --xiv-label-font: "Cinzel", "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif, var(--xiv-font);
+  --xiv-window: #0b1424;
+  --xiv-frame-bright: #d8b670;
+  --xiv-frame: #a8874c;
+  --xiv-frame-dim: #6c5630;
+  --xiv-trim: #a8874c;
+  --xiv-panel: rgba(21, 35, 60, 0.8);
+  --xiv-plate: #3d2d15;
+  --xiv-text: #ece7dc;
+  --xiv-headword: #fbf8f0;
+  --xiv-gold: #e8cd8c;
+  --xiv-label: #f1dfae;
+  --xiv-muted: #b5b1a7;
+  --xiv-number: #efe6cf;
+  --xiv-chip-border: #8a7444;
+  --xiv-rule: #8a7444;
+  --xiv-control-border: #a8874c;
+  --xiv-control-text: #ebe2ca;
+  --xiv-surface: #13203a;
+  --xiv-field: #0a1220;
+  --xiv-focus: #ffe7a3;
+  --xiv-link: #f0d79a;
+  --xiv-hover: rgba(232, 205, 140, 0.16);
+  --xiv-selected: linear-gradient(180deg, #7a5b2a, #4e3819);
+  --xiv-tab: linear-gradient(180deg, #1d2d4a, #101b30);
+}
+.gsm-hoshidicts-popup {
+  border: 1px solid var(--xiv-frame-bright); border-radius: 7px;
+  background-image: radial-gradient(120% 55% at 50% 0%, rgba(70, 112, 178, 0.14), rgba(70, 112, 178, 0) 70%);
+  box-shadow: inset 0 0 0 3px rgba(4, 8, 15, 0.6), inset 0 0 0 4px var(--xiv-frame-dim),
+    0 0 0 1px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+/* Ornaments sit under the content and never take pointer events. */
+.gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after { content: ""; position: absolute; z-index: 0; pointer-events: none; }
+.gsm-hoshidicts-popup::before {
+  inset: 0;
+  background: svg(corner-a-tl) left top / 30px 30px no-repeat, svg(corner-a-tr) right top / 30px 30px no-repeat,
+    svg(corner-a-bl) left bottom / 30px 30px no-repeat, svg(corner-a-br) right bottom / 30px 30px no-repeat;
+}
+.gsm-hoshidicts-popup::after {
+  top: 1px; right: 5px; width: 44px; height: 40px;
+  background: svg(crystal-mount) center / 44px 40px no-repeat,
+    radial-gradient(closest-side, rgba(126, 206, 255, 0.45), rgba(126, 206, 255, 0)) center / 30px 40px no-repeat;
+}
+.jl-header, .jl-scroll { position: relative; z-index: 1; }
+.gsm-hoshidicts-resize-handle { z-index: 2; }
+
+/* Header: tab plates, then a gold rule running to the crystal. */
+.jl-tabs { align-items: center; margin: 9px 50px 0 11px; }
+.jl-tabs::after {
+  content: ""; flex: 1 1 0; min-width: 0; height: 1px; margin: 0 0 2px 8px;
+  background: linear-gradient(90deg, var(--xiv-frame), var(--xiv-frame-dim) 70%, rgba(108, 86, 48, 0));
+}
+.jl-header:has(.jl-tab)::after {
+  content: ""; display: block; height: 1px; margin: 6px 12px 0;
+  background: linear-gradient(90deg, rgba(168, 135, 76, 0), var(--xiv-frame-dim) 12%, var(--xiv-frame-dim) 88%, rgba(168, 135, 76, 0));
+}
+.gsm-hoshidicts-popup .jl-tab {
+  padding: 3px 11px; border: 1px solid var(--xiv-control-border); border-radius: 3px;
+  background: var(--xiv-tab); color: var(--xiv-control-text);
+  font-size: 14px; line-height: 20px; letter-spacing: 0.07em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: linear-gradient(180deg, #263a5e, #15233d); }
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: var(--xiv-frame-bright); background: var(--xiv-selected); color: #fff6dc;
+  text-decoration-color: var(--xiv-frame-bright); text-decoration-thickness: 1px;
+  box-shadow: inset 0 1px 0 rgba(255, 236, 190, 0.35), 0 0 8px rgba(226, 190, 112, 0.35);
+}
+/* Back hangs from the window's left edge like a bookmark; a nested popup's
+ * close button is a gold-ringed disc left of the crystal. */
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  margin: 8px 0 0; padding: 2px 13px 2px 12px; border: 1px solid var(--xiv-control-border); border-left: 0;
+  border-radius: 0 12px 12px 0; background: var(--xiv-tab); color: var(--xiv-control-text);
+  font-family: var(--xiv-label-font); font-variant-caps: small-caps; font-size: 13px; letter-spacing: 0.07em;
+}
+.jl-nav > .gsm-hoshidicts-popup-close { margin: 7px 50px 0 auto; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
+  width: 22px; height: 22px; border: 1px solid var(--xiv-frame); border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #263a5e, #0e182b); color: var(--xiv-headword); font: 14px/20px var(--xiv-font);
+}
+
+.jl-scroll { margin: 2px 4px 8px; scrollbar-color: var(--xiv-frame) transparent; }
+.gsm-hoshidicts-popup:not(:has(.jl-header button)) .jl-scroll { margin-top: 6px; }
+.jl-entry { margin: 0 8px 0 10px; padding: 10px 0 2px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 0; border-image: none; padding-top: 14px; }
+
+/* Headword line on the window. */
+.jl-spelling { font-size: 24px; color: var(--xiv-headword); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85); }
+.jl-reading { font-size: 18px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); }
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0 6px 0 5px;
+  border: 1px solid var(--xiv-chip-border); border-radius: 3px; background: rgba(5, 10, 19, 0.55);
+  color: var(--xiv-number); line-height: 18px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 12px; height: 12px; background: var(--xiv-gold); mask: svg(book) center / contain no-repeat;
+}
+
+/* The panel: its top half-row holds the name plate, a rule and the actions;
+ * the definitions close it with sides, a bottom edge and corner brackets. */
+.bee-source-actions {
+  gap: 4px; min-height: 24px; margin-top: 7px;
+  background:
+    linear-gradient(var(--xiv-frame), var(--xiv-frame)) left bottom / 1px 50% no-repeat,
+    linear-gradient(var(--xiv-frame), var(--xiv-frame)) right bottom / 1px 50% no-repeat,
+    linear-gradient(var(--xiv-panel), var(--xiv-panel)) left bottom / 100% 50% no-repeat;
+}
+.bee-source-actions::before {
+  content: ""; order: 1; flex: 1 1 0; min-width: 0; height: 1px;
+  background: linear-gradient(90deg, var(--xiv-frame-bright), var(--xiv-frame) 40%);
+}
+.bee-source-actions::after { content: ""; order: 3; flex: 0 1 8px; min-width: 0; height: 1px; background: var(--xiv-frame); }
+.bee-source-actions > .gsm-hoshidicts-entry-actions { order: 2; margin-left: 0; }
+.bee-source-actions > .jl-dictionary {
+  flex: 0 1 auto; box-sizing: border-box; height: 24px; margin-left: -4px; padding: 2px 3px 2px 2px;
+  border-style: solid; border-color: transparent; border-width: 0 10px 0 23px;
+  border-image: svg(plate) 0 10 0 23 fill / 0 10px 0 23px stretch;
+  background: var(--xiv-plate) padding-box;
+  color: var(--xiv-label); font-size: 14px; line-height: 20px; letter-spacing: 0.07em; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+}
+.jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text {
+  margin: 0; padding: 5px 12px 8px; border: 1px solid var(--xiv-frame); border-top: 0; border-radius: 0 0 4px 4px;
+  background: svg(pc-bl) left bottom / 9px 9px no-repeat border-box, svg(pc-br) right bottom / 9px 9px no-repeat border-box, var(--xiv-panel);
+}
+.jl-kanji > .bee-rich-content { padding-bottom: 2px; border-bottom: 0; border-radius: 0; background: var(--xiv-panel); }
+.jl-kanji > .jl-kanji-text { padding-top: 2px; }
+.bee-rich-content li::marker { color: var(--xiv-gold); }
+/* Cinzel's 1 looks like a Roman I, so numbers use a plain serif. */
+.bee-rich-content ol > li::marker { font-family: "Noto Serif", "Source Serif 4", serif; font-weight: 700; }
+
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after, .jl-tabs::after, .jl-header::after,
+  .bee-source-actions::before, .bee-source-actions::after, .jl-frequency .gsm-hoshidicts-tag-frequency::before { display: none; }
+  .gsm-hoshidicts-popup { box-shadow: none; background-image: none; }
+  .bee-source-actions { background: none; }
+  .bee-source-actions > .jl-dictionary { border-image: none; border-width: 0; padding: 0 4px; background: none; }
+  .jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text { background: none; border-color: CanvasText; }
+  .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back { box-shadow: none; }
+}

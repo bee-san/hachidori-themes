@@ -1,0 +1,105 @@
+/* Direction B, Ornate (issue #24 mockup 3, top): the game's Dark windows
+ * dressed up. Charcoal-violet glass with a faint nebula and a distant castle,
+ * scrolled gold corners and a crystal crown at the top centre, bright gold
+ * selected tab, book-marked dictionary names, and diamond rules between
+ * dictionaries. One surface, no panels. */
+:host {
+  --xiv-label-font: "Cinzel", "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif, var(--xiv-font);
+  --xiv-window: #15131b;
+  --xiv-frame-bright: #dcb86e;
+  --xiv-frame: #a8874c;
+  --xiv-frame-dim: #6c5630;
+  --xiv-trim: #a8874c;
+  --xiv-text: #ece8e1;
+  --xiv-headword: #fbf9f4;
+  --xiv-gold: #e9cd8b;
+  --xiv-label: #e9cd8b;
+  --xiv-muted: #b7b2aa;
+  --xiv-number: #efe6cf;
+  --xiv-chip-border: #a8874c;
+  --xiv-rule: #8a7444;
+  --xiv-control-border: #a8874c;
+  --xiv-control-text: #ebe2ca;
+  --xiv-surface: #201d27;
+  --xiv-field: #0f0e13;
+  --xiv-focus: #ffe7a3;
+  --xiv-link: #f0d79a;
+  --xiv-hover: rgba(233, 205, 139, 0.16);
+  --xiv-selected: linear-gradient(180deg, #f0d48e, #c49a4d);
+  --xiv-tab: linear-gradient(180deg, #27232f, #17151d);
+}
+.gsm-hoshidicts-popup {
+  border: 1px solid var(--xiv-frame-bright); border-radius: 10px;
+  background-image: radial-gradient(55% 45% at 88% 18%, rgba(118, 92, 196, 0.14), rgba(118, 92, 196, 0)),
+    radial-gradient(60% 50% at 8% 92%, rgba(62, 84, 170, 0.1), rgba(62, 84, 170, 0));
+  box-shadow: inset 0 0 0 4px rgba(6, 5, 9, 0.55), inset 0 0 0 5px var(--xiv-frame-dim),
+    0 0 0 1px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after { content: ""; position: absolute; z-index: 0; pointer-events: none; }
+.gsm-hoshidicts-popup::before {
+  inset: 0;
+  background: svg(corner-b-tl) left top / 38px 38px no-repeat, svg(corner-b-tr) right top / 38px 38px no-repeat,
+    svg(corner-b-bl) left bottom / 38px 38px no-repeat, svg(corner-b-br) right bottom / 38px 38px no-repeat,
+    svg(castle-faint) right 14px bottom 10px / 200px 110px no-repeat;
+}
+.gsm-hoshidicts-popup::after {
+  top: 0; left: 50%; width: 132px; height: 32px; margin-left: -66px;
+  background: svg(crystal-crown) center / 132px 32px no-repeat,
+    radial-gradient(closest-side, rgba(126, 206, 255, 0.4), rgba(126, 206, 255, 0)) center / 40px 32px no-repeat;
+}
+.jl-header, .jl-scroll { position: relative; z-index: 1; }
+.gsm-hoshidicts-resize-handle { z-index: 2; }
+
+.jl-tabs { margin: 24px 14px 0; }
+.gsm-hoshidicts-popup .jl-tab {
+  padding: 3px 12px; border: 1px solid var(--xiv-control-border); border-radius: 4px;
+  background: var(--xiv-tab); color: var(--xiv-control-text); font-size: 13px; line-height: 20px; letter-spacing: 0.07em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.gsm-hoshidicts-popup .jl-tab:hover:not([aria-pressed="true"]) { background: linear-gradient(180deg, #332e3c, #1d1a24); }
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: #f6e2a6; background: var(--xiv-selected); color: #1c1407;
+  text-decoration-color: #1c1407; text-decoration-thickness: 1px; box-shadow: 0 0 10px rgba(240, 212, 142, 0.35);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  margin: 26px 0 0; padding: 2px 13px 2px 12px; border: 1px solid var(--xiv-control-border); border-left: 0;
+  border-radius: 0 12px 12px 0; background: var(--xiv-tab); color: var(--xiv-control-text);
+  font-family: var(--xiv-label-font); font-variant-caps: small-caps; font-size: 13px; letter-spacing: 0.07em;
+}
+.jl-nav > .gsm-hoshidicts-popup-close { margin: 8px 12px 0 auto; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
+  width: 22px; height: 22px; border: 1px solid var(--xiv-frame-bright); border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #332e3c, #121016); color: var(--xiv-gold); font: 14px/20px var(--xiv-font);
+}
+.jl-scroll { margin: 4px 4px 10px; scrollbar-color: var(--xiv-frame) transparent; }
+.gsm-hoshidicts-popup:not(:has(.jl-header button)) .jl-scroll { margin-top: 22px; }
+.jl-entry { margin: 0 10px 0 14px; padding: 8px 0 2px; }
+/* Diamond rules between the shown dictionaries. */
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 0; border-image: none; padding-top: 4px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden])::before {
+  content: ""; display: block; height: 12px; margin: 0 0 6px;
+  background: svg(rule) center / 48px 12px no-repeat,
+    linear-gradient(90deg, rgba(168, 135, 76, 0), var(--xiv-frame) 18%, var(--xiv-frame) calc(50% - 25px), rgba(168, 135, 76, 0) calc(50% - 25px),
+      rgba(168, 135, 76, 0) calc(50% + 25px), var(--xiv-frame) calc(50% + 25px), var(--xiv-frame) 82%, rgba(168, 135, 76, 0)) center / 100% 1px no-repeat;
+}
+.jl-spelling { font-size: 24px; color: var(--xiv-headword); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85); }
+.jl-reading { font-size: 18px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); }
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  padding: 0 8px; border: 1px solid var(--xiv-chip-border); border-radius: 9px; background: rgba(0, 0, 0, 0.3);
+  color: var(--xiv-number); line-height: 18px;
+}
+.bee-source-actions { margin-top: 5px; }
+.bee-source-actions > .jl-dictionary { font-size: 15px; letter-spacing: 0.07em; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
+.bee-source-actions > .jl-dictionary::before {
+  content: ""; display: inline-block; width: 17px; height: 14px; margin-right: 7px; vertical-align: -1px;
+  background: var(--xiv-gold); mask: svg(book) center / contain no-repeat;
+}
+.gsm-hoshidicts-definitions { margin: 4px 2px 6px 8px; }
+.bee-rich-content li::marker { color: var(--xiv-gold); }
+.bee-rich-content ol > li::marker { font-family: var(--xiv-label-font); font-weight: 700; }
+
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after, .jl-entry::before, .jl-dictionary::before { display: none; }
+  .gsm-hoshidicts-popup { box-shadow: none; background-image: none; }
+  .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back { box-shadow: none; }
+}

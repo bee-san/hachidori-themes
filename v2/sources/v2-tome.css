@@ -1,0 +1,139 @@
+/* Direction D, Tome (issue #24 mockup 1): a thick navy-and-gilt frame with
+ * gems on its sides and a crystal at the top right; each dictionary is a
+ * parchment page with a faint engraved astrolabe, under a navy ribbon with a
+ * crystal; the actions are gold-ringed coins. */
+:host {
+  --xiv-label-font: "Cinzel", "Noto Serif", "Source Serif 4", "Noto Serif CJK JP", "Noto Serif JP", serif, var(--xiv-font);
+  --xiv-window: #0e1830;
+  --xiv-frame-bright: #dcb86e;
+  --xiv-frame: #b08f52;
+  --xiv-frame-dim: #6c5630;
+  --xiv-trim: #b08f52;
+  --xiv-text: #ece7dc;
+  --xiv-headword: #fbf8f0;
+  --xiv-gold: #ead08f;
+  --xiv-label: #f3e2b4;
+  --xiv-muted: #b7b4ad;
+  --xiv-number: #efe6cf;
+  --xiv-chip-border: #a8874c;
+  --xiv-rule: #8a7444;
+  --xiv-control-border: #b08f52;
+  --xiv-control-text: #ece3cb;
+  --xiv-surface: #15233f;
+  --xiv-field: #0a1222;
+  --xiv-focus: #ffe7a3;
+  --xiv-link: #f0d79a;
+  --xiv-hover: rgba(234, 208, 143, 0.18);
+  --xiv-selected: linear-gradient(180deg, #2e4f80, #1a3058);
+  --xiv-tab: linear-gradient(180deg, #1f3156, #121e38);
+  --xiv-ink: #2a2117;
+  --xiv-ink-soft: #594a38;
+  --xiv-ink-accent: #6e450e;
+  --xiv-parchment: linear-gradient(180deg, #f2e8d0, #e3d3b0);
+}
+.gsm-hoshidicts-popup {
+  border: 2px solid var(--xiv-frame-bright); border-radius: 8px;
+  background-image: radial-gradient(110% 60% at 50% 0%, rgba(80, 120, 190, 0.16), rgba(80, 120, 190, 0) 70%);
+  box-shadow: inset 0 0 0 5px rgba(20, 36, 70, 0.92), inset 0 0 0 6px var(--xiv-frame),
+    0 0 0 1px rgba(0, 0, 0, 0.55), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after { content: ""; position: absolute; z-index: 0; pointer-events: none; }
+.gsm-hoshidicts-popup::before {
+  inset: 0;
+  background: svg(corner-b-tl) left top / 38px 38px no-repeat, svg(corner-b-bl) left bottom / 38px 38px no-repeat,
+    svg(corner-b-br) right bottom / 38px 38px no-repeat,
+    svg(gem) left -1px center / 14px 14px no-repeat, svg(gem) right -1px center / 14px 14px no-repeat;
+}
+.gsm-hoshidicts-popup::after {
+  top: 0; right: 3px; width: 50px; height: 46px;
+  background: svg(crystal-mount) center / 50px 46px no-repeat,
+    radial-gradient(closest-side, rgba(126, 206, 255, 0.5), rgba(126, 206, 255, 0)) center / 36px 46px no-repeat;
+}
+.jl-header, .jl-scroll { position: relative; z-index: 1; }
+.gsm-hoshidicts-resize-handle { z-index: 2; }
+
+.jl-tabs { margin: 10px 56px 0 12px; }
+.gsm-hoshidicts-popup .jl-tab {
+  padding: 3px 12px; border: 1px solid var(--xiv-control-border); border-radius: 3px;
+  background: var(--xiv-tab); color: var(--xiv-control-text); font-size: 13px; line-height: 20px; letter-spacing: 0.07em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.gsm-hoshidicts-popup .jl-tab[aria-pressed="true"] {
+  border-color: #a9dcff; background: var(--xiv-selected); color: #ffffff;
+  text-decoration-color: #a9dcff; text-decoration-thickness: 1px;
+  box-shadow: 0 0 9px rgba(110, 196, 255, 0.55), inset 0 0 6px rgba(140, 210, 255, 0.3);
+}
+.gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back {
+  margin: 9px 0 0; padding: 2px 13px 2px 12px; border: 1px solid var(--xiv-control-border); border-left: 0;
+  border-radius: 0 12px 12px 0; background: var(--xiv-tab); color: var(--xiv-control-text);
+  font-family: var(--xiv-label-font); font-variant-caps: small-caps; font-size: 13px; letter-spacing: 0.07em;
+}
+.jl-nav > .gsm-hoshidicts-popup-close { margin: 9px 56px 0 auto; }
+.gsm-hoshidicts-popup .gsm-hoshidicts-popup-close {
+  width: 22px; height: 22px; border: 0; border-radius: 50%; color: var(--xiv-headword); font: 14px/22px var(--xiv-font);
+  background: radial-gradient(circle at 50% 35%, #2c4570, #0f1a30); box-shadow: inset 0 0 0 1px var(--xiv-frame-bright);
+}
+.jl-scroll { margin: 4px 7px 9px; scrollbar-color: var(--xiv-frame) transparent; }
+.gsm-hoshidicts-popup:not(:has(.jl-header button)) .jl-scroll { margin-top: 8px; }
+.jl-entry { margin: 0 8px 0 9px; padding: 9px 0 2px; }
+.jl-entry:not([hidden]) ~ .jl-entry:not([hidden]) { border-top: 0; border-image: none; padding-top: 12px; }
+.jl-spelling { font-size: 24px; color: var(--xiv-headword); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85); }
+.jl-reading { font-size: 18px; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); }
+.jl-frequency .gsm-hoshidicts-tag-frequency {
+  display: inline-flex; align-items: center; gap: 4px; padding: 0 6px 0 5px; border: 1px solid var(--xiv-chip-border);
+  border-radius: 3px; background: rgba(5, 10, 22, 0.55); color: var(--xiv-number); line-height: 18px;
+}
+.jl-frequency .gsm-hoshidicts-tag-frequency::before {
+  content: ""; flex: none; width: 12px; height: 12px; background: var(--xiv-gold); mask: svg(star) center / contain no-repeat;
+}
+/* A navy ribbon with a crystal, and coin buttons. */
+.bee-source-actions { gap: 4px; margin-top: 6px; }
+.bee-source-actions > .jl-dictionary {
+  flex: 0 1 auto; box-sizing: border-box; height: 24px; margin-left: -3px; padding: 2px 4px 2px 2px;
+  border-style: solid; border-color: transparent; border-width: 0 11px 0 22px;
+  border-image: svg(plate-navy) 0 10 0 21 fill / 0 11px 0 22px stretch;
+  background: #1d3054 padding-box; color: var(--xiv-label); font-size: 13px; line-height: 20px; letter-spacing: 0.07em;
+}
+.bee-source-actions::before {
+  content: ""; order: 1; flex: 1 1 0; min-width: 0; height: 1px; background: linear-gradient(90deg, var(--xiv-frame), rgba(176, 143, 82, 0.2));
+}
+.bee-source-actions > .gsm-hoshidicts-entry-actions { order: 2; margin-left: 0; }
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-entry-actions > .gsm-hoshidicts-text-action-button), .gsm-hoshidicts-popup .bee-more-actions > summary {
+  border-radius: 50%; background: radial-gradient(circle at 50% 35%, #2c4570, #0f1a30);
+  box-shadow: inset 0 0 0 1px var(--xiv-frame-bright), 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+  .gsm-hoshidicts-text-action-button):is(:hover, [aria-expanded="true"]):not(:disabled) {
+  background: radial-gradient(circle at 50% 35%, #3d5f96, #172848);
+}
+/* Parchment pages: dark ink, brown accents. */
+.jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text {
+  --text-color: var(--xiv-ink); --text-color-light1: var(--xiv-ink-accent); --text-color-light3: var(--xiv-ink-soft);
+  --accent-color: var(--xiv-ink-accent); --accent-color-dark: var(--xiv-ink); --link-color: var(--xiv-ink-accent);
+  --gloss-image-background-color: #e9dcbf;
+  margin: 4px 0 0; padding: 6px 12px 8px; color: var(--xiv-ink);
+  border: 1px solid var(--xiv-frame-bright); border-radius: 3px;
+  background: svg(astrolabe-faint) right -24px center / 140px 140px no-repeat, var(--xiv-parchment);
+  box-shadow: inset 0 0 14px rgba(120, 84, 34, 0.28), 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.jl-kanji > .bee-rich-content { border-bottom: 0; border-radius: 3px 3px 0 0; padding-bottom: 2px; }
+.jl-kanji > .jl-kanji-text { margin-top: 0; border-top: 0; border-radius: 0 0 3px 3px; padding-top: 2px; }
+.jl-entry .bee-rich-content rt { color: var(--xiv-ink-accent); }
+.jl-entry .bee-rich-content a { color: var(--xiv-ink-accent); }
+.jl-entry .bee-rich-content li::marker { color: var(--xiv-ink-accent); }
+.jl-entry .bee-rich-content ol > li::marker { font-family: var(--xiv-label-font); font-weight: 700; }
+:host([data-hoshidicts-glossary-layout="compact"]) .jl-entry :is(.gloss-item, .gloss-sc-ul[data-sc-content="glossary"] .gloss-sc-li):not(:first-child)::before {
+  color: var(--xiv-ink-soft);
+}
+
+@media (forced-colors: active) {
+  .gsm-hoshidicts-popup::before, .gsm-hoshidicts-popup::after, .bee-source-actions::before,
+  .jl-frequency .gsm-hoshidicts-tag-frequency::before { display: none; }
+  .gsm-hoshidicts-popup { box-shadow: none; background-image: none; }
+  .bee-source-actions > .jl-dictionary { border-image: none; border-width: 0; padding: 0 4px; background: none; }
+  .jl-entry > .gsm-hoshidicts-definitions, .jl-kanji > .bee-rich-content, .jl-kanji > .jl-kanji-text { background: none; box-shadow: none; }
+  .gsm-hoshidicts-popup .jl-tab, .gsm-hoshidicts-popup .gsm-hoshidicts-kanji-back,
+  .gsm-hoshidicts-popup :is(.gsm-hoshidicts-audio-button, .gsm-hoshidicts-mine-button, .gsm-hoshidicts-note-button,
+    .gsm-hoshidicts-text-action-button), .gsm-hoshidicts-popup .bee-more-actions > summary { box-shadow: none; background: none; }
+}
