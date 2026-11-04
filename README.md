@@ -1,5 +1,7 @@
 # Hachidori themes
 
+[![Discord](https://img.shields.io/discord/754001738184392704?logo=discord&label=Discord)](https://discord.skerritt.blog)
+
 Reviewed popup renderers for [Hachidori](https://github.com/bee-san/hachidori).
 Themes **become the popup**: they create their own DOM directly from lookup data.
 They do not build Default and hide or rearrange it afterwards.
